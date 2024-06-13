@@ -32,18 +32,11 @@ Per poter realizzare questo progetto sono necessari:
 - **Descrizione dei problemi possibili**: -
 - **Stato del sistema al completamento**: L'utente una volta cliccato il pulsante configurazioni andrà nella pagina di configurazione con aperto il primo tab di presa visione.
 
-### 3 L'UTENTE VISUALIZZA LE SUE CREDENZIALI E LE PU0' MODIFICARE 
-- **Assunzione iniziale**: L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
-  pagina sarà possibile anche modificare i propri dati.
-- **Descrizione del flow normale**: L'utente vuole modificare le proprie credenziali, per fare questo, una volta all'interno della sua pagina home, dovrà 
-  schiacciare il bottone "Profilo" e verrà indirizzato in una pagina contente tutte le credenziali in modalità solo lettura.
-  Schiacciando sul tasto "Modifica", l'utente avrà la possibilità di modificare tutti i campi presenti nella pagina, sempre
-  rispettando gli stessi requisiti della creazione di un nuovo utente. Per salvare le modifiche l'utente dovrà schiacciare
-  sul bottone "Salva".
-- **Descrizione dei problemi possibili**: Se i dati che vengono modificati non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica e verranno
-  visualizzati dei messaggi di errore.
-- **Stato del sistema al completamento**: Dopo aver premuto il pulsante "Salva" l'utente verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere
-  le modifiche appena fatte.
+### 3 L'UTENTE PUO TORNARE ALLA PAGINA PRECEDENTE 
+- **Assunzione iniziale**: L'utente può tornare alla pagina precedente.
+- **Descrizione del flow normale**: L'utente cliccando sul pulsante "Comunicazioni" può tornare alla pagina precedente.
+- **Descrizione dei problemi possibili**: -
+- **Stato del sistema al completamento**: L'utente una volta premuto il pulsante vedrà la pagina di Comunicazioni.
 
 ### 4 L'UTENTE SI DEVE FARE UN INIEZIONE DI INSULINA
 - **Assunzione iniziale**: Nel momento in cui l'utente ha il bisogno di fare un iniezione d'insulina si aspetta di poter inserire nel sistema: 
