@@ -3,7 +3,6 @@
 Tramitel'utilizzo di Selenium, un framework per il testing di pagine web, sono stati realizzati dei test su Figma e poi sono stati portati sul sito ufficiale, che è stato sviluppato durante l'esperienza di tirocinio.
 
 ## RELAZIONE PROGETTO
-SeleniumTest Figma/Sito.
 Relazione progetto di tesi nella seguente pagina: https://www.overleaf.com/project/664a1a9e1a75cc1600fac278.
 
 ## INTRODUZIONE
@@ -27,17 +26,11 @@ Per poter realizzare questo progetto sono necessari:
 - **Descrizione dei problemi possibili**: -
 - **Stato del sistema al completamento**: L'utente visualizza il titolo della pagina.
 
-### 2 L'UTENTE EFFETTUA L'ACCESSO AL SUO ACCOUNT
-- **Assunzione iniziale**: L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
-- **Descrizione del flow normale**: Una volta che l'account è stato creato verrà visualizzata la pagina login. In questa pagina è presente un form, in cui
-  vengono richiesti username e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
-  alla pagina utente. A questo punto una volta che l'utente ha inserito le proprie credenziali in modo corretto e negli appositi 
-  spazi schiacciando sul pulsante "Accedi" riuscirà ad accedere alla home.
-- **Descrizione dei problemi possibili**: Nel caso in cui l'utente si sia dimenticato le sue credenziali, o semplicemente le inserisce in modo sbagliato, verrà visualizzato 
-  un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password. L'utente a questo punto rimarrà sulla
-  pagina login e potrà reinserire nuovamente le proprie credenziali (non c'è un limite massimo di errori che l'utente può fare). 
-- **Stato del sistema al completamento**: Una volta inserite le credenziali corrette l'utente verrà indirizzato alla pagina home all'interno del proprio account. 
-  A questo punto potrà eseguire tutte le azioni necessarie per monitorare al meglio le sue condizioni di salute.
+### 2 L'UTENTE CLICCA SU CONFIGURAZIONI
+- **Assunzione iniziale**: L'utente può cliccare su configurazioni per accedere alle opzioni di configurazione comunicazione.
+- **Descrizione del flow normale**: L'utente nella pagina comunicazioni può premere il pulsante configurazioni.
+- **Descrizione dei problemi possibili**: -
+- **Stato del sistema al completamento**: L'utente una volta cliccato il pulsante configurazioni andrà nella pagina di configurazione con aperto il primo tab di presa visione.
 
 ### 3 L'UTENTE VISUALIZZA LE SUE CREDENZIALI E LE PU0' MODIFICARE 
 - **Assunzione iniziale**: L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
