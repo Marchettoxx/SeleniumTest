@@ -21,16 +21,11 @@ Per poter realizzare questo progetto sono necessari:
 
 ## SCENARI
 
-### 1 L'UTENTE CREA UN NUOVO ACCOUNT 
-- **Assunzione iniziale**: Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorate le sue iniezioni d'insulina,
-  essendo che è il primo suo accesso dovrà crearsi un nuovo account.
-- **Descrizione del flow normale**: L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
-  verrà indirizzato su una pagina in cui gli verrà richiesto d'inserire il suo nome, cognome, email, username e password.
-  Ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
-  correttamente.
-- **Descrizione dei problemi possibili**: Se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari delle varie credenziali
-  non sarà possibile creare l'account e verranno visualizzati dei messaggi di errore.
-- **Stato del sistema al completamento**: Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato alla pagina di login.
+### 1 L'UTENTE ACCEDE ALLA PAGINA PRINCIPALE 
+- **Assunzione iniziale**: Non esiste una pagina di creazione dell'utente per cui si assume che l'utente sia già a conoscenza delle proprie credenziali e quindi lo stato iniziale sarà quello in cui l'utente visualizza la pagina principale, ovvero delle comunicazioni.
+- **Descrizione del flow normale**: L'utente visualizza su schermo la pagina delle comunicazioni.
+- **Descrizione dei problemi possibili**: -
+- **Stato del sistema al completamento**: L'utente visualizza il titolo della pagina.
 
 ### 2 L'UTENTE EFFETTUA L'ACCESSO AL SUO ACCOUNT
 - **Assunzione iniziale**: L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
