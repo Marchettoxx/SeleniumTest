@@ -12,6 +12,15 @@ public class ConfigurationPO extends PageObject {
     @FindBy(linkText = "Comunicazioni")
     private WebElement communicationLink;
 
+    @FindBy(linkText = "Notifiche")
+    private WebElement notificationLink;
+
+    @FindBy(linkText = "Testi di default")
+    private WebElement textLink;
+
+    @FindBy(linkText = "Firme")
+    private WebElement signatureLink;
+
     public ConfigurationPO(WebDriver driver) {
         super(driver);
     }
@@ -23,6 +32,21 @@ public class ConfigurationPO extends PageObject {
     public CommunicationPO clickCommunication() {
         this.communicationLink.click();
         return new CommunicationPO(driver);
+    }
+
+    public NotificationPO clickNotification() {
+        this.notificationLink.click();
+        return new NotificationPO(driver);
+    }
+
+    public TextPO clickText() {
+        this.textLink.click();
+        return new TextPO(driver);
+    }
+
+    public SignaturePO clickSignature() {
+        this.signatureLink.click();
+        return new SignaturePO(driver);
     }
 }
 

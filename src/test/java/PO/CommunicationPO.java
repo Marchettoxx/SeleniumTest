@@ -1,11 +1,8 @@
 package PO;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 public class CommunicationPO extends PageObject {
 
@@ -17,6 +14,9 @@ public class CommunicationPO extends PageObject {
 
     @FindBy(linkText = "3/2024")
     private WebElement detailLink;
+
+    @FindBy(linkText = "Utenti e gruppi")
+    private WebElement usersAndGroupsLink;
 
     public CommunicationPO(WebDriver driver) {
         super(driver);
@@ -31,9 +31,14 @@ public class CommunicationPO extends PageObject {
         return new ConfigurationPO(driver);
     }
 
-    public DetailPO clickDetail() {
+    public DetailCommunicationPO clickDetail() {
         this.detailLink.click();
-        return new DetailPO(driver);
+        return new DetailCommunicationPO(driver);
+    }
+
+    public UsersAndGroupsPO clickUsersAndGroups() {
+        this.usersAndGroupsLink.click();
+        return new UsersAndGroupsPO(driver);
     }
 }
 

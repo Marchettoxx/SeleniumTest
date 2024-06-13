@@ -4,12 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class DetailPO extends PageObject {
+public class DetailUserPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='[Nome comunicazione]']")
+    @FindBy(xpath = "//span[text()='[Cognome nome]']")
     private WebElement title;
 
-    public DetailPO(WebDriver driver) {
+    public DetailUserPO(WebDriver driver) {
         super(driver);
     }
 
