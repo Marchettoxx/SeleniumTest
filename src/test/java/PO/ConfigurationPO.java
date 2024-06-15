@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ConfigurationPO extends PageObject {
 
@@ -41,11 +43,17 @@ public class ConfigurationPO extends PageObject {
     }
 
     public TextPO clickText() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.textLink));
+
         this.textLink.click();
         return new TextPO(driver);
     }
 
     public SignaturePO clickSignature() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(signatureLink));
+
         this.signatureLink.click();
         return new SignaturePO(driver);
     }

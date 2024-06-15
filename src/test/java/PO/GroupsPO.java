@@ -3,6 +3,8 @@ package PO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GroupsPO extends PageObject {
 
@@ -21,6 +23,9 @@ public class GroupsPO extends PageObject {
     }
 
     public DetailGroupPO clickDetailGroup() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+
         this.detailLink.click();
         return new DetailGroupPO(driver);
     }

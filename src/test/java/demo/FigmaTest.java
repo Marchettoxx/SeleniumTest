@@ -151,7 +151,6 @@ public class FigmaTest {
 
         SignaturePO signaturePO = configurationPO.clickSignature();
 
-        Thread.sleep(1000);
         String firstSignature = signaturePO.getFirstSignatureText();
         assertEquals("Firma CCB 1", firstSignature);
     }
@@ -192,7 +191,6 @@ public class FigmaTest {
 
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
-        Thread.sleep(1000);
         String groupName = groupsPO.getGroupText();
         assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
     }
@@ -208,13 +206,11 @@ public class FigmaTest {
 
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
-        Thread.sleep(2000);
         String groupName = groupsPO.getGroupText();
         assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
 
         DetailGroupPO detailGroupPO = groupsPO.clickDetailGroup();
 
-        Thread.sleep(2000);
         String titleGroupDetail = detailGroupPO.getTitle();
         assertEquals("[Nome gruppo]", titleGroupDetail);
     }
