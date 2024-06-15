@@ -1,14 +1,18 @@
 package demo;
 
 import PO.*;
+import model.UserType;
 import org.apache.commons.lang3.SystemUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -49,28 +53,41 @@ public class FigmaTest {
         }
     }
 
-    public CommunicationPO login() {
+    public CommunicationPO login(UserType userType) {
         String url = "https://testselenium.teleporthq.app/";
         driver.get(url);
+
         driver.manage().window().maximize();
+
+        // Riduzione zoom, non funzionante
+        // JavascriptExecutor js = (JavascriptExecutor) driver;
+        // js.executeScript("document.body.style.zoom = '50%'");
 
         LoginPO loginPO = new LoginPO(driver);
         String password = "ESGJ3P";
 
-        return loginPO.login(password);
+        SelectUserPO selectUserPO = loginPO.login(password);
+        CommunicationPO communicationPO = null;
+        try {
+            communicationPO = selectUserPO.selectUserType(userType);
+        } catch (InterruptedException e) {
+            // errore
+        }
+
+        return communicationPO;
     }
 
     @Test
     public void ATest() {
-        CommunicationPO communicationPO = this.login();
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         String titleCommunication = communicationPO.getTitle();
         assertEquals("Comunicazioni", titleCommunication);
     }
 
     @Test
-    public void BTest() {
-        CommunicationPO communicationPO = this.login();
+    public void BTest()  {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -79,8 +96,8 @@ public class FigmaTest {
     }
 
     @Test
-    public void CTest() {
-        CommunicationPO communicationPO = this.login();
+    public void CTest()  {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -94,8 +111,8 @@ public class FigmaTest {
     }
 
     @Test
-    public void DTest() {
-        CommunicationPO communicationPO = this.login();
+    public void DTest()  {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -109,8 +126,8 @@ public class FigmaTest {
     }
 
     @Test
-    public void ETest() {
-        CommunicationPO communicationPO = this.login();
+    public void ETest()  {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -124,23 +141,24 @@ public class FigmaTest {
     }
 
     @Test
-    public void FTest() {
-        CommunicationPO communicationPO = this.login();
+    public void FTest() throws InterruptedException {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
         String titleConfiguration = configurationPO.getTitle();
         assertEquals("Configurazione", titleConfiguration);
 
-        SignaturePO textPO = configurationPO.clickSignature();
+        SignaturePO signaturePO = configurationPO.clickSignature();
 
-        String firstSignature = textPO.getFirstSignature();
+        Thread.sleep(1000);
+        String firstSignature = signaturePO.getFirstSignatureText();
         assertEquals("Firma CCB 1", firstSignature);
     }
 
     @Test
-    public void GTest() {
-        CommunicationPO communicationPO = this.login();
+    public void GTest()  {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -150,7 +168,7 @@ public class FigmaTest {
 
     @Test
     public void HTest() {
-        CommunicationPO communicationPO = this.login();
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -164,8 +182,8 @@ public class FigmaTest {
     }
 
     @Test
-    public void ITest() {
-        CommunicationPO communicationPO = this.login();
+    public void ITest() throws InterruptedException {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -174,13 +192,14 @@ public class FigmaTest {
 
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
-        String newGroupButtonText = groupsPO.getNewGroupButtonText();
-        assertEquals("NUOVO GRUPPO", newGroupButtonText);
+        Thread.sleep(1000);
+        String groupName = groupsPO.getGroupText();
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
     }
 
     @Test
-    public void JTest() {
-        CommunicationPO communicationPO = this.login();
+    public void JTest() throws InterruptedException {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -189,11 +208,13 @@ public class FigmaTest {
 
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
-        String newGroupButtonText = groupsPO.getNewGroupButtonText();
-        assertEquals("NUOVO GRUPPO", newGroupButtonText);
+        Thread.sleep(2000);
+        String groupName = groupsPO.getGroupText();
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
 
         DetailGroupPO detailGroupPO = groupsPO.clickDetailGroup();
 
+        Thread.sleep(2000);
         String titleGroupDetail = detailGroupPO.getTitle();
         assertEquals("[Nome gruppo]", titleGroupDetail);
     }

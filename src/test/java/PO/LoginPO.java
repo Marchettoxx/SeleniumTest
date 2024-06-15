@@ -16,10 +16,10 @@ public class LoginPO extends PageObject {
         super(driver);
     }
 
-    public CommunicationPO login(String password) {
+    public SelectUserPO login(String password) {
         passwordInput.sendKeys(password);
         submitButton.click();
-        return new CommunicationPO(driver);
+        return new SelectUserPO(driver);
     }
 }
 

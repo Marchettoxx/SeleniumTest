@@ -13,8 +13,12 @@ public class SignaturePO extends PageObject {
         super(driver);
     }
 
-    public String getFirstSignature() {
+    public String getFirstSignatureText() {
         return this.firstSignature.getText();
+    }
+
+    public WebElement getFirstSignature() {
+        return firstSignature;
     }
 }
 

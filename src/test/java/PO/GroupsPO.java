@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class GroupsPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='NUOVO GRUPPO']")
+    @FindBy(linkText = "NUOVO GRUPPO")
     private WebElement newGroupButton;
 
     @FindBy(linkText = "Gruppo Compliance 231 (ristretto)")
@@ -16,8 +16,8 @@ public class GroupsPO extends PageObject {
         super(driver);
     }
 
-    public String getNewGroupButtonText() {
-        return this.newGroupButton.getText();
+    public String getGroupText() {
+        return this.detailLink.getText();
     }
 
     public DetailGroupPO clickDetailGroup() {
