@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.boot.autoconfigure.jms.JmsProperties;
 
 public class ConfigurationPO extends PageObject {
 
@@ -23,6 +24,9 @@ public class ConfigurationPO extends PageObject {
 
     @FindBy(linkText = "Firme")
     private WebElement signatureLink;
+
+    @FindBy(linkText = "Modifica")
+    private WebElement editAckLink;
 
     public ConfigurationPO(WebDriver driver) {
         super(driver);
@@ -56,6 +60,11 @@ public class ConfigurationPO extends PageObject {
 
         this.signatureLink.click();
         return new SignaturePO(driver);
+    }
+
+    public AcknowledgeEditPO clickEditAcknowledge() {
+        this.editAckLink.click();
+        return new AcknowledgeEditPO(driver);
     }
 }
 

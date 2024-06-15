@@ -19,6 +19,9 @@ public class GroupsPO extends PageObject {
     }
 
     public String getGroupText() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+
         return this.detailLink.getText();
     }
 
