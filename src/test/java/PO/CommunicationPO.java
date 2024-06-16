@@ -20,6 +20,9 @@ public class CommunicationPO extends PageObject {
     @FindBy(linkText = "Utenti e gruppi")
     private WebElement usersAndGroupsLink;
 
+    @FindBy(linkText = "Rubrica")
+    private WebElement addressbookLink;
+
     public CommunicationPO(WebDriver driver) {
         super(driver);
     }
@@ -39,12 +42,12 @@ public class CommunicationPO extends PageObject {
         return new ConfigurationPO(driver);
     }
 
-    public DetailCommunicationPO clickDetail() {
+    public CommunicationDetailPO clickDetail() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
 
         this.detailLink.click();
-        return new DetailCommunicationPO(driver);
+        return new CommunicationDetailPO(driver);
     }
 
     public UsersAndGroupsPO clickUsersAndGroups() {
@@ -53,6 +56,14 @@ public class CommunicationPO extends PageObject {
 
         this.usersAndGroupsLink.click();
         return new UsersAndGroupsPO(driver);
+    }
+
+    public AddressBookPO clickAddressBook() {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.elementToBeClickable(this.addressbookLink));
+
+        this.addressbookLink.click();
+        return new AddressBookPO(driver);
     }
 }
 

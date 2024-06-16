@@ -5,14 +5,13 @@ import model.UserType;
 import org.apache.commons.lang3.SystemUtils;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.JavascriptExecutor;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -21,6 +20,7 @@ import java.nio.file.Paths;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class FigmaTest {
 
@@ -59,10 +59,6 @@ public class FigmaTest {
 
         driver.manage().window().maximize();
 
-        // Riduzione zoom, non funzionante
-        // JavascriptExecutor js = (JavascriptExecutor) driver;
-        // js.executeScript("document.body.style.zoom = '50%'");
-
         LoginPO loginPO = new LoginPO(driver);
         String password = "ESGJ3P";
 
@@ -87,52 +83,29 @@ public class FigmaTest {
     }
 
     // Test per vedere se cliccando su una comunicazione si aprono i dettagli
+    // e si può tornare indietro
     @Test
-    public void AAAdminTest() {
+    public void BAdminTest() {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         String titleCommunication = communicationPO.getTitle();
         assertEquals("Comunicazioni", titleCommunication);
 
-        DetailCommunicationPO detailCommunicationPO = communicationPO.clickDetail();
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
-        String titleDetailCommunication = detailCommunicationPO.getTitle();
-        assertEquals("[Nome comunicazione]", titleDetailCommunication);
-    }
-
-    // Test per vedere se da dettagli si può tornare alla pagina precedente
-    @Test
-    public void AABdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
-
-        String titleCommunication = communicationPO.getTitle();
-        assertEquals("Comunicazioni", titleCommunication);
-
-        DetailCommunicationPO detailCommunicationPO = communicationPO.clickDetail();
-
-        String titleDetailCommunication = detailCommunicationPO.getTitle();
+        String titleDetailCommunication = communicationDetailPO.getTitle();
         assertEquals("[Nome comunicazione]", titleDetailCommunication);
 
-        CommunicationPO communicationPO1 = detailCommunicationPO.returnBackBreadCrumb();
+        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se dopo aver cliccato il bottone configura compare la pagina di configurazione
+    // Test per vedere se dopo aver cliccato il bottone configura compare la
+    // pagina di configurazione e si può tornare indietro
     @Test
-    public void BAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
-
-        ConfigurationPO configurationPO = communicationPO.clickConfig();
-
-        String titleConfiguration = configurationPO.getTitle();
-        assertEquals("Configurazione", titleConfiguration);
-    }
-
-    // Test per vedere se cliccando su modifica si apre la pagina di modifica
-    @Test
-    public void BAAdminTest()  {
+    public void CAdminTest()  {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -140,15 +113,16 @@ public class FigmaTest {
         String titleConfiguration = configurationPO.getTitle();
         assertEquals("Configurazione", titleConfiguration);
 
-        AcknowledgeEditPO acknowledgeEditPO = configurationPO.clickEditAcknowledge();
+        CommunicationPO communicationPO1 = configurationPO.clickCommunication();
 
-        String buttonSaveText = acknowledgeEditPO.getSaveButtonText();
-        assertEquals("SALVA", buttonSaveText);
+        String titleCommunication = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunication);
     }
 
-    // Test per vedere se cliccando salva si torna alla pagina di configurazione
+    // Test per vedere se cliccando su modifica si apre la pagina di modifica e cliccando salva
+    // si torna alla pagina precedente
     @Test
-    public void BBAdminTest()  {
+    public void DAdminTest() throws InterruptedException {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -167,26 +141,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationSave);
     }
 
-    // Test per vedere cliccando in comunicazioni si può tornare da configurazione in
-    // comunicazioni
-    @Test
-    public void CAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
-
-        ConfigurationPO configurationPO = communicationPO.clickConfig();
-
-        String titleConfiguration = configurationPO.getTitle();
-        assertEquals("Configurazione", titleConfiguration);
-
-        CommunicationPO communicationPO1 = configurationPO.clickCommunication();
-
-        String titleCommunication = communicationPO1.getTitle();
-        assertEquals("Comunicazioni", titleCommunication);
-    }
-
     // Test per vedere se cliccando sul tab notifiche si finisce sulla pagina delle notifiche
     @Test
-    public void DAdminTest()  {
+    public void EAdminTest()  {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -201,9 +158,9 @@ public class FigmaTest {
     }
 
     // Test per vedere se cliccando su nuova notifica si apre la
-    // pagina di creazione
+    // pagina di creazione e salvando si torna indietro
     @Test
-    public void DAAdminTest()  {
+    public void FAdminTest()  {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -216,34 +173,12 @@ public class FigmaTest {
         String titleNotification = notificationPO.getTitle();
         assertEquals("Notifiche", titleNotification);
 
-        NotificationEditPO notificationEditPO = notificationPO.createNotification();
+        NotificationCreatePO notificationCreatePO = notificationPO.createNotification();
 
-        String confirmButtonText = notificationEditPO.getSaveButtonText();
-        assertEquals("CONFERMA", confirmButtonText);
-    }
+        String confirmButtonText = notificationCreatePO.getTitle();
+        assertEquals("Nuova notifica", confirmButtonText);
 
-    // Test per vedere se cliccando su conferma si apre la pagina
-    // di visione delle notifiche
-    @Test
-    public void DBAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
-
-        ConfigurationPO configurationPO = communicationPO.clickConfig();
-
-        String titleConfiguration = configurationPO.getTitle();
-        assertEquals("Configurazione", titleConfiguration);
-
-        NotificationPO notificationPO = configurationPO.clickNotification();
-
-        String titleNotification = notificationPO.getTitle();
-        assertEquals("Notifiche", titleNotification);
-
-        NotificationEditPO notificationEditPO = notificationPO.createNotification();
-
-        String confirmButtonText = notificationEditPO.getSaveButtonText();
-        assertEquals("CONFERMA", confirmButtonText);
-
-        NotificationPO notificationPO1 = notificationEditPO.save();
+        NotificationPO notificationPO1 = notificationCreatePO.confirm();
 
         String titleNotificationConfirm = notificationPO1.getTitle();
         assertEquals("Notifiche", titleNotificationConfirm);
@@ -251,7 +186,7 @@ public class FigmaTest {
 
     // Test per vedere se cliccando su una notifica si apre il dettaglio
     @Test
-    public void DCAdminTest()  {
+    public void GAdminTest()  {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -270,35 +205,10 @@ public class FigmaTest {
         assertEquals("[Descrizione notifica]", titleNotificationDetail);
     }
 
-    // Test per vedere se cliccando su una modific si apre la pagina di modifica
+    // Test per vedere se cliccando su una modifica si apre la pagina di modifica
+    // e salvando si torna indietro
     @Test
-    public void DDAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
-
-        ConfigurationPO configurationPO = communicationPO.clickConfig();
-
-        String titleConfiguration = configurationPO.getTitle();
-        assertEquals("Configurazione", titleConfiguration);
-
-        NotificationPO notificationPO = configurationPO.clickNotification();
-
-        String titleNotification = notificationPO.getTitle();
-        assertEquals("Notifiche", titleNotification);
-
-        NotificationDetailPO notificationDetailPO = notificationPO.clickDetail();
-
-        String titleNotificationDetail = notificationDetailPO.getTitle();
-        assertEquals("[Descrizione notifica]", titleNotificationDetail);
-
-        NotificationEditPO notificationEditPO = notificationDetailPO.edit();
-
-        String buttonSaveText = notificationEditPO.getSaveButtonText();
-        assertEquals("SALVA", buttonSaveText);
-    }
-
-    // Test per vedere se cliccando su salva si apre la notifiche
-    @Test
-    public void DEAdminTest()  {
+    public void HAdminTest() throws InterruptedException {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -328,9 +238,9 @@ public class FigmaTest {
     }
 
     // Test per vedere se cliccando sul tab dei testi di default si
-    // apre la pagina giusta
+    // apre la pagina dei testi
     @Test
-    public void EAdminTest()  {
+    public void IAdminTest()  {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -345,9 +255,9 @@ public class FigmaTest {
     }
 
     // Test per vedere se cliccando sul tab delle firme si
-    // apre la pagina giusta
+    // apre la pagina delle firme
     @Test
-    public void FAdminTest() throws InterruptedException {
+    public void JAdminTest() throws InterruptedException {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -362,7 +272,7 @@ public class FigmaTest {
     }
 
     @Test
-    public void GAdminTest()  {
+    public void KAdminTest()  {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
@@ -372,7 +282,7 @@ public class FigmaTest {
     }
 
     @Test
-    public void HAdminTest() {
+    public void LAdminTest() {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
@@ -380,14 +290,14 @@ public class FigmaTest {
         String titleUsersAndGroups = usersAndGroupsPO.getTitle();
         assertEquals("Utenti e gruppi", titleUsersAndGroups);
 
-        DetailUserPO detailUserPO = usersAndGroupsPO.clickDetailUser();
+        UserDetailPO userDetailPO = usersAndGroupsPO.clickDetailUser();
 
-        String titleUserDetail = detailUserPO.getTitle();
+        String titleUserDetail = userDetailPO.getTitle();
         assertEquals("[Cognome nome]", titleUserDetail);
     }
 
     @Test
-    public void IAdminTest() throws InterruptedException {
+    public void MAdminTest() throws InterruptedException {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
@@ -402,7 +312,7 @@ public class FigmaTest {
     }
 
     @Test
-    public void JAdminTest() throws InterruptedException {
+    public void NAdminTest() throws InterruptedException {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
@@ -415,9 +325,93 @@ public class FigmaTest {
         String groupName = groupsPO.getGroupText();
         assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
 
-        DetailGroupPO detailGroupPO = groupsPO.clickDetailGroup();
+        GroupDetailPO groupDetailPO = groupsPO.clickDetailGroup();
 
-        String titleGroupDetail = detailGroupPO.getTitle();
+        String titleGroupDetail = groupDetailPO.getTitle();
         assertEquals("[Nome gruppo]", titleGroupDetail);
+    }
+
+    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
+    // e si può tornare indietro
+    @Test
+    public void ABankTest() {
+        CommunicationPO communicationPO = this.login(UserType.BANK);
+
+        String titleCommunication = communicationPO.getTitle();
+        assertEquals("Comunicazioni", titleCommunication);
+
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+
+        String titleDetailCommunication = communicationDetailPO.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+
+        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
+
+        String titleCommunicationBack = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunicationBack);
+    }
+
+    // Test per vedere se cliccando su rubrica si apre la rubrica
+    @Test
+    public void BBankTest() {
+        CommunicationPO communicationPO = this.login(UserType.BANK);
+
+        String titleCommunication = communicationPO.getTitle();
+        assertEquals("Comunicazioni", titleCommunication);
+
+        AddressBookPO addressBookPO = communicationPO.clickAddressBook();
+
+        String titleAddressBook = addressBookPO.getTitle();
+        assertEquals("Rubrica", titleAddressBook);
+    }
+
+    // Test per vedere se cliccando modifica si apre la pagina di modifica
+    // e cliccando annulla appare la schermata iniziale
+    @Test
+    public void CBankTest() {
+        CommunicationPO communicationPO = this.login(UserType.BANK);
+
+        String titleCommunication = communicationPO.getTitle();
+        assertEquals("Comunicazioni", titleCommunication);
+
+        AddressBookPO addressBookPO = communicationPO.clickAddressBook();
+
+        String titleAddressBook = addressBookPO.getTitle();
+        assertEquals("Rubrica", titleAddressBook);
+
+        AddressBookEditPO addressBookEditPO = addressBookPO.edit();
+
+        String saveButtonText = addressBookEditPO.getCancelButtonText();
+        assertEquals("ANNULLA", saveButtonText);
+
+        AddressBookPO addressBookPO1 = addressBookEditPO.cancel();
+
+        String titleAddressBookEdit = addressBookPO1.getTitle();
+        assertEquals("Rubrica", titleAddressBookEdit);
+    }
+
+    // Test per vedere se cliccando nuovo contatto si apre la pagina di creazione
+    // e cliccando salva appare la schermata iniziale
+    @Test
+    public void DBankTest() {
+        CommunicationPO communicationPO = this.login(UserType.BANK);
+
+        String titleCommunication = communicationPO.getTitle();
+        assertEquals("Comunicazioni", titleCommunication);
+
+        AddressBookPO addressBookPO = communicationPO.clickAddressBook();
+
+        String titleAddressBook = addressBookPO.getTitle();
+        assertEquals("Rubrica", titleAddressBook);
+
+        AddressBookCreatePO addressBookCreatePO = addressBookPO.create();
+
+        String saveButtonText = addressBookCreatePO.getTitle();
+        assertEquals("Crea nuovo contatto", saveButtonText);
+
+        AddressBookPO addressBookPO1 = addressBookCreatePO.create();
+
+        String titleAddressBookEdit = addressBookPO1.getTitle();
+        assertEquals("Rubrica", titleAddressBookEdit);
     }
 }

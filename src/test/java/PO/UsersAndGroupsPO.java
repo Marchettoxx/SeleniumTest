@@ -25,9 +25,9 @@ public class UsersAndGroupsPO extends PageObject {
         return this.title.getText();
     }
 
-    public DetailUserPO clickDetailUser() {
+    public UserDetailPO clickDetailUser() {
         this.detailLink.click();
-        return new DetailUserPO(driver);
+        return new UserDetailPO(driver);
     }
 
     public GroupsPO clickGroups() {

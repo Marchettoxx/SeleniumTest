@@ -6,15 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class NotificationDetailPO extends PageObject {
+public class AddressBookCreatePO extends PageObject {
 
-    @FindBy(linkText = "MODIFICA")
-    private WebElement editButton;
-
-    @FindBy(xpath = "//span[text()='[Descrizione notifica]']")
+    @FindBy(xpath = "//span[text()='Crea nuovo contatto']")
     private WebElement title;
 
-    public NotificationDetailPO(WebDriver driver) {
+    @FindBy(linkText = "CREA")
+    private WebElement createButton;
+
+    public AddressBookCreatePO(WebDriver driver) {
         super(driver);
     }
 
@@ -22,12 +22,12 @@ public class NotificationDetailPO extends PageObject {
         return this.title.getText();
     }
 
-    public NotificationEditPO edit() {
+    public AddressBookPO create() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
-        this.editButton.click();
-        return new NotificationEditPO(driver);
+        this.createButton.click();
+        return new AddressBookPO(driver);
     }
 }
 

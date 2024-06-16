@@ -6,12 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DetailGroupPO extends PageObject {
+public class GroupDetailPO extends PageObject {
 
     @FindBy(xpath = "//span[text()='[Nome gruppo]']")
     private WebElement title;
 
-    public DetailGroupPO(WebDriver driver) {
+    public GroupDetailPO(WebDriver driver) {
         super(driver);
     }
 

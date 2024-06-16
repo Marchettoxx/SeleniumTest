@@ -6,15 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class NotificationDetailPO extends PageObject {
+public class NotificationCreatePO extends PageObject {
 
-    @FindBy(linkText = "MODIFICA")
-    private WebElement editButton;
+    @FindBy(linkText = "CONFERMA")
+    private WebElement confirmButton;
 
-    @FindBy(xpath = "//span[text()='[Descrizione notifica]']")
+    @FindBy(xpath = "//span[text()='Nuova notifica']")
     private WebElement title;
 
-    public NotificationDetailPO(WebDriver driver) {
+    public NotificationCreatePO(WebDriver driver) {
         super(driver);
     }
 
@@ -22,12 +22,12 @@ public class NotificationDetailPO extends PageObject {
         return this.title.getText();
     }
 
-    public NotificationEditPO edit() {
+    public NotificationPO confirm() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
 
-        this.editButton.click();
-        return new NotificationEditPO(driver);
+        this.confirmButton.click();
+        return new NotificationPO(driver);
     }
 }
 

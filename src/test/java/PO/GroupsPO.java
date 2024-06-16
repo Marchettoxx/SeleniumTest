@@ -25,12 +25,12 @@ public class GroupsPO extends PageObject {
         return this.detailLink.getText();
     }
 
-    public DetailGroupPO clickDetailGroup() {
+    public GroupDetailPO clickDetailGroup() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
 
         this.detailLink.click();
-        return new DetailGroupPO(driver);
+        return new GroupDetailPO(driver);
     }
 }
 

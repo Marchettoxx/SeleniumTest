@@ -3,8 +3,10 @@ package PO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DetailCommunicationPO extends PageObject {
+public class CommunicationDetailPO extends PageObject {
 
     @FindBy(xpath = "//span[text()='[Nome comunicazione]']")
     private WebElement title;
@@ -12,7 +14,7 @@ public class DetailCommunicationPO extends PageObject {
     @FindBy(linkText = "Comunicazioni")
     private WebElement communicationLinkBreadCrumb;
 
-    public DetailCommunicationPO(WebDriver driver) {
+    public CommunicationDetailPO(WebDriver driver) {
         super(driver);
     }
 
@@ -21,6 +23,9 @@ public class DetailCommunicationPO extends PageObject {
     }
 
     public CommunicationPO returnBackBreadCrumb() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.communicationLinkBreadCrumb));
+
         this.communicationLinkBreadCrumb.click();
         return new CommunicationPO(driver);
     }

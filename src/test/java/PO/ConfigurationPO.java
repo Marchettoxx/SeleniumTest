@@ -37,11 +37,17 @@ public class ConfigurationPO extends PageObject {
     }
 
     public CommunicationPO clickCommunication() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.communicationLink));
+
         this.communicationLink.click();
         return new CommunicationPO(driver);
     }
 
     public NotificationPO clickNotification() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.notificationLink));
+
         this.notificationLink.click();
         return new NotificationPO(driver);
     }
@@ -63,6 +69,11 @@ public class ConfigurationPO extends PageObject {
     }
 
     public AcknowledgeEditPO clickEditAcknowledge() {
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+
+        wait.until(ExpectedConditions.visibilityOf(this.editAckLink));
+        wait.until(ExpectedConditions.elementToBeClickable(this.editAckLink));
+
         this.editAckLink.click();
         return new AcknowledgeEditPO(driver);
     }

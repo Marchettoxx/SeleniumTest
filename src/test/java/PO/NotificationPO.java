@@ -22,15 +22,18 @@ public class NotificationPO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(this.title));
+
         return this.title.getText();
     }
 
-    public NotificationEditPO createNotification() {
+    public NotificationCreatePO createNotification() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(this.createNotificationButton));
 
         this.createNotificationButton.click();
-        return new NotificationEditPO(driver);
+        return new NotificationCreatePO(driver);
     }
 
     public NotificationDetailPO clickDetail() {
