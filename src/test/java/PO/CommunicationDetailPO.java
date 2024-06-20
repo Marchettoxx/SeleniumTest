@@ -31,6 +31,9 @@ public class CommunicationDetailPO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Nome comunicazione]"));
+
         return this.title.getText();
     }
 

@@ -11,10 +11,10 @@ public class UserDetailPO extends PageObject {
     @FindBy(xpath = "//span[text()='[Cognome nome]']")
     private WebElement title;
 
-    @FindBy(linkText = "Utenti e gruppi")
+    @FindBy(css = "div.cmdettaglioutente-breadcrumb-item2 a")
     private WebElement backLink;
 
-    @FindBy(linkText = "Utenti e gruppi")
+    @FindBy(css = "div.cmdettaglioutente-drawer-item1 a")
     private WebElement backMenuLink;
 
     @FindBy(linkText = "MODIFICA")
@@ -25,6 +25,9 @@ public class UserDetailPO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Cognome nome]"));
+
         return this.title.getText();
     }
 

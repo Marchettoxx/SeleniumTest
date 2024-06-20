@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationSelectContactPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='[Seleziona i contatti a cui inoltrare la comunicazione]']")
+    @FindBy(xpath = "//span[text()='Seleziona i contatti a cui inoltrare la comunicazione']")
     private WebElement title;
 
     @FindBy(linkText = "CONFERMA")
@@ -19,6 +19,9 @@ public class CommunicationSelectContactPO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Seleziona i contatti a cui inoltrare la comunicazione"));
+
         return this.title.getText();
     }
 

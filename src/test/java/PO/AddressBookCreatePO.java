@@ -19,6 +19,9 @@ public class AddressBookCreatePO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuovo contatto"));
+
         return this.title.getText();
     }
 

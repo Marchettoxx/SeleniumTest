@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationAnswerPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='[Chat]']")
+    @FindBy(xpath = "//span[text()='Chat']")
     private WebElement title;
 
     @FindBy(linkText = "TORNA AL DETTAGLIO")
@@ -19,6 +19,9 @@ public class CommunicationAnswerPO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Chat"));
+
         return this.title.getText();
     }
 

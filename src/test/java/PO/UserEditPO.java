@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UserEditPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='[Dettaglio utente]']")
+    @FindBy(xpath = "//span[text()='Dettaglio utente']")
     private WebElement title;
 
     @FindBy(linkText = "SALVA")
@@ -19,6 +19,9 @@ public class UserEditPO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Dettaglio utente"));
+
         return this.title.getText();
     }
 

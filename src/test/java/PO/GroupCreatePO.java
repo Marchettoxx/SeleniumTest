@@ -19,6 +19,9 @@ public class GroupCreatePO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Nuovo gruppo"));
+
         return this.title.getText();
     }
 

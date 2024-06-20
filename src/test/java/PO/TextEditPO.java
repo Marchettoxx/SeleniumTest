@@ -16,6 +16,9 @@ public class TextEditPO extends PageObject {
     }
 
     public String getSaveButtonText() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.saveButton, "SALVA"));
+
         return this.saveButton.getText();
     }
 

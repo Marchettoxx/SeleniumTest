@@ -26,7 +26,7 @@ public class GroupsPO extends PageObject {
 
     public String getGroupText() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+        wait.until(ExpectedConditions.textToBePresentInElement(this.detailLink, "Gruppo Compliance 231 (ristretto)"));
 
         return this.detailLink.getText();
     }

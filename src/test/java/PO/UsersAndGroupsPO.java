@@ -25,10 +25,16 @@ public class UsersAndGroupsPO extends PageObject {
     }
 
     public String getTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Utenti e gruppi"));
+
         return this.title.getText();
     }
 
     public UserDetailPO clickDetailUser() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+
         this.detailLink.click();
         return new UserDetailPO(driver);
     }

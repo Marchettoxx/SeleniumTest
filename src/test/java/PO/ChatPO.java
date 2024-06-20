@@ -11,7 +11,7 @@ public class ChatPO extends PageObject {
     @FindBy(linkText = "TORNA AL DETTAGLIO")
     private WebElement backButton;
 
-    @FindBy(xpath = "//span[text()='Comunicazioni']")
+    @FindBy(xpath = "//span[text()='Chat con ABI 08016']")
     private WebElement title;
 
     public ChatPO(WebDriver driver) {
