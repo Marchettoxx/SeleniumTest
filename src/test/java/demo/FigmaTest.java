@@ -5,10 +5,8 @@ import model.UserType;
 import org.apache.commons.lang3.SystemUtils;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,7 +18,6 @@ import java.nio.file.Paths;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class FigmaTest {
 
@@ -55,37 +52,20 @@ public class FigmaTest {
 
     public CommunicationPO login(UserType userType) {
         String url = "https://testselenium.teleporthq.app/";
-        driver.get(url);
+        String password = "ESGJ3P";
 
+        driver.get(url);
         driver.manage().window().maximize();
 
         LoginPO loginPO = new LoginPO(driver);
-        String password = "ESGJ3P";
-
         SelectUserPO selectUserPO = loginPO.login(password);
-        CommunicationPO communicationPO = null;
-        try {
-            communicationPO = selectUserPO.selectUserType(userType);
-        } catch (InterruptedException e) {
-            // errore
-        }
-
-        return communicationPO;
-    }
-
-    // Test se la pagina corrisponde a quella delle comunicazioni
-    @Test
-    public void AAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
-
-        String titleCommunication = communicationPO.getTitle();
-        assertEquals("Comunicazioni", titleCommunication);
+        return selectUserPO.selectUserType(userType);
     }
 
     // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro
+    // e si può tornare indietro tramite la breadcrumb
     @Test
-    public void BAdminTest() {
+    public void detailCommunicationTest() {
         CommunicationPO communicationPO = this.login(UserType.ADMIN);
 
         String titleCommunication = communicationPO.getTitle();
@@ -95,6 +75,39 @@ public class FigmaTest {
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
         assertEquals("[Nome comunicazione]", titleDetailCommunication);
+
+        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
+
+        String titleCommunicationBack = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunicationBack);
+    }
+
+    // TODO: creare un test come quello precedente, facendo il ritorno dal tasto della barra laterale
+
+    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
+    // e cliccando su "Nuovo messaggio" si può aprire la chat e richiudere
+    // e si può tornare indietro tramite la breadcrumb
+    @Test
+    public void chatCommunicationTest() {
+        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+
+        String titleCommunication = communicationPO.getTitle();
+        assertEquals("Comunicazioni", titleCommunication);
+
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+
+        String titleDetailCommunication = communicationDetailPO.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+
+        ChatPO chatPO = communicationDetailPO.openChat();
+
+        String titleChat = chatPO.getTitle();
+        assertEquals("Chat con ABI 08016", titleChat);
+
+        CommunicationDetailPO communicationDetailPO1 = communicationPO.clickDetail();
+
+        String titleDetailCommunicationFromChat = communicationDetailPO1.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunicationFromChat);
 
         CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
 

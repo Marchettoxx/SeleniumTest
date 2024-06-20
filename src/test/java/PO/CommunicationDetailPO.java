@@ -14,6 +14,9 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(linkText = "Comunicazioni")
     private WebElement communicationLinkBreadCrumb;
 
+    @FindBy(linkText = "Nuovo messaggio")
+    private WebElement newMessageLink;
+
     public CommunicationDetailPO(WebDriver driver) {
         super(driver);
     }
@@ -28,6 +31,14 @@ public class CommunicationDetailPO extends PageObject {
 
         this.communicationLinkBreadCrumb.click();
         return new CommunicationPO(driver);
+    }
+
+    public ChatPO openChat() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.newMessageLink));
+
+        this.newMessageLink.click();
+        return new ChatPO(driver);
     }
 }
 

@@ -1,10 +1,11 @@
 package PO;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 import model.UserType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectUserPO extends PageObject {
 
@@ -21,22 +22,23 @@ public class SelectUserPO extends PageObject {
         super(driver);
     }
 
-    public CommunicationPO selectUserType(UserType userType) throws InterruptedException {
+    public CommunicationPO selectUserType(UserType userType) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement choice = null;
         switch (userType) {
             case ADMIN:
-                this.adminButton.click();
+                choice = this.adminButton;
                 break;
             case STANDARD:
-                this.standardButton.click();
+                choice = this.standardButton;
                 break;
             case BANK:
-                this.bankButton.click();
+                choice = this.bankButton;
                 break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + userType);
         }
 
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(choice));
+        choice.click();
         return new CommunicationPO(driver);
     }
 }
