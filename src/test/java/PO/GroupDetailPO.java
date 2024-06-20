@@ -11,6 +11,12 @@ public class GroupDetailPO extends PageObject {
     @FindBy(xpath = "//span[text()='[Nome gruppo]']")
     private WebElement title;
 
+    @FindBy(linkText = "Utenti e gruppi")
+    private WebElement backLink;
+
+    @FindBy(linkText = "MODIFICA")
+    private WebElement editButton;
+
     public GroupDetailPO(WebDriver driver) {
         super(driver);
     }
@@ -20,6 +26,22 @@ public class GroupDetailPO extends PageObject {
         wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Nome gruppo]"));
         
         return this.title.getText();
+    }
+
+    public GroupsPO back() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
+
+        this.backLink.click();
+        return new GroupsPO(driver);
+    }
+
+    public GroupEditPO edit() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+
+        this.editButton.click();
+        return new GroupEditPO(driver);
     }
 }
 

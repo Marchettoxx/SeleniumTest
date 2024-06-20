@@ -14,6 +14,12 @@ public class GroupsPO extends PageObject {
     @FindBy(linkText = "Gruppo Compliance 231 (ristretto)")
     private WebElement detailLink;
 
+    @FindBy(linkText = "Gestione utenti")
+    private WebElement usersLink;
+
+    @FindBy(linkText = "NUOVO GRUPPO")
+    private WebElement createButton;
+
     public GroupsPO(WebDriver driver) {
         super(driver);
     }
@@ -31,6 +37,22 @@ public class GroupsPO extends PageObject {
 
         this.detailLink.click();
         return new GroupDetailPO(driver);
+    }
+
+    public UsersAndGroupsPO back() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.usersLink));
+
+        this.usersLink.click();
+        return new UsersAndGroupsPO(driver);
+    }
+
+    public GroupCreatePO create() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+
+        this.createButton.click();
+        return new GroupCreatePO(driver);
     }
 }
 

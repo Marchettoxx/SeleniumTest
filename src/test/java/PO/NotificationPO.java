@@ -17,6 +17,9 @@ public class NotificationPO extends PageObject {
     @FindBy(linkText = "Regola di notifica 2")
     private WebElement detailNotificationLink;
 
+    @FindBy(linkText = "Presa visione")
+    private WebElement ackTab;
+
     public NotificationPO(WebDriver driver) {
         super(driver);
     }
@@ -42,6 +45,14 @@ public class NotificationPO extends PageObject {
 
         this.detailNotificationLink.click();
         return new NotificationDetailPO(driver);
+    }
+
+    public ConfigurationPO backToCommunication() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
+
+        this.ackTab.click();
+        return new ConfigurationPO(driver);
     }
 }
 

@@ -17,6 +17,9 @@ public class UsersAndGroupsPO extends PageObject {
     @FindBy(linkText = "Gestione gruppi")
     private WebElement groupsLink;
 
+    @FindBy(linkText = "NUOVO UTENTE")
+    private WebElement createButton;
+
     public UsersAndGroupsPO(WebDriver driver) {
         super(driver);
     }
@@ -36,6 +39,14 @@ public class UsersAndGroupsPO extends PageObject {
 
         this.groupsLink.click();
         return new GroupsPO(driver);
+    }
+
+    public UserCreatePO create() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+
+        this.createButton.click();
+        return new UserCreatePO(driver);
     }
 }
 
