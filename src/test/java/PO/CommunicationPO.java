@@ -23,6 +23,9 @@ public class CommunicationPO extends PageObject {
     @FindBy(linkText = "Rubrica")
     private WebElement addressbookLink;
 
+    @FindBy(linkText = "NUOVA COMUNICAZIONE")
+    private WebElement createButton;
+
     public CommunicationPO(WebDriver driver) {
         super(driver);
     }
@@ -64,6 +67,14 @@ public class CommunicationPO extends PageObject {
 
         this.addressbookLink.click();
         return new AddressBookPO(driver);
+    }
+
+    public CommunicationCreatePO create() {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+
+        this.createButton.click();
+        return new CommunicationCreatePO(driver);
     }
 }
 

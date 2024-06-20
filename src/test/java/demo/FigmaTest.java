@@ -89,15 +89,25 @@ public class FigmaTest {
     }
 
     @Test
-    public void communicationDetailSideMenuAdminTest() {
+    public void communicationCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+        CommunicationCreatePO communicationCreatePO = communicationPO.create();
 
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+        String titleCreateCommunication = communicationCreatePO.getTitle();
+        assertEquals("Nuova comunicazione", titleCreateCommunication);
 
-        CommunicationPO communicationPO1 = communicationDetailPO.back();
+        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
+
+        String titleSelectUser = communicationSelectUserPO.getTitle();
+        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
+
+        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
+
+        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
+        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
+
+        CommunicationPO communicationPO1 = communicationCreatePO1.cancel();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);
@@ -611,15 +621,25 @@ public class FigmaTest {
     }
 
     @Test
-    public void communicationDetailSideMenuStandardTest() {
+    public void communicationCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
 
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+        CommunicationCreatePO communicationCreatePO = communicationPO.create();
 
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+        String titleCreateCommunication = communicationCreatePO.getTitle();
+        assertEquals("Nuova comunicazione", titleCreateCommunication);
 
-        CommunicationPO communicationPO1 = communicationDetailPO.back();
+        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
+
+        String titleSelectUser = communicationSelectUserPO.getTitle();
+        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
+
+        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
+
+        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
+        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
+
+        CommunicationPO communicationPO1 = communicationCreatePO1.cancel();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);
