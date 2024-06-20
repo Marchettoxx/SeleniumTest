@@ -6,26 +6,23 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ChatPO extends PageObject {
+public class CommunicationAnswerPO extends PageObject {
+
+    @FindBy(xpath = "//span[text()='[Chat]']")
+    private WebElement title;
 
     @FindBy(linkText = "TORNA AL DETTAGLIO")
     private WebElement backButton;
 
-    @FindBy(xpath = "//span[text()='Comunicazioni']")
-    private WebElement title;
-
-    public ChatPO(WebDriver driver) {
+    public CommunicationAnswerPO(WebDriver driver) {
         super(driver);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Chat con ABI 08016"));
-
         return this.title.getText();
     }
 
-    public CommunicationDetailPO closeChat() {
+    public CommunicationDetailPO back() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(this.backButton));
 

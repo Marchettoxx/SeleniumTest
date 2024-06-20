@@ -1,6 +1,6 @@
 package PO;
 
-import model.UserType;
+import model.UserTypeEnum;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,10 +22,10 @@ public class SelectUserPO extends PageObject {
         super(driver);
     }
 
-    public CommunicationPO selectUserType(UserType userType) {
+    public CommunicationPO selectUserType(UserTypeEnum userTypeEnum) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement choice = null;
-        switch (userType) {
+        switch (userTypeEnum) {
             case ADMIN:
                 choice = this.adminButton;
                 break;

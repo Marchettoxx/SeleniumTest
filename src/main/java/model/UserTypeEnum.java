@@ -1,6 +1,6 @@
 package model;
 
-public enum UserType {
+public enum UserTypeEnum {
     ADMIN,
     STANDARD,
     BANK;

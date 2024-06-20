@@ -1,7 +1,7 @@
 package demo;
 
 import PO.*;
-import model.UserType;
+import model.UserTypeEnum;
 import org.apache.commons.lang3.SystemUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -50,7 +50,7 @@ public class FigmaTest {
         }
     }
 
-    public CommunicationPO login(UserType userType) {
+    public CommunicationPO login(UserTypeEnum userTypeEnum) {
         String url = "https://testselenium.teleporthq.app/";
         String password = "ESGJ3P";
 
@@ -59,7 +59,7 @@ public class FigmaTest {
 
         LoginPO loginPO = new LoginPO(driver);
         SelectUserPO selectUserPO = loginPO.login(password);
-        CommunicationPO communicationPO = selectUserPO.selectUserType(userType);
+        CommunicationPO communicationPO = selectUserPO.selectUserType(userTypeEnum);
 
         String titleCommunication = communicationPO.getTitle();
         assertEquals("Comunicazioni", titleCommunication);
@@ -74,8 +74,8 @@ public class FigmaTest {
     // Test per vedere se cliccando su una comunicazione si aprono i dettagli
     // e si può tornare indietro tramite la breadcrumb
     @Test
-    public void communicationDetailAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+    public void communicationDetailBreadCrumbAdminTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
@@ -88,12 +88,27 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    @Test
+    public void communicationDetailSideMenuAdminTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
+
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+
+        String titleDetailCommunication = communicationDetailPO.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+
+        CommunicationPO communicationPO1 = communicationDetailPO.back();
+
+        String titleCommunicationBack = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunicationBack);
+    }
+
     // Test per vedere se cliccando su una comunicazione si aprono i dettagli
     // e cliccando su "Nuovo messaggio" si può aprire la chat e richiudere
     // e si può tornare indietro tramite la breadcrumb
     @Test
     public void chatCommunicationAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
@@ -120,7 +135,7 @@ public class FigmaTest {
     // pagina di configurazione e cliccando su Comunicazioni si può tornare indietro
     @Test
     public void configurationAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -137,7 +152,7 @@ public class FigmaTest {
     // si torna alla pagina precedente
     @Test
     public void acknowledgmentEditAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -159,7 +174,7 @@ public class FigmaTest {
     // e si può tramite il tab tornare indietro
     @Test
     public void notificationTabAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -181,7 +196,7 @@ public class FigmaTest {
     // e tramite la breadcrumb si può tornare indietro
     @Test
     public void notificationDetailAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -208,7 +223,7 @@ public class FigmaTest {
     // e salvando si torna indietro
     @Test
     public void notificationEditAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -240,7 +255,7 @@ public class FigmaTest {
     // pagina di creazione e salvando si torna indietro
     @Test
     public void notificationCreateAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -267,7 +282,7 @@ public class FigmaTest {
     // apre la pagina dei testi
     @Test
     public void textTabAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -288,7 +303,7 @@ public class FigmaTest {
     // Test per vedere se è possibile modificare il primo testo e salvare
     @Test
     public void textEditAdminTest()  {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -315,7 +330,7 @@ public class FigmaTest {
     // apre la pagina delle firme
     @Test
     public void signatureTabAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -336,7 +351,7 @@ public class FigmaTest {
     // Test per vedere se è possibile aprire la modifica firma e poi salvare
     @Test
     public void signatureEditAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -362,7 +377,7 @@ public class FigmaTest {
     // Test per vedere se è possibile aprire nuona firma e tornare indietro
     @Test
     public void signatureCreateAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
 
@@ -388,8 +403,28 @@ public class FigmaTest {
     // Test per vedere se clicando su un utente si apre la pagina
     // di dettaglio e si può ritornare indietro
     @Test
-    public void UserDetailAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+    public void UserDetailBreadCrumbAdminTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
+
+        UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
+
+        String titleUsersAndGroups = usersAndGroupsPO.getTitle();
+        assertEquals("Utenti e gruppi", titleUsersAndGroups);
+
+        UserDetailPO userDetailPO = usersAndGroupsPO.clickDetailUser();
+
+        String titleUserDetail = userDetailPO.getTitle();
+        assertEquals("[Cognome nome]", titleUserDetail);
+
+        UsersAndGroupsPO usersAndGroupsPO1 = userDetailPO.backBreadCrumb();
+
+        String titleUsersAndGroupsDetail = usersAndGroupsPO1.getTitle();
+        assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
+    }
+
+    @Test
+    public void UserDetailSideMenuAdminTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -409,7 +444,7 @@ public class FigmaTest {
 
     @Test
     public void UserEditAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -436,7 +471,7 @@ public class FigmaTest {
     // di creazione e si può ritornare indietro
     @Test
     public void UserCreateAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -456,7 +491,7 @@ public class FigmaTest {
 
     @Test
     public void groupsTabAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -476,7 +511,7 @@ public class FigmaTest {
 
     @Test
     public void groupDetailAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -501,7 +536,7 @@ public class FigmaTest {
 
     @Test
     public void groupEditAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -531,7 +566,7 @@ public class FigmaTest {
 
     @Test
     public void groupCreateAdminTest() {
-        CommunicationPO communicationPO = this.login(UserType.ADMIN);
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         UsersAndGroupsPO usersAndGroupsPO = communicationPO.clickUsersAndGroups();
 
@@ -567,8 +602,8 @@ public class FigmaTest {
     // Test per vedere se cliccando su una comunicazione si aprono i dettagli
     // e si può tornare indietro
     @Test
-    public void communicationDetailBankTest() {
-        CommunicationPO communicationPO = this.login(UserType.BANK);
+    public void communicationDetailBreadCrumbBankTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
 
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
@@ -581,22 +616,78 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su rubrica si apre la rubrica
     @Test
-    public void BBankTest() {
-        CommunicationPO communicationPO = this.login(UserType.BANK);
+    public void communicationDetailSideMenuBankTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
 
-        AddressBookPO addressBookPO = communicationPO.clickAddressBook();
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
-        String titleAddressBook = addressBookPO.getTitle();
-        assertEquals("Rubrica", titleAddressBook);
+        String titleDetailCommunication = communicationDetailPO.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+
+        CommunicationPO communicationPO1 = communicationDetailPO.back();
+
+        String titleCommunicationBack = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunicationBack);
+    }
+
+    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
+    // e si può tornare indietro
+    @Test
+    public void communicationForwardBankTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
+
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+
+        String titleDetailCommunication = communicationDetailPO.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+
+        CommunicationForwardPO communicationForwardPO = communicationDetailPO.forward();
+
+        String titleForward = communicationForwardPO.getTitle();
+        assertEquals("Inoltra comunicazione 34893549085", titleForward);
+
+        CommunicationSelectContactPO communicationSelectContactPO = communicationForwardPO.select();
+
+        String titleSelectContact = communicationSelectContactPO.getTitle();
+        assertEquals("Seleziona i contatti a cui inoltrare la comunicazione", titleSelectContact);
+
+        CommunicationForwardPO communicationForwardPO1 = communicationSelectContactPO.confirm();
+
+        String titleForwardSelect = communicationForwardPO.getTitle();
+        assertEquals("Inoltra comunicazione 34893549085", titleForwardSelect);
+
+        CommunicationDetailPO communicationDetailPO1 = communicationForwardPO1.cancel();
+
+        String titleDetailCommunicationForward = communicationDetailPO1.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunicationForward);
+    }
+
+    @Test
+    public void communicationAnswerBankTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
+
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+
+        String titleDetailCommunication = communicationDetailPO.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+
+        CommunicationAnswerPO communicationAnswerPO = communicationDetailPO.answer();
+
+        String titleAnswer = communicationAnswerPO.getTitle();
+        assertEquals("Chat", titleAnswer);
+
+        CommunicationDetailPO communicationDetailPO1 = communicationAnswerPO.back();
+
+        String titleDetailCommunicationForward = communicationDetailPO1.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunicationForward);
     }
 
     // Test per vedere se cliccando modifica si apre la pagina di modifica
     // e cliccando annulla appare la schermata iniziale
     @Test
-    public void CBankTest() {
-        CommunicationPO communicationPO = this.login(UserType.BANK);
+    public void addressBookEditBankTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
 
         AddressBookPO addressBookPO = communicationPO.clickAddressBook();
 
@@ -617,8 +708,8 @@ public class FigmaTest {
     // Test per vedere se cliccando nuovo contatto si apre la pagina di creazione
     // e cliccando salva appare la schermata iniziale
     @Test
-    public void DBankTest() {
-        CommunicationPO communicationPO = this.login(UserType.BANK);
+    public void addressBookCreateBankTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
 
         AddressBookPO addressBookPO = communicationPO.clickAddressBook();
 

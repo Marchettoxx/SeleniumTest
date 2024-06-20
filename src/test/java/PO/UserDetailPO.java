@@ -14,6 +14,9 @@ public class UserDetailPO extends PageObject {
     @FindBy(linkText = "Utenti e gruppi")
     private WebElement backLink;
 
+    @FindBy(linkText = "Utenti e gruppi")
+    private WebElement backMenuLink;
+
     @FindBy(linkText = "MODIFICA")
     private WebElement editButton;
 
@@ -30,6 +33,14 @@ public class UserDetailPO extends PageObject {
         wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
 
         this.backLink.click();
+        return new UsersAndGroupsPO(driver);
+    }
+
+    public UsersAndGroupsPO backBreadCrumb() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.backMenuLink));
+
+        this.backMenuLink.click();
         return new UsersAndGroupsPO(driver);
     }
 

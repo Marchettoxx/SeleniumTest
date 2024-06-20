@@ -14,8 +14,17 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(linkText = "Comunicazioni")
     private WebElement communicationLinkBreadCrumb;
 
+    @FindBy(linkText = "Comunicazioni")
+    private WebElement commMenuLink;
+
     @FindBy(linkText = "Nuovo messaggio")
     private WebElement newMessageLink;
+
+    @FindBy(linkText = "INOLTRA")
+    private WebElement forwardButton;
+
+    @FindBy(linkText = "RISPONDI")
+    private WebElement answerButton;
 
     public CommunicationDetailPO(WebDriver driver) {
         super(driver);
@@ -33,12 +42,36 @@ public class CommunicationDetailPO extends PageObject {
         return new CommunicationPO(driver);
     }
 
+    public CommunicationPO back() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.commMenuLink));
+
+        this.commMenuLink.click();
+        return new CommunicationPO(driver);
+    }
+
     public ChatPO openChat() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(this.newMessageLink));
 
         this.newMessageLink.click();
         return new ChatPO(driver);
+    }
+
+    public CommunicationForwardPO forward() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.forwardButton));
+
+        this.forwardButton.click();
+        return new CommunicationForwardPO(driver);
+    }
+
+    public CommunicationAnswerPO answer() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.answerButton));
+
+        this.answerButton.click();
+        return new CommunicationAnswerPO(driver);
     }
 }
 
