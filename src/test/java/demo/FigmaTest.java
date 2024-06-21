@@ -56,8 +56,6 @@ public class FigmaTest {
     // TEST UTENTE TIPOLOGIA ADMIN
     // ------------------------------------------------------------------------------------
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro tramite la breadcrumb
     @Test
     public void communicationDetailBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -98,9 +96,6 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e cliccando su "Nuovo messaggio" si può aprire la chat e richiudere
-    // e si può tornare indietro tramite la breadcrumb
     @Test
     public void chatCommunicationAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -126,8 +121,6 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se dopo aver cliccato il bottone configura compare la
-    // pagina di configurazione e cliccando su Comunicazioni si può tornare indietro
     @Test
     public void configurationAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -143,8 +136,6 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su modifica si apre la pagina di modifica e cliccando salva
-    // si torna alla pagina precedente
     @Test
     public void acknowledgmentEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -165,8 +156,6 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationSave);
     }
 
-    // Test per vedere se cliccando sul tab notifiche si finisce sulla pagina delle notifiche
-    // e si può tramite il tab tornare indietro
     @Test
     public void notificationTabAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -187,8 +176,6 @@ public class FigmaTest {
         assertEquals("Configurazione", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una notifica si apre il dettaglio
-    // e tramite la breadcrumb si può tornare indietro
     @Test
     public void notificationDetailAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -214,8 +201,6 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationBack);
     }
 
-    // Test per vedere se cliccando su una modifica si apre la pagina di modifica
-    // e salvando si torna indietro
     @Test
     public void notificationEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -246,8 +231,6 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationSave);
     }
 
-    // Test per vedere se cliccando su nuova notifica si apre la
-    // pagina di creazione e salvando si torna indietro
     @Test
     public void notificationCreateAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -273,8 +256,6 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationConfirm);
     }
 
-    // Test per vedere se cliccando sul tab dei testi di default si
-    // apre la pagina dei testi
     @Test
     public void textTabAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -295,7 +276,6 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
-    // Test per vedere se è possibile modificare il primo testo e salvare
     @Test
     public void textEditAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -321,8 +301,6 @@ public class FigmaTest {
         assertEquals("Alert normativo", firstTextSave);
     }
 
-    // Test per vedere se cliccando sul tab delle firme si
-    // apre la pagina delle firme
     @Test
     public void signatureTabAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -343,7 +321,6 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
-    // Test per vedere se è possibile aprire la modifica firma e poi salvare
     @Test
     public void signatureEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -369,7 +346,6 @@ public class FigmaTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
-    // Test per vedere se è possibile aprire nuona firma e tornare indietro
     @Test
     public void signatureCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -395,8 +371,6 @@ public class FigmaTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
-    // Test per vedere se clicando su un utente si apre la pagina
-    // di dettaglio e si può ritornare indietro
     @Test
     public void UserDetailBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -462,8 +436,6 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUserDetailEdit);
     }
 
-    // Test per vedere se clicando su nuovo utente si apre la pagina
-    // di creazione e si può ritornare indietro
     @Test
     public void UserCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -608,8 +580,6 @@ public class FigmaTest {
     // TEST UTENTE TIPOLOGIA STANDARD
     // ------------------------------------------------------------------------------------
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro tramite la breadcrumb
     @Test
     public void communicationDetailBreadCrumbStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -650,9 +620,6 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e cliccando su "Nuovo messaggio" si può aprire la chat e richiudere
-    // e si può tornare indietro tramite la breadcrumb
     @Test
     public void chatCommunicationStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -678,8 +645,6 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se dopo aver cliccato il bottone configura compare la
-    // pagina di configurazione e cliccando su Comunicazioni si può tornare indietro
     @Test
     public void configurationStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -695,8 +660,6 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su modifica si apre la pagina di modifica e cliccando salva
-    // si torna alla pagina precedente
     @Test
     public void acknowledgmentEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -717,8 +680,6 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationSave);
     }
 
-    // Test per vedere se cliccando sul tab notifiche si finisce sulla pagina delle notifiche
-    // e si può tramite il tab tornare indietro
     @Test
     public void notificationTabStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -739,8 +700,6 @@ public class FigmaTest {
         assertEquals("Configurazione", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una notifica si apre il dettaglio
-    // e tramite la breadcrumb si può tornare indietro
     @Test
     public void notificationDetailStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -766,8 +725,6 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationBack);
     }
 
-    // Test per vedere se cliccando su una modifica si apre la pagina di modifica
-    // e salvando si torna indietro
     @Test
     public void notificationEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -798,8 +755,6 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationSave);
     }
 
-    // Test per vedere se cliccando su nuova notifica si apre la
-    // pagina di creazione e salvando si torna indietro
     @Test
     public void notificationCreateStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -825,8 +780,6 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationConfirm);
     }
 
-    // Test per vedere se cliccando sul tab dei testi di default si
-    // apre la pagina dei testi
     @Test
     public void textTabStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -847,7 +800,6 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
-    // Test per vedere se è possibile modificare il primo testo e salvare
     @Test
     public void textEditStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -873,8 +825,6 @@ public class FigmaTest {
         assertEquals("Alert normativo", firstTextSave);
     }
 
-    // Test per vedere se cliccando sul tab delle firme si
-    // apre la pagina delle firme
     @Test
     public void signatureTabStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -895,7 +845,6 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
-    // Test per vedere se è possibile aprire la modifica firma e poi salvare
     @Test
     public void signatureEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -921,7 +870,6 @@ public class FigmaTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
-    // Test per vedere se è possibile aprire nuona firma e tornare indietro
     @Test
     public void signatureCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -947,8 +895,6 @@ public class FigmaTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
-    // Test per vedere se clicando su un utente si apre la pagina
-    // di dettaglio e si può ritornare indietro
     @Test
     public void UserDetailBreadCrumbStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1158,8 +1104,6 @@ public class FigmaTest {
     // TEST UTENTE TIPOLOGIA BANCA
     // ------------------------------------------------------------------------------------
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro
     @Test
     public void communicationDetailBreadCrumbBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1190,8 +1134,6 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro
     @Test
     public void communicationForwardBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1242,8 +1184,6 @@ public class FigmaTest {
         assertEquals("[Nome comunicazione]", titleDetailCommunicationForward);
     }
 
-    // Test per vedere se cliccando modifica si apre la pagina di modifica
-    // e cliccando annulla appare la schermata iniziale
     @Test
     public void addressBookEditBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1264,8 +1204,6 @@ public class FigmaTest {
         assertEquals("Rubrica", titleAddressBookEdit);
     }
 
-    // Test per vedere se cliccando nuovo contatto si apre la pagina di creazione
-    // e cliccando salva appare la schermata iniziale
     @Test
     public void addressBookCreateBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
