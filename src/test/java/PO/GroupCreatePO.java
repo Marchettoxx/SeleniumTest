@@ -14,6 +14,9 @@ public class GroupCreatePO extends PageObject {
     @FindBy(linkText = "ANNULLA")
     private WebElement cancelButton;
 
+    @FindBy(linkText = "Aggiungi utente")
+    private WebElement addButton;
+
     public GroupCreatePO(WebDriver driver) {
         super(driver);
     }
@@ -31,6 +34,14 @@ public class GroupCreatePO extends PageObject {
 
         this.cancelButton.click();
         return new GroupsPO(driver);
+    }
+
+    public GroupAddUserPO add() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(this.addButton));
+
+        this.addButton.click();
+        return new GroupAddUserPO(driver);
     }
 }
 

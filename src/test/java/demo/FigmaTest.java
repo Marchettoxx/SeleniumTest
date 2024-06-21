@@ -55,7 +55,7 @@ public class FigmaTest {
         String password = "ESGJ3P";
 
         driver.get(url);
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         LoginPO loginPO = new LoginPO(driver);
         SelectUserPO selectUserPO = loginPO.login(password);
@@ -493,7 +493,17 @@ public class FigmaTest {
         String titleNewUser = userCreatePO.getTitle();
         assertEquals("Nuovo utente", titleNewUser);
 
-        UsersAndGroupsPO usersAndGroupsPO1 = userCreatePO.confirm();
+        UserAddToGroupPO userAddToGroupPO = userCreatePO.add();
+
+        String titleAddGroup = userAddToGroupPO.getTitle();
+        assertEquals("Seleziona i gruppi in cui aggiungere l’utente", titleAddGroup);
+
+        UserCreatePO userCreatePO1 = userAddToGroupPO.confirm();
+
+        String titleNewUserAdd = userCreatePO1.getTitle();
+        assertEquals("Nuovo utente", titleNewUserAdd);
+
+        UsersAndGroupsPO usersAndGroupsPO1 = userCreatePO1.confirm();
 
         String titleUsersAndGroupsDetail = usersAndGroupsPO1.getTitle();
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
@@ -592,6 +602,16 @@ public class FigmaTest {
 
         String titleGroupDetail = groupCreatePO.getTitle();
         assertEquals("Nuovo gruppo", titleGroupDetail);
+
+        GroupAddUserPO groupAddUserPO = groupCreatePO.add();
+
+        String titleAddUser = groupAddUserPO.getTitle();
+        assertEquals("Seleziona gli utenti da aggiungere al gruppo", titleAddUser);
+
+        GroupCreatePO groupCreatePO1 = groupAddUserPO.confirm();
+
+        String titleGroupDetailAdd = groupCreatePO1.getTitle();
+        assertEquals("Nuovo gruppo", titleGroupDetailAdd);
 
         GroupsPO groupsPO1 = groupCreatePO.cancel();
 
@@ -1009,8 +1029,6 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUserDetailEdit);
     }
 
-    // Test per vedere se clicando su nuovo utente si apre la pagina
-    // di creazione e si può ritornare indietro
     @Test
     public void UserCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1025,7 +1043,17 @@ public class FigmaTest {
         String titleNewUser = userCreatePO.getTitle();
         assertEquals("Nuovo utente", titleNewUser);
 
-        UsersAndGroupsPO usersAndGroupsPO1 = userCreatePO.confirm();
+        UserAddToGroupPO userAddToGroupPO = userCreatePO.add();
+
+        String titleAddGroup = userAddToGroupPO.getTitle();
+        assertEquals("Seleziona i gruppi in cui aggiungere l’utente", titleAddGroup);
+
+        UserCreatePO userCreatePO1 = userAddToGroupPO.confirm();
+
+        String titleNewUserAdd = userCreatePO1.getTitle();
+        assertEquals("Nuovo utente", titleNewUserAdd);
+
+        UsersAndGroupsPO usersAndGroupsPO1 = userCreatePO1.confirm();
 
         String titleUsersAndGroupsDetail = usersAndGroupsPO1.getTitle();
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
@@ -1125,11 +1153,22 @@ public class FigmaTest {
         String titleGroupDetail = groupCreatePO.getTitle();
         assertEquals("Nuovo gruppo", titleGroupDetail);
 
+        GroupAddUserPO groupAddUserPO = groupCreatePO.add();
+
+        String titleAddUser = groupAddUserPO.getTitle();
+        assertEquals("Seleziona gli utenti da aggiungere al gruppo", titleAddUser);
+
+        GroupCreatePO groupCreatePO1 = groupAddUserPO.confirm();
+
+        String titleGroupDetailAdd = groupCreatePO1.getTitle();
+        assertEquals("Nuovo gruppo", titleGroupDetailAdd);
+
         GroupsPO groupsPO1 = groupCreatePO.cancel();
 
         String groupNameBack = groupsPO1.getGroupText();
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
     }
+
     // ------------------------------------------------------------------------------------
     // TEST UTENTE TIPOLOGIA BANCA
     // ------------------------------------------------------------------------------------

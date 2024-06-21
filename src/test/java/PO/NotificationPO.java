@@ -26,7 +26,7 @@ public class NotificationPO extends PageObject {
 
     public String getTitle() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOf(this.title));
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Notifiche"));
 
         return this.title.getText();
     }
