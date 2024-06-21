@@ -25,7 +25,7 @@ public class FigmaTest {
     @Before
     public void setUp() {
         ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.addArguments("--headless");
+        //chrome_options.addArguments("--headless=new");
         if(SystemUtils.IS_OS_WINDOWS){
             System.setProperty("webdriver.chrome.driver",
                     Paths.get("src/test/resources/chromedriver_win32_96/chromedriver.exe").toString());
@@ -55,7 +55,6 @@ public class FigmaTest {
         String password = "ESGJ3P";
 
         driver.get(url);
-        //driver.manage().window().maximize();
 
         LoginPO loginPO = new LoginPO(driver);
         SelectUserPO selectUserPO = loginPO.login(password);
