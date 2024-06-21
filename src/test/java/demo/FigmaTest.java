@@ -1,19 +1,16 @@
 package demo;
 
-import PO.*;
+import PO.figma.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import model.UserTypeEnum;
-import org.apache.commons.lang3.SystemUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,24 +19,13 @@ import static org.junit.Assert.assertEquals;
 public class FigmaTest {
 
     private WebDriver driver;
+
     @Before
-    public void setUp() {
+    public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.addArguments("--headless=new");
-        if(SystemUtils.IS_OS_WINDOWS){
-            System.setProperty("webdriver.chrome.driver",
-                    Paths.get("src/test/resources/chromedriver_win32_96/chromedriver.exe").toString());
-        }
-        else if (SystemUtils.IS_OS_MAC){
-            System.setProperty("webdriver.chrome.driver",
-                    Paths.get("src/test/resources/chromedriver_mac64_96/chromedriver").toString());
-        }
-        else if (SystemUtils.IS_OS_LINUX){
-            System.setProperty("webdriver.chrome.driver",
-                    Paths.get("src/test/resources/chromedriver_linux64_96/chromedriver").toString());
-        }
+        chrome_options.addArguments("--headless=new");
         if (driver == null) {
-            driver = new ChromeDriver(chrome_options);
+            driver = WebDriverManager.chromedriver().create();
         }
     }
 

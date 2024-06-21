@@ -26,3 +26,29 @@ per cui i test non sono in grado di individuare gli elementi.
     Codice rimosso:
     
        driver.manage().window().maximize();
+5. Inizialmente il driver di chrome veniva preso in locale, per cui ad ogni aggiornamento del driver di chrome
+era necessario installare un nuovo driver per farlo funzionare, per evitare di fare questo è 
+stato installato un webdrivermanager per la gestione dei driver. (https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager/5.8.0, https://github.com/bonigarcia/webdrivermanager?tab=readme-ov-file).
+
+    Codice vecchio:
+    
+        public void setUp() {
+            ChromeOptions chrome_options = new ChromeOptions();
+            //chrome_options.addArguments("--headless=new");
+            if(SystemUtils.IS_OS_WINDOWS){
+                System.setProperty("webdriver.chrome.driver",
+                        Paths.get("src/test/resources/chromedriver_win32_96/chromedriver.exe").toString());
+            }
+            else if (SystemUtils.IS_OS_MAC){
+                System.setProperty("webdriver.chrome.driver",
+                        Paths.get("src/test/resources/chromedriver_mac64_96/chromedriver").toString());
+            }
+            else if (SystemUtils.IS_OS_LINUX){
+                System.setProperty("webdriver.chrome.driver",
+                        Paths.get("src/test/resources/chromedriver_linux64_96/chromedriver").toString());
+            }
+            if (driver == null) {
+                driver = new ChromeDriver(chrome_options);
+            }
+        }
+6. 
