@@ -1,15 +1,14 @@
 # Alcune problematiche ritrovate sul Figma:
 
----
-**Presupposto:** Le componenti di Figma sono state 
-copiate (quasi tutte) tramite un plugin, cercando di
-rispettare tutte le funzionalità presenti sul Figma.
----
-
-1. Su figma non sono implementate molte usage ad 
+1. Selenium inizialmente doveva eseguire su Figma, ma Figma non espone gli 
+elementi html, per cui tramite un plugin chiamato **TeleportHQ** (https://play.teleporthq.io/projects/1-portali-sprint-1-workflow-comunicazioni-uiux-27nnss), sono stati copiate
+tutte le pagine presenti su Figma e sono stati aggiunti i collegamenti tra le pagine
+come ad esempio le azioni di click di un pulsante. Sono state copiate tutte le interazioni
+che i designer di Figma hanno realizzato, in modo tale da emulare un contesto lavorativo.
+2. Su figma non sono implementate molte usage ad 
 esempio ci sono grafiche che non sono collegate per 
 cui non possono essere utilizzate (SE CI SARA' TEMPO SI AGGIUNGERANNO ALLA FINW).
-2. Inizialmente la versione headless dava problemi, ovvero i test non passavano, 
+3. Inizialmente la versione headless dava problemi, ovvero i test non passavano, 
 per cui è stato necessario aggungere il valore new perchè funzionassero (https://stackoverflow.com/questions/75401348/selenium-chrome-driver-headless-mode-not-working).
 
     Versione non funzionante:
@@ -18,7 +17,7 @@ per cui è stato necessario aggungere il valore new perchè funzionassero (https
     Versione funzionante:
         
         chrome_options.addArguments("--headless=new");
-3. Inizialmente si eseguivano i test andando ad allargare la dimensione
+4. Inizialmente si eseguivano i test andando ad allargare la dimensione
 della finestra tramite perchè altrimenti i test non funzionavano, allora
 è stato necessario tramite il plugin **TeleportHQ** ridurre la dimensione
 delle pagine web dato che la loro dimensione era fissa e non responsive,
