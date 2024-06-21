@@ -14,12 +14,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Web test.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class WebTest {
 
     private WebDriver driver;
 
+    /**
+     * Set up del driver.
+     */
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
@@ -29,6 +35,9 @@ public class WebTest {
         }
     }
 
+    /**
+     * Chiusura del driver.
+     */
     @After
     public void tearDown() {
         if (driver != null) {
@@ -36,6 +45,12 @@ public class WebTest {
         }
     }
 
+    /**
+     * Funzione per la realizzazione del login.
+     *
+     * @param userTypeEnum the user type enum
+     * @return the communication po
+     */
     public CommunicationPO login(UserTypeEnum userTypeEnum) {
         String url = "https://testselenium.teleporthq.app/";
         String password = "ESGJ3P";
@@ -56,8 +71,9 @@ public class WebTest {
     // TEST UTENTE TIPOLOGIA ADMIN
     // ------------------------------------------------------------------------------------
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro tramite la breadcrumb
+    /**
+     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente.
+     */
     @Test
     public void communicationDetailBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -73,6 +89,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -98,9 +117,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e cliccando su "Nuovo messaggio" si può aprire la chat e richiudere
-    // e si può tornare indietro tramite la breadcrumb
+    /**
+     * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void chatCommunicationAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -126,8 +145,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se dopo aver cliccato il bottone configura compare la
-    // pagina di configurazione e cliccando su Comunicazioni si può tornare indietro
+    /**
+     * Test azione apertura configurazione e ritorno alla pagina precedente.
+     */
     @Test
     public void configurationAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -143,8 +163,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su modifica si apre la pagina di modifica e cliccando salva
-    // si torna alla pagina precedente
+    /**
+     * Test azione apertura modifica di una comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void acknowledgmentEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -165,8 +186,9 @@ public class WebTest {
         assertEquals("Configurazione", titleConfigurationSave);
     }
 
-    // Test per vedere se cliccando sul tab notifiche si finisce sulla pagina delle notifiche
-    // e si può tramite il tab tornare indietro
+    /**
+     * Test azione di apertura tab Notifiche e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationTabAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -187,8 +209,9 @@ public class WebTest {
         assertEquals("Configurazione", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una notifica si apre il dettaglio
-    // e tramite la breadcrumb si può tornare indietro
+    /**
+     * Test azione apertura dettaglio notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationDetailAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -214,8 +237,9 @@ public class WebTest {
         assertEquals("Notifiche", titleNotificationBack);
     }
 
-    // Test per vedere se cliccando su una modifica si apre la pagina di modifica
-    // e salvando si torna indietro
+    /**
+     * Test azione apertura modifica notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -246,8 +270,9 @@ public class WebTest {
         assertEquals("Notifiche", titleNotificationSave);
     }
 
-    // Test per vedere se cliccando su nuova notifica si apre la
-    // pagina di creazione e salvando si torna indietro
+    /**
+     * Test azione di apertura creazione notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationCreateAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -273,8 +298,9 @@ public class WebTest {
         assertEquals("Notifiche", titleNotificationConfirm);
     }
 
-    // Test per vedere se cliccando sul tab dei testi di default si
-    // apre la pagina dei testi
+    /**
+     * Test azione apertura tab dei testi e ritono alla pagina precedente.
+     */
     @Test
     public void textTabAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -295,7 +321,9 @@ public class WebTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
-    // Test per vedere se è possibile modificare il primo testo e salvare
+    /**
+     * Test azione di apertura modifica testo e ritorno alla pagina precedente.
+     */
     @Test
     public void textEditAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -321,8 +349,9 @@ public class WebTest {
         assertEquals("Alert normativo", firstTextSave);
     }
 
-    // Test per vedere se cliccando sul tab delle firme si
-    // apre la pagina delle firme
+    /**
+     * Test azione di apertura tab delle firme e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureTabAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -343,7 +372,9 @@ public class WebTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
-    // Test per vedere se è possibile aprire la modifica firma e poi salvare
+    /**
+     * Test azione di apertura pagina di modifica firma e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -369,7 +400,9 @@ public class WebTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
-    // Test per vedere se è possibile aprire nuona firma e tornare indietro
+    /**
+     * Test azione di apertura creazione firma e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -395,8 +428,9 @@ public class WebTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
-    // Test per vedere se clicando su un utente si apre la pagina
-    // di dettaglio e si può ritornare indietro
+    /**
+     * Test azione di apertura dettaglio utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserDetailBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -417,6 +451,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura dettaglio utente e ritorno alla pagina precedente tramite side bar.
+     */
     @Test
     public void UserDetailSideMenuAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -437,6 +474,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura modifica utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -462,8 +502,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUserDetailEdit);
     }
 
-    // Test per vedere se clicando su nuovo utente si apre la pagina
-    // di creazione e si può ritornare indietro
+    /**
+     * Test azione di apertura creazione utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -494,6 +535,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura tab dei gruppi e ritorno alla pagina precedente.
+     */
     @Test
     public void groupsTabAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -514,6 +558,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsBack);
     }
 
+    /**
+     * Test azione apertura dettaglio gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupDetailAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -539,6 +586,9 @@ public class WebTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
     }
 
+    /**
+     * Test azione di apertura modifica gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -569,6 +619,9 @@ public class WebTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameEdit);
     }
 
+    /**
+     * Test azione di apertura creazione gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -608,8 +661,9 @@ public class WebTest {
     // TEST UTENTE TIPOLOGIA STANDARD
     // ------------------------------------------------------------------------------------
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro tramite la breadcrumb
+    /**
+     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente.
+     */
     @Test
     public void communicationDetailBreadCrumbStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -625,6 +679,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -650,9 +707,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e cliccando su "Nuovo messaggio" si può aprire la chat e richiudere
-    // e si può tornare indietro tramite la breadcrumb
+    /**
+     * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void chatCommunicationStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -678,8 +735,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se dopo aver cliccato il bottone configura compare la
-    // pagina di configurazione e cliccando su Comunicazioni si può tornare indietro
+    /**
+     * Test azione apertura configurazione e ritorno alla pagina precedente.
+     */
     @Test
     public void configurationStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -695,8 +753,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su modifica si apre la pagina di modifica e cliccando salva
-    // si torna alla pagina precedente
+    /**
+     * Test azione apertura modifica di una comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void acknowledgmentEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -717,8 +776,9 @@ public class WebTest {
         assertEquals("Configurazione", titleConfigurationSave);
     }
 
-    // Test per vedere se cliccando sul tab notifiche si finisce sulla pagina delle notifiche
-    // e si può tramite il tab tornare indietro
+    /**
+     * Test azione di apertura tab Notifiche e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationTabStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -739,8 +799,9 @@ public class WebTest {
         assertEquals("Configurazione", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una notifica si apre il dettaglio
-    // e tramite la breadcrumb si può tornare indietro
+    /**
+     * Test azione apertura dettaglio notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationDetailStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -766,8 +827,9 @@ public class WebTest {
         assertEquals("Notifiche", titleNotificationBack);
     }
 
-    // Test per vedere se cliccando su una modifica si apre la pagina di modifica
-    // e salvando si torna indietro
+    /**
+     * Test azione apertura modifica notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -798,8 +860,9 @@ public class WebTest {
         assertEquals("Notifiche", titleNotificationSave);
     }
 
-    // Test per vedere se cliccando su nuova notifica si apre la
-    // pagina di creazione e salvando si torna indietro
+    /**
+     * Test azione di apertura creazione notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationCreateStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -825,8 +888,9 @@ public class WebTest {
         assertEquals("Notifiche", titleNotificationConfirm);
     }
 
-    // Test per vedere se cliccando sul tab dei testi di default si
-    // apre la pagina dei testi
+    /**
+     * Test azione apertura tab dei testi e ritono alla pagina precedente.
+     */
     @Test
     public void textTabStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -847,7 +911,9 @@ public class WebTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
-    // Test per vedere se è possibile modificare il primo testo e salvare
+    /**
+     * Test azione di apertura modifica testo e ritorno alla pagina precedente.
+     */
     @Test
     public void textEditStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -873,8 +939,9 @@ public class WebTest {
         assertEquals("Alert normativo", firstTextSave);
     }
 
-    // Test per vedere se cliccando sul tab delle firme si
-    // apre la pagina delle firme
+    /**
+     * Test azione di apertura tab delle firme e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureTabStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -895,7 +962,9 @@ public class WebTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
-    // Test per vedere se è possibile aprire la modifica firma e poi salvare
+    /**
+     * Test azione di apertura pagina di modifica firma e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -921,7 +990,9 @@ public class WebTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
-    // Test per vedere se è possibile aprire nuona firma e tornare indietro
+    /**
+     * Test azione di apertura creazione firma e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -947,8 +1018,9 @@ public class WebTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
-    // Test per vedere se clicando su un utente si apre la pagina
-    // di dettaglio e si può ritornare indietro
+    /**
+     * Test azione di apertura dettaglio utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserDetailBreadCrumbStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -969,6 +1041,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura dettaglio utente e ritorno alla pagina precedente tramite side bar.
+     */
     @Test
     public void UserDetailSideMenuStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -989,6 +1064,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura modifica utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1014,6 +1092,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUserDetailEdit);
     }
 
+    /**
+     * Test azione di apertura creazione utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1044,6 +1125,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura tab dei gruppi e ritorno alla pagina precedente.
+     */
     @Test
     public void groupsTabStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1064,6 +1148,9 @@ public class WebTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsBack);
     }
 
+    /**
+     * Test azione apertura dettaglio gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupDetailStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1089,6 +1176,9 @@ public class WebTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
     }
 
+    /**
+     * Test azione di apertura modifica gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1119,6 +1209,9 @@ public class WebTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameEdit);
     }
 
+    /**
+     * Test azione di apertura creazione gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1158,8 +1251,9 @@ public class WebTest {
     // TEST UTENTE TIPOLOGIA BANCA
     // ------------------------------------------------------------------------------------
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro
+    /**
+     * Test azione di apertura dettaglio comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationDetailBreadCrumbBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1175,6 +1269,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione apertura dettaglio e ritorno alal pagina precedente tramite side bar.
+     */
     @Test
     public void communicationDetailSideMenuBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1190,8 +1287,9 @@ public class WebTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
-    // Test per vedere se cliccando su una comunicazione si aprono i dettagli
-    // e si può tornare indietro
+    /**
+     * Test azione di apertura inoltro comunicazione e selezione contatti e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationForwardBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1222,6 +1320,9 @@ public class WebTest {
         assertEquals("[Nome comunicazione]", titleDetailCommunicationForward);
     }
 
+    /**
+     * Test azione di apertura risposta comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationAnswerBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1242,8 +1343,9 @@ public class WebTest {
         assertEquals("[Nome comunicazione]", titleDetailCommunicationForward);
     }
 
-    // Test per vedere se cliccando modifica si apre la pagina di modifica
-    // e cliccando annulla appare la schermata iniziale
+    /**
+     * Test azione apertura modifica rubrica e ritorno alla pagina precedente.
+     */
     @Test
     public void addressBookEditBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1264,8 +1366,9 @@ public class WebTest {
         assertEquals("Rubrica", titleAddressBookEdit);
     }
 
-    // Test per vedere se cliccando nuovo contatto si apre la pagina di creazione
-    // e cliccando salva appare la schermata iniziale
+    /**
+     * Test azione di apertura creazione contatto e ritorno alla pagina precedente.
+     */
     @Test
     public void addressBookCreateBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);

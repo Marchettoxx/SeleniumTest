@@ -14,12 +14,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Figma test.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class FigmaTest {
 
     private WebDriver driver;
 
+    /**
+     * Set up del driver.
+     */
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
@@ -29,6 +35,9 @@ public class FigmaTest {
         }
     }
 
+    /**
+     * Chiusura del driver.
+     */
     @After
     public void tearDown() {
         if (driver != null) {
@@ -36,6 +45,12 @@ public class FigmaTest {
         }
     }
 
+    /**
+     * Funzione per la realizzazione del login.
+     *
+     * @param userTypeEnum the user type enum
+     * @return the communication po
+     */
     public CommunicationPO login(UserTypeEnum userTypeEnum) {
         String url = "https://testselenium.teleporthq.app/";
         String password = "ESGJ3P";
@@ -56,6 +71,9 @@ public class FigmaTest {
     // TEST UTENTE TIPOLOGIA ADMIN
     // ------------------------------------------------------------------------------------
 
+    /**
+     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente.
+     */
     @Test
     public void communicationDetailBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -71,6 +89,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -96,6 +117,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void chatCommunicationAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -121,6 +145,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione apertura configurazione e ritorno alla pagina precedente.
+     */
     @Test
     public void configurationAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -136,6 +163,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione apertura modifica di una comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void acknowledgmentEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -156,6 +186,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationSave);
     }
 
+    /**
+     * Test azione di apertura tab Notifiche e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationTabAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -176,6 +209,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleCommunicationBack);
     }
 
+    /**
+     * Test azione apertura dettaglio notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationDetailAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -201,6 +237,9 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationBack);
     }
 
+    /**
+     * Test azione apertura modifica notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -231,6 +270,9 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationSave);
     }
 
+    /**
+     * Test azione di apertura creazione notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationCreateAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -256,6 +298,9 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationConfirm);
     }
 
+    /**
+     * Test azione apertura tab dei testi e ritono alla pagina precedente.
+     */
     @Test
     public void textTabAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -276,6 +321,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
+    /**
+     * Test azione di apertura modifica testo e ritorno alla pagina precedente.
+     */
     @Test
     public void textEditAdminTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -301,6 +349,9 @@ public class FigmaTest {
         assertEquals("Alert normativo", firstTextSave);
     }
 
+    /**
+     * Test azione di apertura tab delle firme e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureTabAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -321,6 +372,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
+    /**
+     * Test azione di apertura pagina di modifica firma e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -346,6 +400,9 @@ public class FigmaTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
+    /**
+     * Test azione di apertura creazione firma e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -371,6 +428,9 @@ public class FigmaTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
+    /**
+     * Test azione di apertura dettaglio utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserDetailBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -391,6 +451,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura dettaglio utente e ritorno alla pagina precedente tramite side bar.
+     */
     @Test
     public void UserDetailSideMenuAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -411,6 +474,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura modifica utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -436,6 +502,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUserDetailEdit);
     }
 
+    /**
+     * Test azione di apertura creazione utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -466,6 +535,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura tab dei gruppi e ritorno alla pagina precedente.
+     */
     @Test
     public void groupsTabAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -486,6 +558,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsBack);
     }
 
+    /**
+     * Test azione apertura dettaglio gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupDetailAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -511,6 +586,9 @@ public class FigmaTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
     }
 
+    /**
+     * Test azione di apertura modifica gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupEditAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -541,6 +619,9 @@ public class FigmaTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameEdit);
     }
 
+    /**
+     * Test azione di apertura creazione gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupCreateAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
@@ -580,6 +661,9 @@ public class FigmaTest {
     // TEST UTENTE TIPOLOGIA STANDARD
     // ------------------------------------------------------------------------------------
 
+    /**
+     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente.
+     */
     @Test
     public void communicationDetailBreadCrumbStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -595,6 +679,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -620,6 +707,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void chatCommunicationStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -645,6 +735,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione apertura configurazione e ritorno alla pagina precedente.
+     */
     @Test
     public void configurationStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -660,6 +753,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione apertura modifica di una comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void acknowledgmentEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -680,6 +776,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationSave);
     }
 
+    /**
+     * Test azione di apertura tab Notifiche e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationTabStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -700,6 +799,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleCommunicationBack);
     }
 
+    /**
+     * Test azione apertura dettaglio notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationDetailStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -725,6 +827,9 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationBack);
     }
 
+    /**
+     * Test azione apertura modifica notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -755,6 +860,9 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationSave);
     }
 
+    /**
+     * Test azione di apertura creazione notifica e ritorno alla pagina precedente.
+     */
     @Test
     public void notificationCreateStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -780,6 +888,9 @@ public class FigmaTest {
         assertEquals("Notifiche", titleNotificationConfirm);
     }
 
+    /**
+     * Test azione apertura tab dei testi e ritono alla pagina precedente.
+     */
     @Test
     public void textTabStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -800,6 +911,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
+    /**
+     * Test azione di apertura modifica testo e ritorno alla pagina precedente.
+     */
     @Test
     public void textEditStandardTest()  {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -825,6 +939,9 @@ public class FigmaTest {
         assertEquals("Alert normativo", firstTextSave);
     }
 
+    /**
+     * Test azione di apertura tab delle firme e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureTabStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -845,6 +962,9 @@ public class FigmaTest {
         assertEquals("Configurazione", titleConfigurationBack);
     }
 
+    /**
+     * Test azione di apertura pagina di modifica firma e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -870,6 +990,9 @@ public class FigmaTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
+    /**
+     * Test azione di apertura creazione firma e ritorno alla pagina precedente.
+     */
     @Test
     public void signatureCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -895,6 +1018,9 @@ public class FigmaTest {
         assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
+    /**
+     * Test azione di apertura dettaglio utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserDetailBreadCrumbStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -915,6 +1041,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura dettaglio utente e ritorno alla pagina precedente tramite side bar.
+     */
     @Test
     public void UserDetailSideMenuStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -935,6 +1064,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura modifica utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -960,6 +1092,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUserDetailEdit);
     }
 
+    /**
+     * Test azione di apertura creazione utente e ritorno alla pagina precedente.
+     */
     @Test
     public void UserCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -990,6 +1125,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
     }
 
+    /**
+     * Test azione di apertura tab dei gruppi e ritorno alla pagina precedente.
+     */
     @Test
     public void groupsTabStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1010,6 +1148,9 @@ public class FigmaTest {
         assertEquals("Utenti e gruppi", titleUsersAndGroupsBack);
     }
 
+    /**
+     * Test azione apertura dettaglio gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupDetailStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1035,6 +1176,9 @@ public class FigmaTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
     }
 
+    /**
+     * Test azione di apertura modifica gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupEditStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1065,6 +1209,9 @@ public class FigmaTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupNameEdit);
     }
 
+    /**
+     * Test azione di apertura creazione gruppo e ritorno alla pagina precedente.
+     */
     @Test
     public void groupCreateStandardTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
@@ -1104,6 +1251,9 @@ public class FigmaTest {
     // TEST UTENTE TIPOLOGIA BANCA
     // ------------------------------------------------------------------------------------
 
+    /**
+     * Test azione di apertura dettaglio comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationDetailBreadCrumbBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1119,6 +1269,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione apertura dettaglio e ritorno alal pagina precedente tramite side bar.
+     */
     @Test
     public void communicationDetailSideMenuBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1134,6 +1287,9 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+    /**
+     * Test azione di apertura inoltro comunicazione e selezione contatti e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationForwardBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1164,6 +1320,9 @@ public class FigmaTest {
         assertEquals("[Nome comunicazione]", titleDetailCommunicationForward);
     }
 
+    /**
+     * Test azione di apertura risposta comunicazione e ritorno alla pagina precedente.
+     */
     @Test
     public void communicationAnswerBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1184,6 +1343,9 @@ public class FigmaTest {
         assertEquals("[Nome comunicazione]", titleDetailCommunicationForward);
     }
 
+    /**
+     * Test azione apertura modifica rubrica e ritorno alla pagina precedente.
+     */
     @Test
     public void addressBookEditBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
@@ -1204,6 +1366,9 @@ public class FigmaTest {
         assertEquals("Rubrica", titleAddressBookEdit);
     }
 
+    /**
+     * Test azione di apertura creazione contatto e ritorno alla pagina precedente.
+     */
     @Test
     public void addressBookCreateBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
