@@ -31,7 +31,7 @@ public class FigmaTest {
         ChromeOptions chrome_options = new ChromeOptions();
         chrome_options.addArguments("--headless=new");
         if (driver == null) {
-            driver = WebDriverManager.chromedriver().create();
+            driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
     }
 
