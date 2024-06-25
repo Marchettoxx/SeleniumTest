@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Comunicazioni']")
+    @FindBy(css = "div.bb-header-title")
     private WebElement title;
 
     @FindBy(linkText = "CONFIGURA")
