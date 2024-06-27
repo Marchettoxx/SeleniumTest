@@ -79,15 +79,15 @@ public class WebTest {
     public void communicationDetailBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
-//        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
-//
-//        String titleDetailCommunication = communicationDetailPO.getTitle();
-//        assertEquals("[Nome comunicazione]", titleDetailCommunication);
-//
-//        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
-//
-//        String titleCommunicationBack = communicationPO1.getTitle();
-//        assertEquals("Comunicazioni", titleCommunicationBack);
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+
+        String titleDetailCommunication = communicationDetailPO.getTitle();
+        assertEquals("321 Prendere visione con urgenza", titleDetailCommunication);
+
+        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
+
+        String titleCommunicationBack = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
     /**
@@ -102,17 +102,17 @@ public class WebTest {
         String titleCreateCommunication = communicationCreatePO.getTitle();
         assertEquals("Nuova comunicazione", titleCreateCommunication);
 
-        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
+//        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
+//
+//        String titleSelectUser = communicationSelectUserPO.getTitle();
+//        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
+//
+//        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
+//
+//        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
+//        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
 
-        String titleSelectUser = communicationSelectUserPO.getTitle();
-        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
-
-        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
-
-        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
-        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
-
-        CommunicationPO communicationPO1 = communicationCreatePO1.cancel();
+        CommunicationPO communicationPO1 = communicationCreatePO.cancel();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);

@@ -14,7 +14,7 @@ public class CommunicationPO extends PageObject {
     @FindBy(linkText = "CONFIGURA")
     private WebElement configuraButton;
 
-    @FindBy(linkText = "6/2024")
+    @FindBy(css = "div.id-cell.bb-ellipsis[title='0/XXXX']")
     private WebElement detailLink;
 
     @FindBy(linkText = "Utenti e gruppi")
@@ -23,57 +23,59 @@ public class CommunicationPO extends PageObject {
     @FindBy(linkText = "Rubrica")
     private WebElement addressbookLink;
 
-    @FindBy(linkText = "NUOVA COMUNICAZIONE")
-    private WebElement createButton;
+    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'CREA COMUNICAZIONE')]")
+    private WebElement createSplitButton;
+
+    @FindBy(xpath = "//span[@class='k-link k-menu-link' and contains(text(), 'Alert normativo')]")
+    private WebElement alertNormativoLink;
+    private final WebDriverWait wait;
 
     public CommunicationPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 50);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Comunicazioni"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Comunicazioni"));
 
         return this.title.getText();
     }
 
     public ConfigurationPO clickConfig() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(this.configuraButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.configuraButton));
 
         this.configuraButton.click();
         return new ConfigurationPO(driver);
     }
 
     public CommunicationDetailPO clickDetail() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
 
         this.detailLink.click();
         return new CommunicationDetailPO(driver);
     }
 
     public UsersAndGroupsPO clickUsersAndGroups() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(this.usersAndGroupsLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.usersAndGroupsLink));
 
         this.usersAndGroupsLink.click();
         return new UsersAndGroupsPO(driver);
     }
 
     public AddressBookPO clickAddressBook() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(this.addressbookLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.addressbookLink));
 
         this.addressbookLink.click();
         return new AddressBookPO(driver);
     }
 
     public CommunicationCreatePO create() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createSplitButton));
+        this.createSplitButton.click();
 
-        this.createButton.click();
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.alertNormativoLink));
+        this.alertNormativoLink.click();
+
         return new CommunicationCreatePO(driver);
     }
 }

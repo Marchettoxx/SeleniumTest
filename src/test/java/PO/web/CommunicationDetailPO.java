@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationDetailPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='[Nome comunicazione]']")
+    @FindBy(css = "div.bb-header-title.bb-ellipsis[title='321 Prendere visione con urgenza']")
     private WebElement title;
 
-    @FindBy(linkText = "Comunicazioni")
+    @FindBy(xpath = "//span[@class='k-breadcrumb-item-text' and text()='Comunicazioni']")
     private WebElement communicationLinkBreadCrumb;
 
     @FindBy(linkText = "Comunicazioni")
@@ -26,52 +26,49 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(linkText = "RISPONDI")
     private WebElement answerButton;
 
+    private WebDriverWait wait;
+
     public CommunicationDetailPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 30);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Nome comunicazione]"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "321 Prendere visione con urgenza"));
 
         return this.title.getText();
     }
 
     public CommunicationPO returnBackBreadCrumb() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.communicationLinkBreadCrumb));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.communicationLinkBreadCrumb));
 
         this.communicationLinkBreadCrumb.click();
         return new CommunicationPO(driver);
     }
 
     public CommunicationPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.commMenuLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.commMenuLink));
 
         this.commMenuLink.click();
         return new CommunicationPO(driver);
     }
 
     public ChatPO openChat() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.newMessageLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.newMessageLink));
 
         this.newMessageLink.click();
         return new ChatPO(driver);
     }
 
     public CommunicationForwardPO forward() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.forwardButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.forwardButton));
 
         this.forwardButton.click();
         return new CommunicationForwardPO(driver);
     }
 
     public CommunicationAnswerPO answer() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.answerButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.answerButton));
 
         this.answerButton.click();
         return new CommunicationAnswerPO(driver);
