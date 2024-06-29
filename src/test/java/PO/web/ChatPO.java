@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ChatPO extends PageObject {
 
-    @FindBy(linkText = "TORNA AL DETTAGLIO")
+    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'TORNA AL DETTAGLIO')]")
     private WebElement backButton;
 
-    @FindBy(xpath = "//span[text()='Chat con ABI 08016']")
+    @FindBy(xpath = "//div[@class='bb-dialog-title' and contains(text(), 'Chat con ABI 03599')]")
     private WebElement title;
 
     public ChatPO(WebDriver driver) {
@@ -20,7 +20,7 @@ public class ChatPO extends PageObject {
 
     public String getTitle() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Chat con ABI 08016"));
+        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Chat con ABI 03599"));
 
         return this.title.getText();
     }

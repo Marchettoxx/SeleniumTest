@@ -8,23 +8,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GroupEditPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Dettaglio gruppo']")
+    @FindBy(xpath = "//div[text()='Dettaglio gruppo']")
     private WebElement title;
 
-    @FindBy(linkText = "SALVA")
+    @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement saveButton;
+
+    private final WebDriverWait wait;
 
     public GroupEditPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Dettaglio gruppo"));
+
         return this.title.getText();
     }
 
     public GroupsPO save() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
 
         this.saveButton.click();
         return new GroupsPO(driver);

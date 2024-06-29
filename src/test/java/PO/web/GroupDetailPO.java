@@ -8,37 +8,37 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GroupDetailPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='[Nome gruppo]']")
+    @FindBy(xpath = "//div[text()='Ref 231']")
     private WebElement title;
 
-    @FindBy(linkText = "Utenti e gruppi")
+    @FindBy(xpath = "//span[text()='Utenti e Gruppi']")
     private WebElement backLink;
 
-    @FindBy(linkText = "MODIFICA")
+    @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;
+
+    private final WebDriverWait wait;
 
     public GroupDetailPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Nome gruppo]"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Ref 231"));
         
         return this.title.getText();
     }
 
     public GroupsPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
 
         this.backLink.click();
         return new GroupsPO(driver);
     }
 
     public GroupEditPO edit() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
 
         this.editButton.click();
         return new GroupEditPO(driver);

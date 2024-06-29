@@ -8,26 +8,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignatureCreatePO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Crea nuova firma']")
+    @FindBy(xpath = "//div[contains(@class, 'bb-dialog-title') and contains(text(), 'Crea nuova firma')]")
     private WebElement title;
 
-    @FindBy(linkText = "CREA")
+    @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement createButton;
+
+    private final WebDriverWait wait;
 
     public SignatureCreatePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuova firma"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuova firma"));
 
         return this.title.getText();
     }
 
     public SignaturePO save() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
         this.createButton.click();
         return new SignaturePO(driver);

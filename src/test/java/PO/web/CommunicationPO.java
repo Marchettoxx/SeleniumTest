@@ -11,22 +11,22 @@ public class CommunicationPO extends PageObject {
     @FindBy(css = "div.bb-header-title")
     private WebElement title;
 
-    @FindBy(linkText = "CONFIGURA")
+    @FindBy(xpath = "//span[contains(text(), 'CONFIGURAZIONE')]")
     private WebElement configuraButton;
 
     @FindBy(css = "div.id-cell.bb-ellipsis[title='0/XXXX']")
     private WebElement detailLink;
 
-    @FindBy(linkText = "Utenti e gruppi")
+    @FindBy(xpath = "//span[contains(text(), 'Utenti e Gruppi')]")
     private WebElement usersAndGroupsLink;
 
     @FindBy(linkText = "Rubrica")
     private WebElement addressbookLink;
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'CREA COMUNICAZIONE')]")
+    @FindBy(xpath = "//span[contains(text(), 'CREA COMUNICAZIONE')]")
     private WebElement createSplitButton;
 
-    @FindBy(xpath = "//span[@class='k-link k-menu-link' and contains(text(), 'Alert normativo')]")
+    @FindBy(xpath = "//span[contains(text(), 'Alert normativo')]")
     private WebElement alertNormativoLink;
     private final WebDriverWait wait;
 

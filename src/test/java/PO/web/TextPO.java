@@ -8,34 +8,37 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TextPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Alert normativo']")
+    @FindBy(xpath = "//div[@class='bb-header-title bb-ellipsis ng-star-inserted' and contains(text(), 'Alert normativo')]")
     private WebElement firstText;
 
-    @FindBy(linkText = "Presa visione")
+    @FindBy(xpath = "//span[contains(text(), 'Presa visione')]")
     private WebElement ackTab;
 
-    @FindBy(linkText = "Modifica")
+    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'MODIFICA')]")
     private WebElement editButton;
+
+    private final WebDriverWait wait;
 
     public TextPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getFirstText() {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.firstText, "Alert normativo"));
+
         return this.firstText.getText();
     }
 
     public TextEditPO edit() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
 
         this.editButton.click();
         return new TextEditPO(driver);
     }
 
     public ConfigurationPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
 
         this.ackTab.click();
         return new ConfigurationPO(driver);

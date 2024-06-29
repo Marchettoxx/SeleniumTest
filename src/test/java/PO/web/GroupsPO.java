@@ -8,48 +8,44 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GroupsPO extends PageObject {
 
-    @FindBy(linkText = "NUOVO GRUPPO")
-    private WebElement newGroupButton;
-
-    @FindBy(linkText = "Gruppo Compliance 231 (ristretto)")
+    @FindBy(xpath = "//div[text()='Ref 231']")
     private WebElement detailLink;
 
-    @FindBy(linkText = "Gestione utenti")
+    @FindBy(xpath = "//span[text()='Gestione utenti']")
     private WebElement usersLink;
 
-    @FindBy(linkText = "NUOVO GRUPPO")
+    @FindBy(xpath = "//span[contains(text(), 'NUOVO GRUPPO')]")
     private WebElement createButton;
+
+    private final WebDriverWait wait;
 
     public GroupsPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getGroupText() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.detailLink, "Gruppo Compliance 231 (ristretto)"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.detailLink, "Ref 231"));
 
         return this.detailLink.getText();
     }
 
     public GroupDetailPO clickDetailGroup() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
 
         this.detailLink.click();
         return new GroupDetailPO(driver);
     }
 
     public UsersAndGroupsPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.usersLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.usersLink));
 
         this.usersLink.click();
         return new UsersAndGroupsPO(driver);
     }
 
     public GroupCreatePO create() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
         this.createButton.click();
         return new GroupCreatePO(driver);

@@ -8,48 +8,46 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignaturePO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Firma CCB 1']")
+    @FindBy(xpath = "//div[@class='bb-header-title bb-ellipsis ng-star-inserted' and contains(@title, 'Firma 50')]")
     private WebElement firstSignature;
 
-    @FindBy(linkText = "Presa visione")
+    @FindBy(xpath = "//span[contains(text(), 'Presa visione')]")
     private WebElement ackTab;
 
-    @FindBy(linkText = "Modifica")
+    @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;
 
-    @FindBy(linkText = "NUOVA FIRMA")
+    @FindBy(xpath = "//span[contains(text(), 'NUOVA FIRMA')]")
     private WebElement createButton;
 
+    private final WebDriverWait wait;
     public SignaturePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getFirstSignatureText() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.firstSignature, "Firma CCB 1"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.firstSignature, "Firma 50"));
 
         return this.firstSignature.getText();
     }
 
     public ConfigurationPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
 
         this.ackTab.click();
         return new ConfigurationPO(driver);
     }
 
     public SignatureEditPO edit() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
 
         this.editButton.click();
         return new SignatureEditPO(driver);
     }
 
     public SignatureCreatePO create() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
         this.createButton.click();
         return new SignatureCreatePO(driver);

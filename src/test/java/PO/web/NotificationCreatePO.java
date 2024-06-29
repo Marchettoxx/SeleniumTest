@@ -8,23 +8,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationCreatePO extends PageObject {
 
-    @FindBy(linkText = "CONFERMA")
+    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'ANNULLA')]")
     private WebElement confirmButton;
 
-    @FindBy(xpath = "//span[text()='Nuova notifica']")
+    @FindBy(xpath = "//div[@class='bb-header-title bb-ellipsis ng-star-inserted' and contains(text(), 'Nuova notifica')]")
     private WebElement title;
 
+    private final WebDriverWait wait;
     public NotificationCreatePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Nuova notifica"));
+
         return this.title.getText();
     }
 
     public NotificationPO confirm() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
 
         this.confirmButton.click();
         return new NotificationPO(driver);

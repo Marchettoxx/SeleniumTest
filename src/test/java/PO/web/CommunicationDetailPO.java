@@ -17,7 +17,7 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(linkText = "Comunicazioni")
     private WebElement commMenuLink;
 
-    @FindBy(linkText = "Nuovo messaggio")
+    @FindBy(xpath = "//div[@class='id-cell bb-ellipsis' and @title='Non ricevuta' and contains(text(), 'Non ricevuta')]")
     private WebElement newMessageLink;
 
     @FindBy(linkText = "INOLTRA")

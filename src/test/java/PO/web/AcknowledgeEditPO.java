@@ -8,21 +8,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AcknowledgeEditPO extends PageObject {
 
-    @FindBy(linkText = "SALVA")
+    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'SALVA')]")
     private WebElement saveButton;
+
+    private final WebDriverWait wait;
 
     public AcknowledgeEditPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getSaveButtonText() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.saveButton,  "SALVA"));
 
         return this.saveButton.getText();
     }
 
     public ConfigurationPO clickSave() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+
         this.saveButton.click();
         return new ConfigurationPO(driver);
     }
