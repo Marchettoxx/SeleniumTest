@@ -14,20 +14,21 @@ public class UserEditPO extends PageObject {
     @FindBy(linkText = "SALVA")
     private WebElement saveButton;
 
+    private final WebDriverWait wait;
+
     public UserEditPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Dettaglio utente"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Dettaglio utente"));
 
         return this.title.getText();
     }
 
     public UsersAndGroupsPO save() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
 
         this.saveButton.click();
         return new UsersAndGroupsPO(driver);

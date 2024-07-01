@@ -14,20 +14,21 @@ public class AddressBookCreatePO extends PageObject {
     @FindBy(linkText = "CREA")
     private WebElement createButton;
 
+    private final WebDriverWait wait;
+
     public AddressBookCreatePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuovo contatto"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuovo contatto"));
 
         return this.title.getText();
     }
 
     public AddressBookPO create() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
         this.createButton.click();
         return new AddressBookPO(driver);

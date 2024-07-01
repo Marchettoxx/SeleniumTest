@@ -17,28 +17,28 @@ public class GroupCreatePO extends PageObject {
     @FindBy(linkText = "Aggiungi utente")
     private WebElement addButton;
 
+    private final WebDriverWait wait;
+
     public GroupCreatePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Nuovo gruppo"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Nuovo gruppo"));
 
         return this.title.getText();
     }
 
     public GroupsPO cancel() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
         this.cancelButton.click();
         return new GroupsPO(driver);
     }
 
     public GroupAddUserPO add() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.addButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.addButton));
 
         this.addButton.click();
         return new GroupAddUserPO(driver);

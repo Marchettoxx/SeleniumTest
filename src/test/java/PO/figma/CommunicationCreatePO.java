@@ -17,28 +17,28 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(linkText = "Seleziona")
     private WebElement selectButton;
 
+    private final WebDriverWait wait;
+
     public CommunicationCreatePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Nuova comunicazione"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Nuova comunicazione"));
 
         return this.title.getText();
     }
 
     public CommunicationPO cancel() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
         this.cancelButton.click();
         return new CommunicationPO(driver);
     }
 
     public CommunicationSelectUserPO select() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.selectButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.selectButton));
 
         this.selectButton.click();
         return new CommunicationSelectUserPO(driver);

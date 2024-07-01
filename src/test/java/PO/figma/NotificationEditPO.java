@@ -11,20 +11,21 @@ public class NotificationEditPO extends PageObject {
     @FindBy(linkText = "SALVA")
     private WebElement saveButton;
 
+    private final WebDriverWait wait;
+
     public NotificationEditPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getSaveButtonText() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
 
         return this.saveButton.getText();
     }
 
     public NotificationPO save() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
 
         this.saveButton.click();
         return new NotificationPO(driver);

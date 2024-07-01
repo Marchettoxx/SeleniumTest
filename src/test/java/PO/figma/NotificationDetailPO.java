@@ -17,28 +17,28 @@ public class NotificationDetailPO extends PageObject {
     @FindBy(xpath = "//span[text()='[Descrizione notifica]']")
     private WebElement title;
 
+    private final WebDriverWait wait;
+
     public NotificationDetailPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Descrizione notifica]"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Descrizione notifica]"));
 
         return this.title.getText();
     }
 
     public NotificationEditPO edit() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
 
         this.editButton.click();
         return new NotificationEditPO(driver);
     }
 
     public NotificationPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.notificationLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.notificationLink));
 
         this.notificationLink.click();
         return new NotificationPO(driver);

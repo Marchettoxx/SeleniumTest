@@ -11,18 +11,22 @@ public class AddressBookEditPO extends PageObject {
     @FindBy(linkText = "ANNULLA")
     private WebElement cancelButton;
 
+    private final WebDriverWait wait;
+
     public AddressBookEditPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getCancelButtonText() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
         return this.cancelButton.getText();
     }
 
     public AddressBookPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
+
         this.cancelButton.click();
         return new AddressBookPO(driver);
     }

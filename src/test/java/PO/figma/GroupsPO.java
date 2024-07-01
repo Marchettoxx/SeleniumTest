@@ -20,36 +20,35 @@ public class GroupsPO extends PageObject {
     @FindBy(linkText = "NUOVO GRUPPO")
     private WebElement createButton;
 
+    private final WebDriverWait wait;
+
     public GroupsPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getGroupText() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.detailLink, "Gruppo Compliance 231 (ristretto)"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.detailLink, "Gruppo Compliance 231 (ristretto)"));
 
         return this.detailLink.getText();
     }
 
     public GroupDetailPO clickDetailGroup() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
 
         this.detailLink.click();
         return new GroupDetailPO(driver);
     }
 
     public UsersAndGroupsPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.usersLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.usersLink));
 
         this.usersLink.click();
         return new UsersAndGroupsPO(driver);
     }
 
     public GroupCreatePO create() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
         this.createButton.click();
         return new GroupCreatePO(driver);

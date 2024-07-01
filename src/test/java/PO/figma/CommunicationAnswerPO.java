@@ -14,20 +14,21 @@ public class CommunicationAnswerPO extends PageObject {
     @FindBy(linkText = "TORNA AL DETTAGLIO")
     private WebElement backButton;
 
+    private final WebDriverWait wait;
+
     public CommunicationAnswerPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Chat"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Chat"));
 
         return this.title.getText();
     }
 
     public CommunicationDetailPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.backButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.backButton));
 
         this.backButton.click();
         return new CommunicationDetailPO(driver);

@@ -14,20 +14,21 @@ public class UserAddToGroupPO extends PageObject {
     @FindBy(linkText = "CONFERMA")
     private WebElement confirmButton;
 
+    private final WebDriverWait wait;
+
     public UserAddToGroupPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Seleziona i gruppi in cui aggiungere l’utente"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Seleziona i gruppi in cui aggiungere l’utente"));
 
         return this.title.getText();
     }
 
     public UserCreatePO confirm() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
 
         this.confirmButton.click();
         return new UserCreatePO(driver);

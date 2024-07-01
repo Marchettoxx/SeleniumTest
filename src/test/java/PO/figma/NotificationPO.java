@@ -20,36 +20,35 @@ public class NotificationPO extends PageObject {
     @FindBy(linkText = "Presa visione")
     private WebElement ackTab;
 
+    private final WebDriverWait wait;
+
     public NotificationPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Notifiche"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Notifiche"));
 
         return this.title.getText();
     }
 
     public NotificationCreatePO createNotification() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createNotificationButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createNotificationButton));
 
         this.createNotificationButton.click();
         return new NotificationCreatePO(driver);
     }
 
     public NotificationDetailPO clickDetail() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.detailNotificationLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailNotificationLink));
 
         this.detailNotificationLink.click();
         return new NotificationDetailPO(driver);
     }
 
     public ConfigurationPO backToCommunication() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
 
         this.ackTab.click();
         return new ConfigurationPO(driver);

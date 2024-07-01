@@ -20,36 +20,35 @@ public class UsersAndGroupsPO extends PageObject {
     @FindBy(linkText = "NUOVO UTENTE")
     private WebElement createButton;
 
+    private final WebDriverWait wait;
+
     public UsersAndGroupsPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Utenti e gruppi"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Utenti e gruppi"));
 
         return this.title.getText();
     }
 
     public UserDetailPO clickDetailUser() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
 
         this.detailLink.click();
         return new UserDetailPO(driver);
     }
 
     public GroupsPO clickGroups() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.groupsLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.groupsLink));
 
         this.groupsLink.click();
         return new GroupsPO(driver);
     }
 
     public UserCreatePO create() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
         this.createButton.click();
         return new UserCreatePO(driver);

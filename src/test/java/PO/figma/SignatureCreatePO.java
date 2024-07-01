@@ -14,20 +14,21 @@ public class SignatureCreatePO extends PageObject {
     @FindBy(linkText = "CREA")
     private WebElement createButton;
 
+    private final WebDriverWait wait;
+
     public SignatureCreatePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuova firma"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuova firma"));
 
         return this.title.getText();
     }
 
     public SignaturePO save() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
         this.createButton.click();
         return new SignaturePO(driver);

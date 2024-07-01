@@ -20,36 +20,35 @@ public class SignaturePO extends PageObject {
     @FindBy(linkText = "NUOVA FIRMA")
     private WebElement createButton;
 
+    private final WebDriverWait wait;
+
     public SignaturePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getFirstSignatureText() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.firstSignature, "Firma CCB 1"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.firstSignature, "Firma CCB 1"));
 
         return this.firstSignature.getText();
     }
 
     public ConfigurationPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
 
         this.ackTab.click();
         return new ConfigurationPO(driver);
     }
 
     public SignatureEditPO edit() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
 
         this.editButton.click();
         return new SignatureEditPO(driver);
     }
 
     public SignatureCreatePO create() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
 
         this.createButton.click();
         return new SignatureCreatePO(driver);

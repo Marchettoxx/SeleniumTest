@@ -20,36 +20,35 @@ public class UserDetailPO extends PageObject {
     @FindBy(linkText = "MODIFICA")
     private WebElement editButton;
 
+    private final WebDriverWait wait;
+
     public UserDetailPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Cognome nome]"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "[Cognome nome]"));
 
         return this.title.getText();
     }
 
     public UsersAndGroupsPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
 
         this.backLink.click();
         return new UsersAndGroupsPO(driver);
     }
 
     public UsersAndGroupsPO backBreadCrumb() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.backMenuLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.backMenuLink));
 
         this.backMenuLink.click();
         return new UsersAndGroupsPO(driver);
     }
 
     public UserEditPO edit() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
 
         this.editButton.click();
         return new UserEditPO(driver);

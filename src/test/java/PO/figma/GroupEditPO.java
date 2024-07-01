@@ -14,17 +14,21 @@ public class GroupEditPO extends PageObject {
     @FindBy(linkText = "SALVA")
     private WebElement saveButton;
 
+    private final WebDriverWait wait;
+
     public GroupEditPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Dettaglio gruppo"));
+
         return this.title.getText();
     }
 
     public GroupsPO save() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
 
         this.saveButton.click();
         return new GroupsPO(driver);

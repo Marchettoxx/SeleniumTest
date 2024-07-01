@@ -17,25 +17,28 @@ public class TextPO extends PageObject {
     @FindBy(linkText = "Modifica")
     private WebElement editButton;
 
+    private final WebDriverWait wait;
+
     public TextPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getFirstText() {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.firstText, "Alert normativo"));
+
         return this.firstText.getText();
     }
 
     public TextEditPO edit() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
 
         this.editButton.click();
         return new TextEditPO(driver);
     }
 
     public ConfigurationPO back() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.ackTab));
 
         this.ackTab.click();
         return new ConfigurationPO(driver);

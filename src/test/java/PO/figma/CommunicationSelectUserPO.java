@@ -14,20 +14,21 @@ public class CommunicationSelectUserPO extends PageObject {
     @FindBy(linkText = "CONFERMA")
     private WebElement confirmButton;
 
+    private final WebDriverWait wait;
+
     public CommunicationSelectUserPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Seleziona gli utenti destinatari della comunicazione"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Seleziona gli utenti destinatari della comunicazione"));
 
         return this.title.getText();
     }
 
     public CommunicationCreatePO confirm() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
 
         this.confirmButton.click();
         return new CommunicationCreatePO(driver);
