@@ -8,16 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GroupsPO extends PageObject {
 
-    @FindBy(linkText = "NUOVO GRUPPO")
-    private WebElement newGroupButton;
-
-    @FindBy(linkText = "Gruppo Compliance 231 (ristretto)")
+    @FindBy(xpath = "//span[text()='Gruppo Compliance 231 (ristretto)']")
     private WebElement detailLink;
 
-    @FindBy(linkText = "Gestione utenti")
+    @FindBy(xpath = "//span[text()='Gestione utenti']")
     private WebElement usersLink;
 
-    @FindBy(linkText = "NUOVO GRUPPO")
+    @FindBy(xpath = "//span[text()='NUOVO GRUPPO']")
     private WebElement createButton;
 
     private final WebDriverWait wait;

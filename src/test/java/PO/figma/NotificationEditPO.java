@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationEditPO extends PageObject {
 
-    @FindBy(linkText = "SALVA")
+    @FindBy(xpath = "//span[text()='SALVA']")
     private WebElement saveButton;
 
     private final WebDriverWait wait;
@@ -24,11 +24,11 @@ public class NotificationEditPO extends PageObject {
         return this.saveButton.getText();
     }
 
-    public NotificationPO save() {
+    public NotificationDetailPO save() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
 
         this.saveButton.click();
-        return new NotificationPO(driver);
+        return new NotificationDetailPO(driver);
     }
 }
 

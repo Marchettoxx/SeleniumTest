@@ -11,7 +11,7 @@ public class GroupAddUserPO extends PageObject {
     @FindBy(xpath = "//span[text()='Seleziona gli utenti da aggiungere al gruppo']")
     private WebElement title;
 
-    @FindBy(linkText = "CONFERMA")
+    @FindBy(xpath = "//span[text()='CONFERMA']")
     private WebElement confirmButton;
 
     private final WebDriverWait wait;

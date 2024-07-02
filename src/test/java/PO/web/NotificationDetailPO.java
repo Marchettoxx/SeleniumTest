@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationDetailPO extends PageObject {
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'MODIFICA')]")
+    @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;
 
-    @FindBy(xpath = "//span[@class='k-breadcrumb-item-text' and contains(text(), 'Configurazione')]")
+    @FindBy(xpath = "//span[contains(text(), 'Configurazione')]")
     private WebElement notificationLink;
 
-    @FindBy(xpath = "//div[@class='bb-header-title bb-ellipsis ng-star-inserted' and @title='Sollecito comunicazione 2312' and contains(text(), 'Sollecito comunicazione 2312')]")
+    @FindBy(xpath = "//div[contains(text(), 'Sollecito comunicazione 2312')]")
     private WebElement title;
 
     private final WebDriverWait wait;

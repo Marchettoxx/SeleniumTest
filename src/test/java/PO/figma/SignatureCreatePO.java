@@ -11,8 +11,8 @@ public class SignatureCreatePO extends PageObject {
     @FindBy(xpath = "//span[text()='Crea nuova firma']")
     private WebElement title;
 
-    @FindBy(linkText = "CREA")
-    private WebElement createButton;
+    @FindBy(xpath = "//span[text()='ANNULLA']")
+    private WebElement cancelButton;
 
     private final WebDriverWait wait;
 
@@ -27,10 +27,10 @@ public class SignatureCreatePO extends PageObject {
         return this.title.getText();
     }
 
-    public SignaturePO save() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+    public SignaturePO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.createButton.click();
+        this.cancelButton.click();
         return new SignaturePO(driver);
     }
 }

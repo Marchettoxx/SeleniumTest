@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationDetailPO extends PageObject {
 
-    @FindBy(linkText = "MODIFICA")
+    @FindBy(xpath = "//span[text()='MODIFICA']")
     private WebElement editButton;
 
-    @FindBy(linkText = "Configurazione")
+    @FindBy(xpath = "//span[text()='Configurazione']")
     private WebElement notificationLink;
 
     @FindBy(xpath = "//span[text()='[Descrizione notifica]']")

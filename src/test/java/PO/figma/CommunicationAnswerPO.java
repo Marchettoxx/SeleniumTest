@@ -11,7 +11,7 @@ public class CommunicationAnswerPO extends PageObject {
     @FindBy(xpath = "//span[text()='Chat']")
     private WebElement title;
 
-    @FindBy(linkText = "TORNA AL DETTAGLIO")
+    @FindBy(xpath = "//a[text()='TORNA AL DETTAGLIO']")
     private WebElement backButton;
 
     private final WebDriverWait wait;

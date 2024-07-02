@@ -12,10 +12,10 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(css = "div.bb-header-title.bb-ellipsis[title='Nuova comunicazione']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'ANNULLA')]")
+    @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'CONFERMA')]")
+    @FindBy(xpath = "//span[contains(text(), 'CONFERMA')]")
     private WebElement confirmModal;
 
     @FindBy(linkText = "Seleziona")

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationCreatePO extends PageObject {
 
-    @FindBy(linkText = "CONFERMA")
+    @FindBy(xpath = "//span[text()='CONFERMA']")
     private WebElement confirmButton;
 
     @FindBy(xpath = "//span[text()='Nuova notifica']")

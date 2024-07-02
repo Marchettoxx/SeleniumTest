@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationCreatePO extends PageObject {
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'ANNULLA')]")
+    @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement confirmButton;
 
-    @FindBy(xpath = "//div[@class='bb-header-title bb-ellipsis ng-star-inserted' and contains(text(), 'Nuova notifica')]")
+    @FindBy(xpath = "//div[contains(text(), 'Nuova notifica')]")
     private WebElement title;
 
     private final WebDriverWait wait;

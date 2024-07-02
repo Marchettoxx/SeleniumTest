@@ -11,13 +11,13 @@ public class SignaturePO extends PageObject {
     @FindBy(xpath = "//span[text()='Firma CCB 1']")
     private WebElement firstSignature;
 
-    @FindBy(linkText = "Presa visione")
+    @FindBy(xpath = "//span[text()='Presa visione']")
     private WebElement ackTab;
 
-    @FindBy(linkText = "Modifica")
+    @FindBy(xpath = "//span[text()='Modifica']")
     private WebElement editButton;
 
-    @FindBy(linkText = "NUOVA FIRMA")
+    @FindBy(xpath = "//span[text()='NUOVA FIRMA']")
     private WebElement createButton;
 
     private final WebDriverWait wait;

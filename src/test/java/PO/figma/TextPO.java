@@ -11,10 +11,10 @@ public class TextPO extends PageObject {
     @FindBy(xpath = "//span[text()='Alert normativo']")
     private WebElement firstText;
 
-    @FindBy(linkText = "Presa visione")
+    @FindBy(xpath = "//span[text()='Presa visione']")
     private WebElement ackTab;
 
-    @FindBy(linkText = "Modifica")
+    @FindBy(xpath = "//span[text()='Modifica']")
     private WebElement editButton;
 
     private final WebDriverWait wait;

@@ -11,10 +11,10 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(xpath = "//span[text()='Nuova comunicazione']")
     private WebElement title;
 
-    @FindBy(linkText = "ANNULLA")
+    @FindBy(xpath = "//span[text()='ANNULLA']")
     private WebElement cancelButton;
 
-    @FindBy(linkText = "Seleziona")
+    @FindBy(xpath = "//span[text()='Seleziona']")
     private WebElement selectButton;
 
     private final WebDriverWait wait;

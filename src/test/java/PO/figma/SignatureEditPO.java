@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignatureEditPO extends PageObject {
 
-    @FindBy(linkText = "SALVA")
+    @FindBy(xpath = "//span[text()='SALVA']")
     private WebElement saveButton;
 
     private final WebDriverWait wait;

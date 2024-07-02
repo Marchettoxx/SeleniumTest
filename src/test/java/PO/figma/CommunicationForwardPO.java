@@ -11,10 +11,10 @@ public class CommunicationForwardPO extends PageObject {
     @FindBy(xpath = "//span[text()='Inoltra comunicazione 34893549085']")
     private WebElement title;
 
-    @FindBy(linkText = "ANNULLA")
+    @FindBy(xpath = "//span[text()='ANNULLA']")
     private WebElement cancelButton;
 
-    @FindBy(linkText = "SELEZIONA")
+    @FindBy(xpath = "//span[text()='SELEZIONA']")
     private WebElement selectButton;
 
     private final WebDriverWait wait;

@@ -9,13 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectUserPO extends PageObject {
 
-    @FindBy(linkText = "UTENTE AMMINISTRATIVO")
+    @FindBy(xpath = "//a[text()='UTENTE AMMINISTRATIVO']")
     private WebElement adminButton;
 
-    @FindBy(linkText = "UTENTE STANDARD")
+    @FindBy(xpath = "//a[text()='UTENTE STANDARD']")
     private WebElement standardButton;
 
-    @FindBy(linkText = "UTENTE BANCA")
+    @FindBy(xpath = "//a[text()='UTENTE BANCA']")
     private WebElement bankButton;
 
     private final WebDriverWait wait;

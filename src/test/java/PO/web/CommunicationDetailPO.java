@@ -11,13 +11,13 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(css = "div.bb-header-title.bb-ellipsis[title='321 Prendere visione con urgenza']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[@class='k-breadcrumb-item-text' and text()='Comunicazioni']")
+    @FindBy(xpath = "//span[text()='Comunicazioni']")
     private WebElement communicationLinkBreadCrumb;
 
     @FindBy(linkText = "Comunicazioni")
     private WebElement commMenuLink;
 
-    @FindBy(xpath = "//div[@class='id-cell bb-ellipsis' and @title='Non ricevuta' and contains(text(), 'Non ricevuta')]")
+    @FindBy(xpath = "//div[contains(text(), 'Non ricevuta')]")
     private WebElement newMessageLink;
 
     @FindBy(linkText = "INOLTRA")

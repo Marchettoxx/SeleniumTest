@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignatureCreatePO extends PageObject {
 
-    @FindBy(xpath = "//div[contains(@class, 'bb-dialog-title') and contains(text(), 'Crea nuova firma')]")
+    @FindBy(xpath = "//div[contains(text(), 'Crea nuova firma')]")
     private WebElement title;
 
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")

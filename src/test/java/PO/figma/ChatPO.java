@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ChatPO extends PageObject {
 
-    @FindBy(linkText = "TORNA AL DETTAGLIO")
+    @FindBy(xpath = "//span[text()='TORNA AL DETTAGLIO']")
     private WebElement backButton;
 
     @FindBy(xpath = "//span[text()='Chat con ABI 08016']")

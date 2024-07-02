@@ -11,13 +11,13 @@ public class UserDetailPO extends PageObject {
     @FindBy(xpath = "//span[text()='[Cognome nome]']")
     private WebElement title;
 
-    @FindBy(css = "div.cmdettaglioutente-breadcrumb-item2 a")
+    @FindBy(xpath = "//span[text()='Comunicazioni']")
     private WebElement backLink;
 
-    @FindBy(css = "div.cmdettaglioutente-drawer-item1 a")
+    @FindBy(xpath = "//span[text()='Comunicazioni']")
     private WebElement backMenuLink;
 
-    @FindBy(linkText = "MODIFICA")
+    @FindBy(xpath = "//span[text()='MODIFICA']")
     private WebElement editButton;
 
     private final WebDriverWait wait;

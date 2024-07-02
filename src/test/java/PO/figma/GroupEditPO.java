@@ -11,7 +11,7 @@ public class GroupEditPO extends PageObject {
     @FindBy(xpath = "//span[text()='Dettaglio gruppo']")
     private WebElement title;
 
-    @FindBy(linkText = "SALVA")
+    @FindBy(xpath = "//span[text()='SALVA']")
     private WebElement saveButton;
 
     private final WebDriverWait wait;

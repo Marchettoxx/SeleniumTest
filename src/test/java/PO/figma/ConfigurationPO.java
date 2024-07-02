@@ -13,19 +13,19 @@ public class ConfigurationPO extends PageObject {
     @FindBy(xpath = "//span[text()='Configurazione']")
     private WebElement title;
 
-    @FindBy(linkText = "Comunicazioni")
+    @FindBy(xpath = "//span[text()='Comunicazioni']")
     private WebElement communicationLink;
 
-    @FindBy(linkText = "Notifiche")
+    @FindBy(xpath = "//span[text()='Notifiche']")
     private WebElement notificationLink;
 
-    @FindBy(linkText = "Testi di default")
+    @FindBy(xpath = "//span[text()='Testi di default']")
     private WebElement textLink;
 
-    @FindBy(linkText = "Firme")
+    @FindBy(xpath = "//span[text()='Firme']")
     private WebElement signatureLink;
 
-    @FindBy(linkText = "Modifica")
+    @FindBy(xpath = "//span[text()='Modifica']")
     private WebElement editAckLink;
 
     private final WebDriverWait wait;

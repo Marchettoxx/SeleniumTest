@@ -11,7 +11,7 @@ public class CommunicationSelectContactPO extends PageObject {
     @FindBy(xpath = "//span[text()='Seleziona i contatti a cui inoltrare la comunicazione']")
     private WebElement title;
 
-    @FindBy(linkText = "CONFERMA")
+    @FindBy(xpath = "//span[text()='CONFERMA']")
     private WebElement confirmButton;
 
     private final WebDriverWait wait;

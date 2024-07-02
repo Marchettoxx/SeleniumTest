@@ -11,13 +11,13 @@ public class NotificationPO extends PageObject {
     @FindBy(xpath = "//span[text()='Notifiche']")
     private WebElement title;
 
-    @FindBy(linkText = "Nuova notifica")
+    @FindBy(xpath = "//span[text()='Nuova notifica']")
     private WebElement createNotificationButton;
 
-    @FindBy(linkText = "Regola di notifica 2")
+    @FindBy(xpath = "//span[text()='Regola di notifica 2']")
     private WebElement detailNotificationLink;
 
-    @FindBy(linkText = "Presa visione")
+    @FindBy(xpath = "//span[text()='Presa visione']")
     private WebElement ackTab;
 
     private final WebDriverWait wait;

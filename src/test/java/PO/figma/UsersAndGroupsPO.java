@@ -11,13 +11,13 @@ public class UsersAndGroupsPO extends PageObject {
     @FindBy(xpath = "//span[text()='Utenti e gruppi']")
     private WebElement title;
 
-    @FindBy(linkText = "laura.bianchini@cassacentrale.it")
+    @FindBy(xpath = "//span[text()='laura.bianchini@cassacentrale.it']")
     private WebElement detailLink;
 
-    @FindBy(linkText = "Gestione gruppi")
+    @FindBy(xpath = "//span[@class='jsx-dffb6c7ed3f4b965' and text()='Gestione gruppi']")
     private WebElement groupsLink;
 
-    @FindBy(linkText = "NUOVO UTENTE")
+    @FindBy(xpath = "//span[text()='NUOVO UTENTE']")
     private WebElement createButton;
 
     private final WebDriverWait wait;

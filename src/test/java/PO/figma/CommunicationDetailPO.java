@@ -11,19 +11,19 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(xpath = "//span[text()='[Nome comunicazione]']")
     private WebElement title;
 
-    @FindBy(linkText = "Comunicazioni")
+    @FindBy(xpath = "//span[text()='Comunicazioni']")
     private WebElement communicationLinkBreadCrumb;
 
-    @FindBy(linkText = "Comunicazioni")
+    @FindBy(xpath = "//span[text()='Comunicazioni']")
     private WebElement commMenuLink;
 
-    @FindBy(linkText = "Nuovo messaggio")
+    @FindBy(xpath = "//a[text()='Nuovo messaggio']")
     private WebElement newMessageLink;
 
-    @FindBy(linkText = "INOLTRA")
+    @FindBy(xpath = "//span[text()='INOLTRA']")
     private WebElement forwardButton;
 
-    @FindBy(linkText = "RISPONDI")
+    @FindBy(xpath = "//span[text()='RISPONDI']")
     private WebElement answerButton;
 
     private final WebDriverWait wait;

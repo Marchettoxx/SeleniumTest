@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignaturePO extends PageObject {
 
-    @FindBy(xpath = "//div[@class='bb-header-title bb-ellipsis ng-star-inserted' and contains(@title, 'Firma 50')]")
+    @FindBy(xpath = "//div[contains(@title, 'Firma 50')]")
     private WebElement firstSignature;
 
     @FindBy(xpath = "//span[contains(text(), 'Presa visione')]")

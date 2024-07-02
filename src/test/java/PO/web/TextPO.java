@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TextPO extends PageObject {
 
-    @FindBy(xpath = "//div[@class='bb-header-title bb-ellipsis ng-star-inserted' and contains(text(), 'Alert normativo')]")
+    @FindBy(xpath = "//div[contains(text(), 'Alert normativo')]")
     private WebElement firstText;
 
     @FindBy(xpath = "//span[contains(text(), 'Presa visione')]")
     private WebElement ackTab;
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'MODIFICA')]")
+    @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;
 
     private final WebDriverWait wait;

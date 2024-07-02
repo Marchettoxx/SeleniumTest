@@ -12,10 +12,10 @@ public class NotificationPO extends PageObject {
     @FindBy(xpath = "//span[text()='Notifiche']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'Nuova notifica')]")
+    @FindBy(xpath = "//span[contains(text(), 'Nuova notifica')]")
     private WebElement createNotificationButton;
 
-    @FindBy(xpath = "//div[@class='bb-ellipsis' and @title='Test' and contains(text(), 'Test')]")
+    @FindBy(xpath = "//div[contains(text(), 'Test')]")
     private WebElement detailNotificationLink;
 
     @FindBy(xpath = "//span[contains(text(), 'Presa visione')]")

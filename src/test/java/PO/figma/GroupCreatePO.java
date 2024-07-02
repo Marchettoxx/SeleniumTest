@@ -11,10 +11,10 @@ public class GroupCreatePO extends PageObject {
     @FindBy(xpath = "//span[text()='Nuovo gruppo']")
     private WebElement title;
 
-    @FindBy(linkText = "ANNULLA")
+    @FindBy(xpath = "//span[text()='ANNULLA']")
     private WebElement cancelButton;
 
-    @FindBy(linkText = "Aggiungi utente")
+    @FindBy(xpath = "//span[text()='Aggiungi utente']")
     private WebElement addButton;
 
     private final WebDriverWait wait;

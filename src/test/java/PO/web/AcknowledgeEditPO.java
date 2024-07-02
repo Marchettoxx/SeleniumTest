@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AcknowledgeEditPO extends PageObject {
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'SALVA')]")
+    @FindBy(xpath = "//span[text(), 'SALVA']")
     private WebElement saveButton;
 
     private final WebDriverWait wait;

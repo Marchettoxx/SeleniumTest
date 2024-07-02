@@ -11,10 +11,10 @@ public class GroupDetailPO extends PageObject {
     @FindBy(xpath = "//span[text()='[Nome gruppo]']")
     private WebElement title;
 
-    @FindBy(linkText = "Utenti e gruppi")
+    @FindBy(xpath = "//a[text()='Utenti e gruppi']")
     private WebElement backLink;
 
-    @FindBy(linkText = "MODIFICA")
+    @FindBy(xpath = "//span[text()='MODIFICA']")
     private WebElement editButton;
 
     private final WebDriverWait wait;

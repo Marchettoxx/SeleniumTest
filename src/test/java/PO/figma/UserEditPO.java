@@ -11,7 +11,7 @@ public class UserEditPO extends PageObject {
     @FindBy(xpath = "//span[text()='Dettaglio utente']")
     private WebElement title;
 
-    @FindBy(linkText = "SALVA")
+    @FindBy(xpath = "//span[text()='SALVA']")
     private WebElement saveButton;
 
     private final WebDriverWait wait;

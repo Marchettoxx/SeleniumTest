@@ -11,10 +11,10 @@ public class UserCreatePO extends PageObject {
     @FindBy(xpath = "//span[text()='Nuovo utente']")
     private WebElement title;
 
-    @FindBy(linkText = "CONFERMA")
-    private WebElement confirmButton;
+    @FindBy(xpath = "//span[text()='ANNULLA']")
+    private WebElement cancelButton;
 
-    @FindBy(linkText = "Aggiungi ad altro gruppo")
+    @FindBy(xpath = "//span[text()='Aggiungi ad altro gruppo']")
     private WebElement addGroupButton;
 
     private final WebDriverWait wait;
@@ -30,10 +30,10 @@ public class UserCreatePO extends PageObject {
         return this.title.getText();
     }
 
-    public UsersAndGroupsPO confirm() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
+    public UsersAndGroupsPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.confirmButton.click();
+        this.cancelButton.click();
         return new UsersAndGroupsPO(driver);
     }
 
