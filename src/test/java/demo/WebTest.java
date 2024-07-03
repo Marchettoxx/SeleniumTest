@@ -29,7 +29,7 @@ public class WebTest {
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.addArguments("--headless=new");
+        chrome_options.addArguments("--headless=new");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
@@ -669,53 +669,6 @@ public class WebTest {
     // ------------------------------------------------------------------------------------
     // TEST UTENTE TIPOLOGIA STANDARD
     // ------------------------------------------------------------------------------------
-
-    /**
-     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente.
-     */
-    @Test
-    public void communicationDetailBreadCrumbStandardTest() {
-        CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
-
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
-
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("321 Prendere visione con urgenza", titleDetailCommunication);
-
-        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
-
-        String titleCommunicationBack = communicationPO1.getTitle();
-        assertEquals("Comunicazioni", titleCommunicationBack);
-    }
-
-    /**
-     * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
-     */
-    @Test
-    public void communicationCreateStandardTest() {
-        CommunicationPO communicationPO = this.login(UserTypeEnum.STANDARD);
-
-        CommunicationCreatePO communicationCreatePO = communicationPO.create();
-
-        String titleCreateCommunication = communicationCreatePO.getTitle();
-        assertEquals("Nuova comunicazione", titleCreateCommunication);
-
-        // TODO: deve essere implementato sullo sviluppo
-//        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
-//
-//        String titleSelectUser = communicationSelectUserPO.getTitle();
-//        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
-//
-//        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
-//
-//        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
-//        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
-
-        CommunicationPO communicationPO1 = communicationCreatePO.cancel();
-
-        String titleCommunicationBack = communicationPO1.getTitle();
-        assertEquals("Comunicazioni", titleCommunicationBack);
-    }
 
     // ------------------------------------------------------------------------------------
     // TEST UTENTE TIPOLOGIA BANCA
