@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationSelectUserPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Seleziona gli utenti destinatari della comunicazione']")
+    @FindBy(xpath = "//div[contains(text(), 'Seleziona gli utenti da aggiungere al gruppo')]")
     private WebElement title;
 
-    @FindBy(linkText = "CONFERMA")
+    @FindBy(xpath = "//span[contains(text(), 'CONFERMA')]")
     private WebElement confirmButton;
 
     private final WebDriverWait wait;
@@ -22,7 +22,7 @@ public class CommunicationSelectUserPO extends PageObject {
     }
 
     public String getTitle() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Seleziona gli utenti destinatari della comunicazione"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Seleziona gli utenti da aggiungere al gruppo"));
 
         return this.title.getText();
     }

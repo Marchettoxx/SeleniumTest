@@ -18,7 +18,13 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'CONFERMA')]")
     private WebElement confirmModal;
 
-    @FindBy(linkText = "Seleziona")
+    @FindBy(xpath = "//kendo-combobox[@id='legalType']//input[@class='k-input-inner']")
+    private WebElement inputField;
+
+    @FindBy(xpath = "//span[contains(text(), 'No')]")
+    private WebElement clickAway;
+
+    @FindBy(xpath = "//bb-button[@label='SELEZIONA']")
     private WebElement selectButton;
 
     private final WebDriverWait wait;
@@ -36,12 +42,24 @@ public class CommunicationCreatePO extends PageObject {
 
     public CommunicationPO cancel() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
-
         this.cancelButton.click();
+
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmModal));
+        this.confirmModal.click();
+
         return new CommunicationPO(driver);
     }
 
     public CommunicationSelectUserPO select() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.inputField));
+        this.inputField.sendKeys("Capogruppo");
+
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.clickAway));
+        this.clickAway.click();
+
+        // TODO: sistemare select, non compare su sviluppo
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.selectButton));
 
         this.selectButton.click();

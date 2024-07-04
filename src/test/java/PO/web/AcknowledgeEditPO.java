@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AcknowledgeEditPO extends PageObject {
 
-    @FindBy(xpath = "//span[text(), 'ANNULLA']")
+    @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
     private final WebDriverWait wait;
@@ -19,7 +19,7 @@ public class AcknowledgeEditPO extends PageObject {
     }
 
     public String getSaveButtonText() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.cancelButton,  "ANNULLA"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.cancelButton,"ANNULLA"));
 
         return this.cancelButton.getText();
     }

@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ConfigurationPO extends PageObject {
 
-    @FindBy(xpath = "//div[contains(text(), 'Configurazione')]")
+    @FindBy(xpath = "//div[text()='Configurazione']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[contains(text(), 'Comunicazioni')]")
+    @FindBy(xpath = "//span[text()='Comunicazioni']")
     private WebElement communicationLink;
 
     @FindBy(xpath = "//span[contains(text(), 'Notifiche')]")

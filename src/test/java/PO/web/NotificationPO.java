@@ -15,7 +15,7 @@ public class NotificationPO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'Nuova notifica')]")
     private WebElement createNotificationButton;
 
-    @FindBy(xpath = "//div[contains(text(), 'Test')]")
+    @FindBy(xpath = "//div[text()='Regola di notifica 2']")
     private WebElement detailNotificationLink;
 
     @FindBy(xpath = "//span[contains(text(), 'Presa visione')]")
@@ -44,6 +44,7 @@ public class NotificationPO extends PageObject {
     public NotificationDetailPO clickDetail() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.detailNotificationLink));
 
+        // TODO: Su sviluppo è sbagliato, ci deve essere il singolo click
         Actions actions = new Actions(driver);
         actions.doubleClick(this.detailNotificationLink).perform();
         return new NotificationDetailPO(driver);

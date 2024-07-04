@@ -14,7 +14,7 @@ public class NotificationDetailPO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'Configurazione')]")
     private WebElement notificationLink;
 
-    @FindBy(xpath = "//div[contains(text(), 'Sollecito comunicazione 2312')]")
+    @FindBy(xpath = "//div[text()='Regola di notifica 2']")
     private WebElement title;
 
     private final WebDriverWait wait;
@@ -25,7 +25,7 @@ public class NotificationDetailPO extends PageObject {
     }
 
     public String getTitle() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Sollecito comunicazione 2312"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Regola di notifica 2"));
 
         return this.title.getText();
     }

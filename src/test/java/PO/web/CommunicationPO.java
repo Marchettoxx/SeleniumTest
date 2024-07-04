@@ -8,20 +8,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationPO extends PageObject {
 
-    @FindBy(css = "div.bb-header-title")
+    @FindBy(xpath = "//div[text()='Comunicazioni']")
     private WebElement title;
 
     @FindBy(xpath = "//span[contains(text(), 'CONFIGURAZIONE')]")
     private WebElement configuraButton;
 
-    @FindBy(css = "div.id-cell.bb-ellipsis[title='0/XXXX']")
+    @FindBy(xpath = "//div[text()='4/2024']")
     private WebElement detailLink;
 
-    @FindBy(xpath = "//span[contains(text(), 'Utenti e Gruppi')]")
+    @FindBy(xpath = "//span[text(), 'Utenti e Gruppi']")
     private WebElement usersAndGroupsLink;
 
     @FindBy(linkText = "Rubrica")
     private WebElement addressbookLink;
+
+    @FindBy(xpath = "//button[@title='Pagina 3']//span[text()=' 3 ']")
+    private WebElement pageThreeButton;
 
     @FindBy(xpath = "//span[contains(text(), 'CREA COMUNICAZIONE')]")
     private WebElement createSplitButton;
@@ -32,7 +35,7 @@ public class CommunicationPO extends PageObject {
 
     public CommunicationPO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 50);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
@@ -49,9 +52,12 @@ public class CommunicationPO extends PageObject {
     }
 
     public CommunicationDetailPO clickDetail() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.pageThreeButton));
+        this.pageThreeButton.click();
 
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
         this.detailLink.click();
+
         return new CommunicationDetailPO(driver);
     }
 
