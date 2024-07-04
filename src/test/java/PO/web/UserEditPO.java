@@ -27,11 +27,11 @@ public class UserEditPO extends PageObject {
         return this.title.getText();
     }
 
-    public UsersAndGroupsPO save() {
+    public UserDetailPO save() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
 
         this.saveButton.click();
-        return new UsersAndGroupsPO(driver);
+        return new UserDetailPO(driver);
     }
 }
 

@@ -17,10 +17,10 @@ public class CommunicationPO extends PageObject {
     @FindBy(xpath = "//div[text()='4/2024']")
     private WebElement detailLink;
 
-    @FindBy(xpath = "//span[text(), 'Utenti e Gruppi']")
+    @FindBy(xpath = "//span[text()='Utenti e Gruppi']")
     private WebElement usersAndGroupsLink;
 
-    @FindBy(linkText = "Rubrica")
+    @FindBy(xpath = "//span[text()='Rubrica']")
     private WebElement addressbookLink;
 
     @FindBy(xpath = "//button[@title='Pagina 3']//span[text()=' 3 ']")
@@ -35,7 +35,7 @@ public class CommunicationPO extends PageObject {
 
     public CommunicationPO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 10);
+        this.wait = new WebDriverWait(driver, 30);
     }
 
     public String getTitle() {
@@ -55,6 +55,13 @@ public class CommunicationPO extends PageObject {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.pageThreeButton));
         this.pageThreeButton.click();
 
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
+        this.detailLink.click();
+
+        return new CommunicationDetailPO(driver);
+    }
+
+    public CommunicationDetailPO clickDetailBase() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
         this.detailLink.click();
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignaturePO extends PageObject {
 
-    @FindBy(xpath = "//div[contains(@title, 'Firma 50')]")
+    @FindBy(xpath = "//div[@title='Firma CCB 1']")
     private WebElement firstSignature;
 
     @FindBy(xpath = "//span[contains(text(), 'Presa visione')]")
@@ -27,7 +27,7 @@ public class SignaturePO extends PageObject {
     }
 
     public String getFirstSignatureText() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.firstSignature, "Firma 50"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.firstSignature, "Firma CCB 1"));
 
         return this.firstSignature.getText();
     }

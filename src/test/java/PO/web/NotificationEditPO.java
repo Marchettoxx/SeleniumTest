@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationEditPO extends PageObject {
 
+    @FindBy(xpath = "//div[text()='Dettaglio notifica']")
+    private WebElement title;
+
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
@@ -18,10 +21,10 @@ public class NotificationEditPO extends PageObject {
         this.wait = new WebDriverWait(driver, 10);
     }
 
-    public String getCancelButtonText() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.cancelButton, "ANNULLA"));
+    public String getTitle() {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Dettaglio notifica"));
 
-        return this.cancelButton.getText();
+        return this.title.getText();
     }
 
     public NotificationDetailPO cancel() {

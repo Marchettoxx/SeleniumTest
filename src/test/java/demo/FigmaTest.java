@@ -261,8 +261,8 @@ public class FigmaTest {
 
         NotificationEditPO notificationEditPO = notificationDetailPO.edit();
 
-        String buttonSaveText = notificationEditPO.getSaveButtonText();
-        assertEquals("SALVA", buttonSaveText);
+        String title = notificationEditPO.getTitle();
+        assertEquals("Dettaglio notifica", title);
 
         NotificationDetailPO notificationDetailPO1 = notificationEditPO.save();
 
@@ -501,10 +501,10 @@ public class FigmaTest {
         String titleUserEdit = userEditPO.getTitle();
         assertEquals("Dettaglio utente", titleUserEdit);
 
-        UsersAndGroupsPO usersAndGroupsPO1 = userEditPO.save();
+        UserDetailPO userDetailPO1 = userEditPO.save();
 
-        String titleUserDetailEdit = usersAndGroupsPO1.getTitle();
-        assertEquals("Utenti e gruppi", titleUserDetailEdit);
+        String titleUserDetailEdit = userDetailPO1.getTitle();
+        assertEquals("[Cognome nome]", titleUserDetailEdit);
     }
 
     /**

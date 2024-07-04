@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddressBookEditPO extends PageObject {
 
-    @FindBy(linkText = "ANNULLA")
+    @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
     private final WebDriverWait wait;

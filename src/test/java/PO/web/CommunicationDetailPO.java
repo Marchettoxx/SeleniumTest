@@ -11,6 +11,9 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(xpath = "//div[text()='1408 PROVA8']")
     private WebElement title;
 
+    @FindBy(xpath = "//div[text()='1414 a']")
+    private WebElement titleBase;
+
     @FindBy(xpath = "//span[text()='Comunicazioni']")
     private WebElement communicationLinkBreadCrumb;
 
@@ -20,10 +23,10 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(xpath = "//div[contains(text(), 'Non ricevuta')]")
     private WebElement newMessageLink;
 
-    @FindBy(linkText = "INOLTRA")
+    @FindBy(xpath = "//span[contains(text(), 'INOLTRA')]")
     private WebElement forwardButton;
 
-    @FindBy(linkText = "RISPONDI")
+    @FindBy(xpath = "//span[contains(text(), 'RISPONDI')]")
     private WebElement answerButton;
 
     private final WebDriverWait wait;
@@ -37,6 +40,12 @@ public class CommunicationDetailPO extends PageObject {
         this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "1408 PROVA8"));
 
         return this.title.getText();
+    }
+
+    public String getTitleBase() {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.titleBase, "1414 a"));
+
+        return this.titleBase.getText();
     }
 
     public CommunicationPO returnBackBreadCrumb() {

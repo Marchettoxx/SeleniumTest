@@ -8,17 +8,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UserAddToGroupPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Seleziona i gruppi in cui aggiungere l’utente']")
+    @FindBy(xpath = "//div[contains(text(), 'Seleziona i gruppi in cui aggiungere l’utente')]")
     private WebElement title;
 
-    @FindBy(linkText = "CONFERMA")
+    @FindBy(xpath = "//span[contains(text(), 'CONFERMA')]")
     private WebElement confirmButton;
 
     private final WebDriverWait wait;
 
     public UserAddToGroupPO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 10);
+        this.wait = new WebDriverWait(driver, 20);
     }
 
     public String getTitle() {

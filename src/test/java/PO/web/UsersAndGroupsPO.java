@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UsersAndGroupsPO extends PageObject {
 
-    @FindBy(xpath = "//div[contains(text(), 'Utenti e gruppi')]")
+    @FindBy(xpath = "//div[text()='Utenti e gruppi']")
     private WebElement title;
 
     @FindBy(xpath = "//div[contains(text(), '1test@test.it')]")

@@ -14,7 +14,7 @@ public class UserCreatePO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
-    @FindBy(linkText = "Aggiungi ad altro gruppo")
+    @FindBy(xpath = "//span[contains(text(), 'Aggiungi ad altro gruppo')]")
     private WebElement addGroupButton;
 
     private final WebDriverWait wait;

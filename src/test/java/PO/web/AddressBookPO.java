@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddressBookPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Rubrica']")
+    @FindBy(xpath = "//div[text()='Rubrica']")
     private WebElement title;
 
-    @FindBy(linkText = "Modifica contatti")
+    @FindBy(xpath = "//span[contains(text(), 'Modifica contatti')]")
     private WebElement editContactButton;
 
-    @FindBy(linkText = "NUOVO CONTATTO")
+    @FindBy(xpath = "//span[contains(text(), 'NUOVO CONTATTO')]")
     private WebElement createContact;
 
     private final WebDriverWait wait;
@@ -31,6 +31,8 @@ public class AddressBookPO extends PageObject {
     }
 
     public AddressBookEditPO edit() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.editContactButton));
 
         this.editContactButton.click();
@@ -38,6 +40,8 @@ public class AddressBookPO extends PageObject {
     }
 
     public AddressBookCreatePO create() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.createContact));
 
         this.createContact.click();

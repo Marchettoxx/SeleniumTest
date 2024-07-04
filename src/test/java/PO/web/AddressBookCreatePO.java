@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddressBookCreatePO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Crea nuovo contatto']")
+    @FindBy(xpath = "//div[contains(text(), 'Crea nuovo contatto')]")
     private WebElement title;
 
-    @FindBy(linkText = "ANNULLA")
+    @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
     private final WebDriverWait wait;

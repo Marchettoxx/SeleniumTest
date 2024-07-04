@@ -3,7 +3,7 @@ package model;
 public enum UserTypeEnum {
     ADMIN("CC9024"),
     STANDARD("CC9021"),
-    BANK("CC9015");
+    BANK("fk1223");
 
     private final String username;
 
