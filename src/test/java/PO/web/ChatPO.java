@@ -11,7 +11,7 @@ public class ChatPO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'TORNA AL DETTAGLIO')]")
     private WebElement backButton;
 
-    @FindBy(xpath = "//div[contains(text(), 'Chat con ABI 03599')]")
+    @FindBy(xpath = "//div[contains(text(), 'Chat con ABI 99999')]")
     private WebElement title;
 
     private final WebDriverWait wait;
@@ -22,7 +22,7 @@ public class ChatPO extends PageObject {
     }
 
     public String getTitle() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Chat con ABI 03599"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Chat con ABI 99999"));
 
         return this.title.getText();
     }

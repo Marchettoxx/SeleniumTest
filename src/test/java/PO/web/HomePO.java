@@ -18,7 +18,7 @@ public class HomePO extends PageObject {
 
     public HomePO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public CommunicationPO goToCommunicationPage() {

@@ -57,7 +57,6 @@ public class CommunicationCreatePO extends PageObject {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.clickAway));
         this.clickAway.click();
 
-        // TODO: sistemare select, non compare su sviluppo
         driver.manage().window().maximize();
 
         this.wait.until(ExpectedConditions.elementToBeClickable(this.selectButton));

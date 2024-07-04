@@ -29,7 +29,7 @@ public class WebTest {
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.addArguments("--headless=new");
+        chrome_options.addArguments("--headless=new");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
@@ -85,7 +85,7 @@ public class WebTest {
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1408 PROVA8", titleDetailCommunication);
+        assertEquals("1392 PROVA2", titleDetailCommunication);
 
         CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
 
@@ -107,7 +107,7 @@ public class WebTest {
 
         CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
 
-        // TODO: Sviluppo è sbagliato
+        // TODO: Sviluppo è sbagliato [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/407]
         //String titleSelectUser = communicationSelectUserPO.getTitle();
         //assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
 
@@ -132,17 +132,17 @@ public class WebTest {
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1408 PROVA8", titleDetailCommunication);
-// TODO: Errore all'apertura della chat
-//        ChatPO chatPO = communicationDetailPO.openChat();
-//
-//        String titleChat = chatPO.getTitle();
-//        assertEquals("Chat con ABI 08016", titleChat);
-//
-//        CommunicationDetailPO communicationDetailPO1 = chatPO.closeChat();
-//
-//        String titleDetailCommunicationFromChat = communicationDetailPO1.getTitle();
-//        assertEquals("1392 PROVA2", titleDetailCommunicationFromChat);
+        assertEquals("1392 PROVA2", titleDetailCommunication);
+
+        ChatPO chatPO = communicationDetailPO.openChat();
+
+        String titleChat = chatPO.getTitle();
+        assertEquals("Chat con ABI 99999", titleChat);
+
+        CommunicationDetailPO communicationDetailPO1 = chatPO.closeChat();
+
+        String titleDetailCommunicationFromChat = communicationDetailPO1.getTitle();
+        assertEquals("1392 PROVA2", titleDetailCommunicationFromChat);
 
         CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
 
@@ -236,13 +236,12 @@ public class WebTest {
         String titleNotificationDetail = notificationDetailPO.getTitle();
         assertEquals("Regola di notifica 2", titleNotificationDetail);
 
-        NotificationPO notificationPO1 = notificationDetailPO.back();
-
-        // TODO: deve andare in configurazione notifiche non in presa visione
-//        String titleNotificationBack = notificationPO1.getTitle();
-//        assertEquals("Notifiche", titleNotificationBack);
+        // TODO: deve andare in configurazione notifiche non in presa visione [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/408]
+//         NotificationPO notificationPO1 = notificationDetailPO.back();
 //
-//        Thread.sleep(5000);
+//         String titleNotificationBack = notificationPO1.getSubTitle();
+//         assertEquals("Notifiche", titleNotificationBack);
+//
     }
 
     /**
@@ -274,7 +273,7 @@ public class WebTest {
 
         NotificationDetailPO notificationDetailPO1 = notificationEditPO.cancel();
 
-        // TODO: Sistemare su sviluppo
+        // TODO: Sistemare su sviluppo [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/409]
 //        String titleNotificationDetailSave = notificationDetailPO1.getTitle();
 //        assertEquals("[Descrizione notifica]", titleNotificationDetailSave);
 
@@ -377,7 +376,6 @@ public class WebTest {
 
         SignaturePO signaturePO = configurationPO.clickSignature();
 
-        // TODO: NON si può modificare una signature se non si modifica anche il logo
         String firstSignature = signaturePO.getFirstSignatureText();
         assertEquals("Firma CCB 1", firstSignature);
 
@@ -539,7 +537,7 @@ public class WebTest {
         String titleAddGroup = userAddToGroupPO.getTitle();
         assertEquals("Seleziona i gruppi in cui aggiungere l’utente", titleAddGroup);
 
-        // TODO: Dimensione da aumentare in sviluppo
+        // TODO: Dimensione da aumentare in sviluppo [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/410]
 //        UserCreatePO userCreatePO1 = userAddToGroupPO.confirm();
 //
 //        String titleNewUserAdd = userCreatePO1.getTitle();
@@ -662,7 +660,7 @@ public class WebTest {
         String titleAddUser = groupAddUserPO.getTitle();
         assertEquals("Seleziona gli utenti da aggiungere al gruppo", titleAddUser);
 
-        // TODO: Aumentare la dimensione della modale
+        // TODO: Aumentare la dimensione della modale [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/410]
 //        GroupCreatePO groupCreatePO1 = groupAddUserPO.confirm();
 //
 //        String titleGroupDetailAdd = groupCreatePO1.getTitle();
@@ -690,7 +688,7 @@ public class WebTest {
     public void communicationDetailBreadCrumbBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
 
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetailBase();
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitleBase();
         assertEquals("1414 a", titleDetailCommunication);
@@ -708,7 +706,7 @@ public class WebTest {
     public void communicationDetailSideMenuBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
 
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetailBase();
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitleBase();
         assertEquals("1414 a", titleDetailCommunication);
@@ -726,12 +724,12 @@ public class WebTest {
     public void communicationForwardBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
 
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetailBase();
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitleBase();
         assertEquals("1414 a", titleDetailCommunication);
 
-        // TODO: Sistemare, errore al click
+        // TODO: Sistemare, errore al click [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/106]
 //        CommunicationForwardPO communicationForwardPO = communicationDetailPO.forward();
 
 //        String titleForward = communicationForwardPO.getTitle();
@@ -760,21 +758,20 @@ public class WebTest {
     public void communicationAnswerBankTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.BANK);
 
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetailBase();
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitleBase();
         assertEquals("1414 a", titleDetailCommunication);
 
-        // TODO: errore in sviluppo
-//        CommunicationAnswerPO communicationAnswerPO = communicationDetailPO.answer();
-//
-//        String titleAnswer = communicationAnswerPO.getTitle();
-//        assertEquals("Chat", titleAnswer);
-//
-//        CommunicationDetailPO communicationDetailPO1 = communicationAnswerPO.back();
-//
-//        String titleDetailCommunicationForward = communicationDetailPO1.getTitleBase();
-//        assertEquals("1414 a", titleDetailCommunicationForward);
+        CommunicationAnswerPO communicationAnswerPO = communicationDetailPO.answer();
+
+        String titleAnswer = communicationAnswerPO.getTitle();
+        assertEquals("Chat", titleAnswer);
+
+        CommunicationDetailPO communicationDetailPO1 = communicationAnswerPO.back();
+
+        String titleDetailCommunicationForward = communicationDetailPO1.getTitleBase();
+        assertEquals("1414 a", titleDetailCommunicationForward);
     }
 
     /**
@@ -789,7 +786,6 @@ public class WebTest {
         String titleAddressBook = addressBookPO.getTitle();
         assertEquals("Rubrica", titleAddressBook);
 
-        // TODO: non è responsive
         AddressBookEditPO addressBookEditPO = addressBookPO.edit();
 
         String saveButtonText = addressBookEditPO.getCancelButtonText();
@@ -813,7 +809,6 @@ public class WebTest {
         String titleAddressBook = addressBookPO.getTitle();
         assertEquals("Rubrica", titleAddressBook);
 
-        // TODO: non è responsive
         AddressBookCreatePO addressBookCreatePO = addressBookPO.create();
 
         String saveButtonText = addressBookCreatePO.getTitle();

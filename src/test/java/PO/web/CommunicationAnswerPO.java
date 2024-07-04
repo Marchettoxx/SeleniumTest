@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationAnswerPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Chat']")
+    @FindBy(xpath = "//div[contains(text(), 'Chat')]")
     private WebElement title;
 
-    @FindBy(linkText = "TORNA AL DETTAGLIO")
+    @FindBy(xpath = "//span[contains(text(), 'TORNA AL DETTAGLIO')]")
     private WebElement backButton;
 
     private final WebDriverWait wait;
