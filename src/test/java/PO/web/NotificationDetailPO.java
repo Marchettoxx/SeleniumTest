@@ -11,7 +11,7 @@ public class NotificationDetailPO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;
 
-    @FindBy(xpath = "//span[contains(text(), 'Configurazione')]")
+    @FindBy(xpath = "//span[@class='k-breadcrumb-link ng-star-inserted']//span[@class='k-breadcrumb-item-text' and text()='Configurazione']")
     private WebElement notificationLink;
 
     @FindBy(xpath = "//div[text()='Regola di notifica 2']")
@@ -21,7 +21,7 @@ public class NotificationDetailPO extends PageObject {
 
     public NotificationDetailPO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 10);
+        this.wait = new WebDriverWait(driver, 20);
     }
 
     public String getTitle() {

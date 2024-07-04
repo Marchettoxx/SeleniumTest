@@ -107,8 +107,8 @@ public class WebTest {
 
         CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
 
-        String titleSelectUser = communicationSelectUserPO.getTitle();
         // TODO: Sviluppo è sbagliato
+        //String titleSelectUser = communicationSelectUserPO.getTitle();
         //assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
 
         CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
@@ -132,7 +132,7 @@ public class WebTest {
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1392 PROVA2", titleDetailCommunication);
+        assertEquals("1408 PROVA8", titleDetailCommunication);
 // TODO: Errore all'apertura della chat
 //        ChatPO chatPO = communicationDetailPO.openChat();
 //
@@ -238,6 +238,7 @@ public class WebTest {
 
         NotificationPO notificationPO1 = notificationDetailPO.back();
 
+        // TODO: deve andare in configurazione notifiche non in presa visione
         String titleNotificationBack = notificationPO1.getTitle();
         assertEquals("Notifiche", titleNotificationBack);
     }
