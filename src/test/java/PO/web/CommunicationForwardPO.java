@@ -17,28 +17,28 @@ public class CommunicationForwardPO extends PageObject {
     @FindBy(linkText = "SELEZIONA")
     private WebElement selectButton;
 
+    private final WebDriverWait wait;
+
     public CommunicationForwardPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Inoltra comunicazione 34893549085"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Inoltra comunicazione 34893549085"));
 
         return this.title.getText();
     }
 
     public CommunicationDetailPO cancel() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
         this.cancelButton.click();
         return new CommunicationDetailPO(driver);
     }
 
     public CommunicationSelectContactPO select() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.selectButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.selectButton));
 
         this.selectButton.click();
         return new CommunicationSelectContactPO(driver);

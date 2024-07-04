@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AcknowledgeEditPO extends PageObject {
 
-    @FindBy(xpath = "//span[text(), 'SALVA']")
-    private WebElement saveButton;
+    @FindBy(xpath = "//span[text(), 'ANNULLA']")
+    private WebElement cancelButton;
 
     private final WebDriverWait wait;
 
@@ -19,15 +19,15 @@ public class AcknowledgeEditPO extends PageObject {
     }
 
     public String getSaveButtonText() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.saveButton,  "SALVA"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.cancelButton,  "ANNULLA"));
 
-        return this.saveButton.getText();
+        return this.cancelButton.getText();
     }
 
-    public ConfigurationPO clickSave() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+    public ConfigurationPO clickCancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.saveButton.click();
+        this.cancelButton.click();
         return new ConfigurationPO(driver);
     }
 }

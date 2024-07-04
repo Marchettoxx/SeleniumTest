@@ -82,7 +82,7 @@ public class WebTest {
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("321 Prendere visione con urgenza", titleDetailCommunication);
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
 
         CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
 
@@ -102,18 +102,17 @@ public class WebTest {
         String titleCreateCommunication = communicationCreatePO.getTitle();
         assertEquals("Nuova comunicazione", titleCreateCommunication);
 
-        // TODO: deve essere implementato sullo sviluppo
-//        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
-//
-//        String titleSelectUser = communicationSelectUserPO.getTitle();
-//        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
-//
-//        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
-//
-//        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
-//        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
+        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
 
-        CommunicationPO communicationPO1 = communicationCreatePO.cancel();
+        String titleSelectUser = communicationSelectUserPO.getTitle();
+        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
+
+        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
+
+        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
+        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
+
+        CommunicationPO communicationPO1 = communicationCreatePO1.cancel();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);
@@ -129,17 +128,17 @@ public class WebTest {
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("321 Prendere visione con urgenza", titleDetailCommunication);
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
 
         ChatPO chatPO = communicationDetailPO.openChat();
 
         String titleChat = chatPO.getTitle();
-        assertEquals("Chat con ABI 03599", titleChat);
+        assertEquals("Chat con ABI 08016", titleChat);
 
         CommunicationDetailPO communicationDetailPO1 = chatPO.closeChat();
 
         String titleDetailCommunicationFromChat = communicationDetailPO1.getTitle();
-        assertEquals("321 Prendere visione con urgenza", titleDetailCommunicationFromChat);
+        assertEquals("[Nome comunicazione]", titleDetailCommunicationFromChat);
 
         CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
 
@@ -180,9 +179,9 @@ public class WebTest {
         AcknowledgeEditPO acknowledgeEditPO = configurationPO.clickEditAcknowledge();
 
         String buttonSaveText = acknowledgeEditPO.getSaveButtonText();
-        assertEquals("SALVA", buttonSaveText);
+        assertEquals("ANNULLA", buttonSaveText);
 
-        ConfigurationPO configurationPO1 = acknowledgeEditPO.clickSave();
+        ConfigurationPO configurationPO1 = acknowledgeEditPO.clickCancel();
 
         String titleConfigurationSave = configurationPO1.getTitle();
         assertEquals("Configurazione", titleConfigurationSave);
@@ -231,7 +230,7 @@ public class WebTest {
         NotificationDetailPO notificationDetailPO = notificationPO.clickDetail();
 
         String titleNotificationDetail = notificationDetailPO.getTitle();
-        assertEquals("Sollecito comunicazione 2312", titleNotificationDetail);
+        assertEquals("[Descrizione notifica]", titleNotificationDetail);
 
         NotificationPO notificationPO1 = notificationDetailPO.back();
 
@@ -259,18 +258,22 @@ public class WebTest {
         NotificationDetailPO notificationDetailPO = notificationPO.clickDetail();
 
         String titleNotificationDetail = notificationDetailPO.getTitle();
-        assertEquals("Sollecito comunicazione 2312", titleNotificationDetail);
+        assertEquals("[Descrizione notifica]", titleNotificationDetail);
 
         NotificationEditPO notificationEditPO = notificationDetailPO.edit();
 
         String buttonSaveText = notificationEditPO.getSaveButtonText();
         assertEquals("SALVA", buttonSaveText);
 
-        NotificationPO notificationPO1 = notificationEditPO.save();
+        NotificationDetailPO notificationDetailPO1 = notificationEditPO.cancel();
 
-        // TODO: su sviluppo il comportamento è sbagliato
-//        String titleNotificationSave = notificationPO1.getTitle();
-//        assertEquals("Notifiche", titleNotificationSave);
+        String titleNotificationDetailSave = notificationDetailPO1.getTitle();
+        assertEquals("[Descrizione notifica]", titleNotificationDetailSave);
+
+        NotificationPO notificationPO1 = notificationDetailPO1.back();
+
+        String titleNotificationBack = notificationPO1.getTitle();
+        assertEquals("Notifiche", titleNotificationBack);
     }
 
     /**
@@ -295,7 +298,6 @@ public class WebTest {
         String confirmButtonText = notificationCreatePO.getTitle();
         assertEquals("Nuova notifica", confirmButtonText);
 
-        // TODO: implementare con conferma e non annulla
         NotificationPO notificationPO1 = notificationCreatePO.confirm();
 
         String titleNotificationConfirm = notificationPO1.getTitle();
@@ -368,7 +370,7 @@ public class WebTest {
         SignaturePO signaturePO = configurationPO.clickSignature();
 
         String firstSignature = signaturePO.getFirstSignatureText();
-        assertEquals("Firma 50", firstSignature);
+        assertEquals("Firma CCB 1", firstSignature);
 
         ConfigurationPO configurationPO1 = signaturePO.back();
 
@@ -391,7 +393,7 @@ public class WebTest {
         SignaturePO signaturePO = configurationPO.clickSignature();
 
         String firstSignature = signaturePO.getFirstSignatureText();
-        assertEquals("Firma 50", firstSignature);
+        assertEquals("Firma CCB 1", firstSignature);
 
         SignatureEditPO signatureEditPO = signaturePO.edit();
 
@@ -401,7 +403,7 @@ public class WebTest {
         SignaturePO signaturePO1 = signatureEditPO.save();
 
         String firstSignatureSave = signaturePO1.getFirstSignatureText();
-        assertEquals("Firma 50", firstSignatureSave);
+        assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
     /**
@@ -419,18 +421,17 @@ public class WebTest {
         SignaturePO signaturePO = configurationPO.clickSignature();
 
         String firstSignature = signaturePO.getFirstSignatureText();
-        assertEquals("Firma 50", firstSignature);
+        assertEquals("Firma CCB 1", firstSignature);
 
         SignatureCreatePO signatureCreatePO = signaturePO.create();
 
         String saveButtonText = signatureCreatePO.getTitle();
         assertEquals("Crea nuova firma", saveButtonText);
 
-        // TODO: Cambiare da annulla in salva
-        SignaturePO signaturePO1 = signatureCreatePO.save();
+        SignaturePO signaturePO1 = signatureCreatePO.cancel();
 
         String firstSignatureSave = signaturePO1.getFirstSignatureText();
-        assertEquals("Firma 50", firstSignatureSave);
+        assertEquals("Firma CCB 1", firstSignatureSave);
     }
 
     /**
@@ -448,7 +449,7 @@ public class WebTest {
         UserDetailPO userDetailPO = usersAndGroupsPO.clickDetailUser();
 
         String titleUserDetail = userDetailPO.getTitle();
-        assertEquals("WORKFLOW test", titleUserDetail);
+        assertEquals("[Cognome nome]", titleUserDetail);
 
         UsersAndGroupsPO usersAndGroupsPO1 = userDetailPO.backBreadCrumb();
 
@@ -471,7 +472,7 @@ public class WebTest {
         UserDetailPO userDetailPO = usersAndGroupsPO.clickDetailUser();
 
         String titleUserDetail = userDetailPO.getTitle();
-        assertEquals("WORKFLOW test", titleUserDetail);
+        assertEquals("[Cognome nome]", titleUserDetail);
 
         UsersAndGroupsPO usersAndGroupsPO1 = userDetailPO.back();
 
@@ -494,14 +495,13 @@ public class WebTest {
         UserDetailPO userDetailPO = usersAndGroupsPO.clickDetailUser();
 
         String titleUserDetail = userDetailPO.getTitle();
-        assertEquals("WORKFLOW test", titleUserDetail);
+        assertEquals("[Cognome nome]", titleUserDetail);
 
         UserEditPO userEditPO = userDetailPO.edit();
 
         String titleUserEdit = userEditPO.getTitle();
         assertEquals("Dettaglio utente", titleUserEdit);
 
-        // TODO: cambiare annulla con salva
         UsersAndGroupsPO usersAndGroupsPO1 = userEditPO.save();
 
         String titleUserDetailEdit = usersAndGroupsPO1.getTitle();
@@ -525,17 +525,17 @@ public class WebTest {
         String titleNewUser = userCreatePO.getTitle();
         assertEquals("Nuovo utente", titleNewUser);
 
-//        UserAddToGroupPO userAddToGroupPO = userCreatePO.add();
-//
-//        String titleAddGroup = userAddToGroupPO.getTitle();
-//        assertEquals("Seleziona i gruppi in cui aggiungere l’utente", titleAddGroup);
-//
-//        UserCreatePO userCreatePO1 = userAddToGroupPO.confirm();
-//
-//        String titleNewUserAdd = userCreatePO1.getTitle();
-//        assertEquals("Nuovo utente", titleNewUserAdd);
+        UserAddToGroupPO userAddToGroupPO = userCreatePO.add();
 
-        UsersAndGroupsPO usersAndGroupsPO1 = userCreatePO.confirm();
+        String titleAddGroup = userAddToGroupPO.getTitle();
+        assertEquals("Seleziona i gruppi in cui aggiungere l’utente", titleAddGroup);
+
+        UserCreatePO userCreatePO1 = userAddToGroupPO.confirm();
+
+        String titleNewUserAdd = userCreatePO1.getTitle();
+        assertEquals("Nuovo utente", titleNewUserAdd);
+
+        UsersAndGroupsPO usersAndGroupsPO1 = userCreatePO1.cancel();
 
         String titleUsersAndGroupsDetail = usersAndGroupsPO1.getTitle();
         assertEquals("Utenti e gruppi", titleUsersAndGroupsDetail);
@@ -556,7 +556,7 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Ref 231", groupName);
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
 
         UsersAndGroupsPO usersAndGroupsPO1 = groupsPO.back();
 
@@ -579,17 +579,17 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Ref 231", groupName);
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
 
         GroupDetailPO groupDetailPO = groupsPO.clickDetailGroup();
 
         String titleGroupDetail = groupDetailPO.getTitle();
-        assertEquals("Ref 231", titleGroupDetail);
+        assertEquals("[Nome gruppo]", titleGroupDetail);
 
         GroupsPO groupsPO1 = groupDetailPO.back();
 
         String groupNameBack = groupsPO1.getGroupText();
-        assertEquals("Ref 231", groupNameBack);
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
     }
 
     /**
@@ -607,24 +607,22 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Ref 231", groupName);
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
 
         GroupDetailPO groupDetailPO = groupsPO.clickDetailGroup();
 
         String titleGroupDetail = groupDetailPO.getTitle();
-        assertEquals("Ref 231", titleGroupDetail);
+        assertEquals("[Nome gruppo]", titleGroupDetail);
 
         GroupEditPO groupEditPO = groupDetailPO.edit();
 
         String groupEditTitle = groupEditPO.getTitle();
         assertEquals("Dettaglio gruppo", groupEditTitle);
 
-        // TODO: mettere annulla
         GroupsPO groupsPO1 = groupEditPO.save();
 
-        // TODO: sistemare sviluppo
-//        String groupNameEdit = groupsPO1.getGroupText();
-//        assertEquals("Ref 231", groupNameEdit);
+        String groupNameEdit = groupsPO1.getGroupText();
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupNameEdit);
     }
 
     /**
@@ -642,33 +640,33 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Ref 231", groupName);
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupName);
 
         GroupCreatePO groupCreatePO = groupsPO.create();
 
         String titleGroupDetail = groupCreatePO.getTitle();
         assertEquals("Nuovo gruppo", titleGroupDetail);
 
-        // TODO: Manca da sviluppare
-//        GroupAddUserPO groupAddUserPO = groupCreatePO.add();
-//
-//        String titleAddUser = groupAddUserPO.getTitle();
-//        assertEquals("Seleziona gli utenti da aggiungere al gruppo", titleAddUser);
-//
-//        GroupCreatePO groupCreatePO1 = groupAddUserPO.confirm();
-//
-//        String titleGroupDetailAdd = groupCreatePO1.getTitle();
-//        assertEquals("Nuovo gruppo", titleGroupDetailAdd);
+        GroupAddUserPO groupAddUserPO = groupCreatePO.add();
+
+        String titleAddUser = groupAddUserPO.getTitle();
+        assertEquals("Seleziona gli utenti da aggiungere al gruppo", titleAddUser);
+
+        GroupCreatePO groupCreatePO1 = groupAddUserPO.confirm();
+
+        String titleGroupDetailAdd = groupCreatePO1.getTitle();
+        assertEquals("Nuovo gruppo", titleGroupDetailAdd);
 
         GroupsPO groupsPO1 = groupCreatePO.cancel();
 
-//        String groupNameBack = groupsPO1.getGroupText();
-//        assertEquals("Ref 231", groupNameBack);
+        String groupNameBack = groupsPO1.getGroupText();
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
     }
 
     // ------------------------------------------------------------------------------------
     // TEST UTENTE TIPOLOGIA STANDARD
     // ------------------------------------------------------------------------------------
+
 
     // ------------------------------------------------------------------------------------
     // TEST UTENTE TIPOLOGIA BANCA
@@ -806,7 +804,7 @@ public class WebTest {
         String saveButtonText = addressBookCreatePO.getTitle();
         assertEquals("Crea nuovo contatto", saveButtonText);
 
-        AddressBookPO addressBookPO1 = addressBookCreatePO.create();
+        AddressBookPO addressBookPO1 = addressBookCreatePO.cancel();
 
         String titleAddressBookEdit = addressBookPO1.getTitle();
         assertEquals("Rubrica", titleAddressBookEdit);

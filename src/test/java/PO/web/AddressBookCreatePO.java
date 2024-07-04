@@ -11,25 +11,26 @@ public class AddressBookCreatePO extends PageObject {
     @FindBy(xpath = "//span[text()='Crea nuovo contatto']")
     private WebElement title;
 
-    @FindBy(linkText = "CREA")
-    private WebElement createButton;
+    @FindBy(linkText = "ANNULLA")
+    private WebElement cancelButton;
+
+    private final WebDriverWait wait;
 
     public AddressBookCreatePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuovo contatto"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Crea nuovo contatto"));
 
         return this.title.getText();
     }
 
-    public AddressBookPO create() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+    public AddressBookPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.createButton.click();
+        this.cancelButton.click();
         return new AddressBookPO(driver);
     }
 }

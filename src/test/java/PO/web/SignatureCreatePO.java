@@ -12,7 +12,7 @@ public class SignatureCreatePO extends PageObject {
     private WebElement title;
 
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
-    private WebElement createButton;
+    private WebElement cancelButton;
 
     private final WebDriverWait wait;
 
@@ -27,10 +27,10 @@ public class SignatureCreatePO extends PageObject {
         return this.title.getText();
     }
 
-    public SignaturePO save() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.createButton));
+    public SignaturePO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.createButton.click();
+        this.cancelButton.click();
         return new SignaturePO(driver);
     }
 }

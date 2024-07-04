@@ -14,17 +14,18 @@ public class HomePO extends PageObject {
     @FindBy(css = "div.singleMenuItemContent span.item-info")
     private WebElement manageCommunicationButton;
 
+    private final WebDriverWait wait;
+
     public HomePO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public CommunicationPO goToCommunicationPage() {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-
-        wait.until(ExpectedConditions.elementToBeClickable(this.dropDownMenuButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.dropDownMenuButton));
         this.dropDownMenuButton.click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(this.manageCommunicationButton));
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.manageCommunicationButton));
         this.manageCommunicationButton.click();
 
         return new CommunicationPO(driver);

@@ -18,12 +18,14 @@ public class SelectUserPO extends PageObject {
     @FindBy(linkText = "UTENTE BANCA")
     private WebElement bankButton;
 
+    private final WebDriverWait wait;
+
     public SelectUserPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public CommunicationPO selectUserType(UserTypeEnum userTypeEnum) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement choice = null;
         switch (userTypeEnum) {
             case ADMIN:
@@ -37,7 +39,7 @@ public class SelectUserPO extends PageObject {
                 break;
         }
 
-        wait.until(ExpectedConditions.elementToBeClickable(choice));
+        this.wait.until(ExpectedConditions.elementToBeClickable(choice));
         choice.click();
         return new CommunicationPO(driver);
     }

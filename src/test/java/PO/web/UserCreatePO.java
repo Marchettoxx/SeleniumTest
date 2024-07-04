@@ -12,7 +12,7 @@ public class UserCreatePO extends PageObject {
     private WebElement title;
 
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
-    private WebElement confirmButton;
+    private WebElement cancelButton;
 
     @FindBy(linkText = "Aggiungi ad altro gruppo")
     private WebElement addGroupButton;
@@ -30,10 +30,10 @@ public class UserCreatePO extends PageObject {
         return this.title.getText();
     }
 
-    public UsersAndGroupsPO confirm() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
+    public UsersAndGroupsPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.confirmButton.click();
+        this.cancelButton.click();
         return new UsersAndGroupsPO(driver);
     }
 

@@ -20,26 +20,22 @@ public class LoginPO extends PageObject {
     @FindBy(xpath = "//input[@value='Verifica']")
     private WebElement submitPasswordButton;
 
+    private final WebDriverWait wait;
+
     public LoginPO(WebDriver driver) {
         super(driver);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public HomePO login(String username, String password) {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        this.wait.until(ExpectedConditions.elementToBeClickable(usernameInput)).sendKeys(username);
 
-        // Attendi che l'input dell'username diventi cliccabile e poi inserisci il valore
-        wait.until(ExpectedConditions.elementToBeClickable(usernameInput)).sendKeys(username);
+        this.wait.until(ExpectedConditions.elementToBeClickable(submitUsernameButton)).click();
 
-        // Attendi che il pulsante di submit per l'username diventi cliccabile e poi clicca
-        wait.until(ExpectedConditions.elementToBeClickable(submitUsernameButton)).click();
+        this.wait.until(ExpectedConditions.visibilityOf(passwordInput)).sendKeys(password);
 
-        // Attendi che l'input della password diventi visibile e poi inserisci il valore
-        wait.until(ExpectedConditions.visibilityOf(passwordInput)).sendKeys(password);
+        this.wait.until(ExpectedConditions.elementToBeClickable(submitPasswordButton)).click();
 
-        // Attendi che il pulsante di submit per la password diventi cliccabile e poi clicca
-        wait.until(ExpectedConditions.elementToBeClickable(submitPasswordButton)).click();
-
-        // Ritorna un nuovo oggetto HomePO dopo il login
         return new HomePO(driver);
     }
 }

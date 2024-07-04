@@ -26,7 +26,7 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(linkText = "RISPONDI")
     private WebElement answerButton;
 
-    private WebDriverWait wait;
+    private final WebDriverWait wait;
 
     public CommunicationDetailPO(WebDriver driver) {
         super(driver);

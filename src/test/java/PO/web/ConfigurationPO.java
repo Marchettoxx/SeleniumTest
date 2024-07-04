@@ -25,7 +25,7 @@ public class ConfigurationPO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'Firme')]")
     private WebElement signatureLink;
 
-    @FindBy(xpath = "//span[@class='k-button-text' and contains(text(), 'MODIFICA')]")
+    @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editAckLink;
 
     private final WebDriverWait wait;

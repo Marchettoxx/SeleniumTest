@@ -58,6 +58,7 @@ public class UsersAndGroupsPO extends PageObject {
 
         this.wait.until(ExpectedConditions.elementToBeClickable(this.clickNewUserLink));
         this.clickNewUserLink.click();
+
         return new UserCreatePO(driver);
     }
 }
