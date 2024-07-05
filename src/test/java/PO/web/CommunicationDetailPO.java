@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationDetailPO extends PageObject {
 
-    @FindBy(xpath = "//div[text()='1392 PROVA2']")
+    @FindBy(xpath = "//div[text()='1424 Prova banca affilitata CC9016']")
     private WebElement title;
 
     @FindBy(xpath = "//div[text()='1414 a']")
@@ -37,7 +37,7 @@ public class CommunicationDetailPO extends PageObject {
     }
 
     public String getTitle() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "1392 PROVA2"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "1424 Prova banca affilitata CC9016"));
 
         return this.title.getText();
     }

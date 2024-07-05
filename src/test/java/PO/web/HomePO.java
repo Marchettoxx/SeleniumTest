@@ -11,7 +11,7 @@ public class HomePO extends PageObject {
     @FindBy(css = "kendo-button.bb-button")
     private WebElement dropDownMenuButton;
 
-    @FindBy(css = "div.singleMenuItemContent span.item-info")
+    @FindBy(xpath = "//span[contains(text(), 'Gestione Comunicazioni')]")
     private WebElement manageCommunicationButton;
 
     private final WebDriverWait wait;

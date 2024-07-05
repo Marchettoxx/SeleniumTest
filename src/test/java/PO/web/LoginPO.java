@@ -28,13 +28,17 @@ public class LoginPO extends PageObject {
     }
 
     public HomePO login(String username, String password) {
-        this.wait.until(ExpectedConditions.elementToBeClickable(usernameInput)).sendKeys(username);
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.usernameInput));
+        this.usernameInput.sendKeys(username);
 
-        this.wait.until(ExpectedConditions.elementToBeClickable(submitUsernameButton)).click();
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.submitUsernameButton));
+        this.submitUsernameButton.click();
 
-        this.wait.until(ExpectedConditions.visibilityOf(passwordInput)).sendKeys(password);
+        this.wait.until(ExpectedConditions.visibilityOf(this.passwordInput));
+        this.passwordInput.sendKeys(password);
 
-        this.wait.until(ExpectedConditions.elementToBeClickable(submitPasswordButton)).click();
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.submitPasswordButton));
+        this.submitPasswordButton.click();
 
         return new HomePO(driver);
     }

@@ -14,8 +14,11 @@ public class CommunicationPO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'CONFIGURAZIONE')]")
     private WebElement configuraButton;
 
-    @FindBy(xpath = "//div[text()='0/XXXX']")
+    @FindBy(xpath = "//div[text()='12/2024']")
     private WebElement detailLink;
+
+    @FindBy(xpath = "//div[text()='4/2024']")
+    private WebElement detailLinkBase;
 
     @FindBy(xpath = "//span[text()='Utenti e Gruppi']")
     private WebElement usersAndGroupsLink;
@@ -52,8 +55,18 @@ public class CommunicationPO extends PageObject {
     }
 
     public CommunicationDetailPO clickDetail() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.pageThreeButton));
+        this.pageThreeButton.click();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
         this.detailLink.click();
+
+        return new CommunicationDetailPO(driver);
+    }
+
+    public CommunicationDetailPO clickDetailBase() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLinkBase));
+        this.detailLinkBase.click();
 
         return new CommunicationDetailPO(driver);
     }

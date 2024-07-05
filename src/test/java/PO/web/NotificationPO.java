@@ -53,9 +53,7 @@ public class NotificationPO extends PageObject {
     public NotificationDetailPO clickDetail() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.detailNotificationLink));
 
-        // TODO: Su sviluppo è sbagliato, ci deve essere il singolo  [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/405]
-        Actions actions = new Actions(driver);
-        actions.doubleClick(this.detailNotificationLink).perform();
+        this.detailNotificationLink.click();
         return new NotificationDetailPO(driver);
     }
 

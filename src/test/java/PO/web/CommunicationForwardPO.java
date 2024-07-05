@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommunicationForwardPO extends PageObject {
 
-    @FindBy(xpath = "//span[text()='Inoltra comunicazione 34893549085']")
+    @FindBy(xpath = "//span[text()='Nuova comunicazione']")
     private WebElement title;
 
-    @FindBy(linkText = "ANNULLA")
+    @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
-    @FindBy(linkText = "SELEZIONA")
+    @FindBy(xpath = "//span[contains(text(), 'SELEZIONA')]")
     private WebElement selectButton;
 
     private final WebDriverWait wait;
@@ -25,7 +25,7 @@ public class CommunicationForwardPO extends PageObject {
     }
 
     public String getTitle() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Inoltra comunicazione 34893549085"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Nuova comunicazione"));
 
         return this.title.getText();
     }

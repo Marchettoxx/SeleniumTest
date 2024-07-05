@@ -29,7 +29,7 @@ public class FigmaTest {
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        chrome_options.addArguments("--headless=new");
+        //chrome_options.addArguments("--headless=new");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
@@ -529,7 +529,7 @@ public class FigmaTest {
         String titleAddGroup = userAddToGroupPO.getTitle();
         assertEquals("Seleziona i gruppi in cui aggiungere l’utente", titleAddGroup);
 
-        UserCreatePO userCreatePO1 = userAddToGroupPO.confirm();
+        UserCreatePO userCreatePO1 = userAddToGroupPO.close();
 
         String titleNewUserAdd = userCreatePO1.getTitle();
         assertEquals("Nuovo utente", titleNewUserAdd);
@@ -585,10 +585,10 @@ public class FigmaTest {
         String titleGroupDetail = groupDetailPO.getTitle();
         assertEquals("[Nome gruppo]", titleGroupDetail);
 
-        GroupsPO groupsPO1 = groupDetailPO.back();
+        UsersAndGroupsPO usersAndGroupsPO1 = groupDetailPO.back();
 
-        String groupNameBack = groupsPO1.getGroupText();
-        assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
+        String usersAndGroupsTitleBack = usersAndGroupsPO1.getTitle();
+        assertEquals("Utenti e gruppi", usersAndGroupsTitleBack);
     }
 
     /**
@@ -651,15 +651,15 @@ public class FigmaTest {
         String titleAddUser = groupAddUserPO.getTitle();
         assertEquals("Seleziona gli utenti da aggiungere al gruppo", titleAddUser);
 
-        GroupCreatePO groupCreatePO1 = groupAddUserPO.confirm();
+        GroupCreatePO groupCreatePO1 = groupAddUserPO.close();
 
         String titleGroupDetailAdd = groupCreatePO1.getTitle();
         assertEquals("Nuovo gruppo", titleGroupDetailAdd);
 
-        GroupsPO groupsPO1 = groupCreatePO.cancel();
+        UsersAndGroupsPO usersAndGroupsPO1 = groupCreatePO.cancel();
 
-        String groupNameBack = groupsPO1.getGroupText();
-        assertEquals("Gruppo Compliance 231 (ristretto)", groupNameBack);
+        String titleUsersAndGroupsBack = usersAndGroupsPO1.getTitle();
+        assertEquals("Utenti e gruppi", titleUsersAndGroupsBack);
     }
 
     // ------------------------------------------------------------------------------------
@@ -729,7 +729,7 @@ public class FigmaTest {
         String titleSelectContact = communicationSelectContactPO.getTitle();
         assertEquals("Seleziona i contatti a cui inoltrare la comunicazione", titleSelectContact);
 
-        CommunicationForwardPO communicationForwardPO1 = communicationSelectContactPO.confirm();
+        CommunicationForwardPO communicationForwardPO1 = communicationSelectContactPO.close();
 
         String titleForwardSelect = communicationForwardPO.getTitle();
         assertEquals("Inoltra comunicazione 34893549085", titleForwardSelect);

@@ -11,8 +11,8 @@ public class GroupAddUserPO extends PageObject {
     @FindBy(xpath = "//span[text()='Seleziona gli utenti da aggiungere al gruppo']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[text()='CONFERMA']")
-    private WebElement confirmButton;
+    @FindBy(xpath = "//a[@href='/cmcreanuovogruppo']")
+    private WebElement closeButton;
 
     private final WebDriverWait wait;
 
@@ -27,10 +27,10 @@ public class GroupAddUserPO extends PageObject {
         return this.title.getText();
     }
 
-    public GroupCreatePO confirm() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
+    public GroupCreatePO close() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.closeButton));
 
-        this.confirmButton.click();
+        this.closeButton.click();
         return new GroupCreatePO(driver);
     }
 }
