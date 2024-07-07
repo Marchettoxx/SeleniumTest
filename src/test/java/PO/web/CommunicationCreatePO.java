@@ -31,7 +31,7 @@ public class CommunicationCreatePO extends PageObject {
 
     public CommunicationCreatePO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 30);;
+        this.wait = new WebDriverWait(driver, 10);;
     }
 
     public String getTitle() {

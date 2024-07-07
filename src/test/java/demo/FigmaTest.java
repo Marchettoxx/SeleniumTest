@@ -29,7 +29,7 @@ public class FigmaTest {
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.addArguments("--headless=new");
+        chrome_options.addArguments("--headless=new");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
@@ -59,6 +59,7 @@ public class FigmaTest {
 
         LoginPO loginPO = new LoginPO(driver);
         SelectUserPO selectUserPO = loginPO.login(password);
+
         CommunicationPO communicationPO = selectUserPO.selectUserType(userTypeEnum);
 
         String titleCommunication = communicationPO.getTitle();
@@ -177,7 +178,7 @@ public class FigmaTest {
 
         AcknowledgeEditPO acknowledgeEditPO = configurationPO.clickEditAcknowledge();
 
-        String buttonSaveText = acknowledgeEditPO.getSaveButtonText();
+        String buttonSaveText = acknowledgeEditPO.getCancelButtonText();
         assertEquals("ANNULLA", buttonSaveText);
 
         ConfigurationPO configurationPO1 = acknowledgeEditPO.clickCancel();
@@ -233,7 +234,7 @@ public class FigmaTest {
 
         NotificationPO notificationPO1 = notificationDetailPO.back();
 
-        String titleNotificationBack = notificationPO1.getTitle();
+        String titleNotificationBack = notificationPO1.getSubTitle();
         assertEquals("Notifiche", titleNotificationBack);
     }
 
@@ -264,14 +265,14 @@ public class FigmaTest {
         String title = notificationEditPO.getTitle();
         assertEquals("Dettaglio notifica", title);
 
-        NotificationDetailPO notificationDetailPO1 = notificationEditPO.save();
+        NotificationDetailPO notificationDetailPO1 = notificationEditPO.cancel();
 
         String titleNotificationDetailSave = notificationDetailPO1.getTitle();
         assertEquals("[Descrizione notifica]", titleNotificationDetailSave);
 
         NotificationPO notificationPO1 = notificationDetailPO1.back();
 
-        String titleNotificationBack = notificationPO1.getTitle();
+        String titleNotificationBack = notificationPO1.getSubTitle();
         assertEquals("Notifiche", titleNotificationBack);
     }
 
@@ -297,7 +298,7 @@ public class FigmaTest {
         String confirmButtonText = notificationCreatePO.getTitle();
         assertEquals("Nuova notifica", confirmButtonText);
 
-        NotificationPO notificationPO1 = notificationCreatePO.confirm();
+        NotificationPO notificationPO1 = notificationCreatePO.cancel();
 
         String titleNotificationConfirm = notificationPO1.getTitle();
         assertEquals("Notifiche", titleNotificationConfirm);
@@ -501,7 +502,7 @@ public class FigmaTest {
         String titleUserEdit = userEditPO.getTitle();
         assertEquals("Dettaglio utente", titleUserEdit);
 
-        UserDetailPO userDetailPO1 = userEditPO.save();
+        UserDetailPO userDetailPO1 = userEditPO.cancel();
 
         String titleUserDetailEdit = userDetailPO1.getTitle();
         assertEquals("[Cognome nome]", titleUserDetailEdit);
@@ -683,7 +684,7 @@ public class FigmaTest {
         String titleDetailCommunication = communicationDetailPO.getTitle();
         assertEquals("[Nome comunicazione]", titleDetailCommunication);
 
-        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
+        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumbBase();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);
@@ -701,7 +702,7 @@ public class FigmaTest {
         String titleDetailCommunication = communicationDetailPO.getTitle();
         assertEquals("[Nome comunicazione]", titleDetailCommunication);
 
-        CommunicationPO communicationPO1 = communicationDetailPO.back();
+        CommunicationPO communicationPO1 = communicationDetailPO.backBase();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);

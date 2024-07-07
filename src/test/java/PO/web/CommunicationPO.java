@@ -38,7 +38,7 @@ public class CommunicationPO extends PageObject {
 
     public CommunicationPO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, 20);
     }
 
     public String getTitle() {

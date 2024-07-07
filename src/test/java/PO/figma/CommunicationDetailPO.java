@@ -11,11 +11,17 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(xpath = "//span[text()='[Nome comunicazione]']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[text()='Comunicazioni']")
+    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadminview-link') and span='Comunicazioni']")
     private WebElement communicationLinkBreadCrumb;
 
-    @FindBy(xpath = "//span[text()='Comunicazioni']")
+    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadminview-link2') and span='Comunicazioni']")
     private WebElement commMenuLink;
+
+    @FindBy(xpath = "//a[contains(@class, 'cmdettagliocomunicazioneutentebanca-link') and span='Comunicazioni']")
+    private WebElement communicationLinkBreadCrumbBase;
+
+    @FindBy(xpath = "//a[contains(@class, 'cmdettagliocomunicazioneutentebanca-link3') and span='Comunicazioni']")
+    private WebElement commMenuLinkBase;
 
     @FindBy(xpath = "//a[text()='Nuovo messaggio']")
     private WebElement newMessageLink;
@@ -50,6 +56,20 @@ public class CommunicationDetailPO extends PageObject {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.commMenuLink));
 
         this.commMenuLink.click();
+        return new CommunicationPO(driver);
+    }
+
+    public CommunicationPO returnBackBreadCrumbBase() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.communicationLinkBreadCrumbBase));
+
+        this.communicationLinkBreadCrumbBase.click();
+        return new CommunicationPO(driver);
+    }
+
+    public CommunicationPO backBase() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.commMenuLinkBase));
+
+        this.commMenuLinkBase.click();
         return new CommunicationPO(driver);
     }
 

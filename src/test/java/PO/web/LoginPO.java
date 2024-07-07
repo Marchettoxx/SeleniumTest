@@ -24,7 +24,7 @@ public class LoginPO extends PageObject {
 
     public LoginPO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 20);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public HomePO login(String username, String password) {

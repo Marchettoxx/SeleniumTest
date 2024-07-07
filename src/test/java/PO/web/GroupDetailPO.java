@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GroupDetailPO extends PageObject {
 
-    @FindBy(xpath = "//div[text()='Ref 231']")
+    @FindBy(xpath = "//div[text()='Gruppo Compliance 231']")
     private WebElement title;
 
     @FindBy(xpath = "//span[text()='Utenti e Gruppi']")
@@ -25,7 +25,7 @@ public class GroupDetailPO extends PageObject {
     }
 
     public String getTitle() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Ref 231"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Gruppo Compliance 231"));
         
         return this.title.getText();
     }

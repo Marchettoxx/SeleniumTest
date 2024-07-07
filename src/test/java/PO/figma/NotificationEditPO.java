@@ -11,8 +11,8 @@ public class NotificationEditPO extends PageObject {
     @FindBy(xpath = "//span[text()='Dettaglio notifica']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[text()='SALVA']")
-    private WebElement saveButton;
+    @FindBy(xpath = "//span[text()='ANNULLA']")
+    private WebElement cancelButton;
 
     private final WebDriverWait wait;
 
@@ -27,10 +27,10 @@ public class NotificationEditPO extends PageObject {
         return this.title.getText();
     }
 
-    public NotificationDetailPO save() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+    public NotificationDetailPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.saveButton.click();
+        this.cancelButton.click();
         return new NotificationDetailPO(driver);
     }
 }

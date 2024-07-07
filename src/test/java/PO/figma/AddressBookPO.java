@@ -14,7 +14,7 @@ public class AddressBookPO extends PageObject {
     @FindBy(xpath = "//span[text()='Modifica contatti']")
     private WebElement editContactButton;
 
-    @FindBy(linkText = "NUOVO CONTATTO")
+    @FindBy(xpath = "//span[text()='NUOVO CONTATTO']")
     private WebElement createContact;
 
     private final WebDriverWait wait;

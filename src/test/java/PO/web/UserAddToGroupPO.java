@@ -18,7 +18,7 @@ public class UserAddToGroupPO extends PageObject {
 
     public UserAddToGroupPO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 20);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {

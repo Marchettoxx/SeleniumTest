@@ -18,7 +18,7 @@ public class AcknowledgeEditPO extends PageObject {
         this.wait = new WebDriverWait(driver, 10);
     }
 
-    public String getSaveButtonText() {
+    public String getCancelButtonText() {
         this.wait.until(ExpectedConditions.textToBePresentInElement(this.cancelButton, "ANNULLA"));
 
         return this.cancelButton.getText();

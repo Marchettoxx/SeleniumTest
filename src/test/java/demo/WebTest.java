@@ -29,7 +29,7 @@ public class WebTest {
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.addArguments("--headless=new");
+        chrome_options.addArguments("--headless=new");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
@@ -181,7 +181,7 @@ public class WebTest {
 
         AcknowledgeEditPO acknowledgeEditPO = configurationPO.clickEditAcknowledge();
 
-        String buttonSaveText = acknowledgeEditPO.getSaveButtonText();
+        String buttonSaveText = acknowledgeEditPO.getCancelButtonText();
         assertEquals("ANNULLA", buttonSaveText);
 
         ConfigurationPO configurationPO1 = acknowledgeEditPO.clickCancel();
@@ -217,7 +217,7 @@ public class WebTest {
      * Test azione apertura dettaglio notifica e ritorno alla pagina precedente.
      */
     @Test
-    public void notificationDetailAdminTest() throws InterruptedException {
+    public void notificationDetailAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -278,7 +278,7 @@ public class WebTest {
         // TODO: deve andare in configurazione notifiche non in presa visione [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/408]
 //        NotificationPO notificationPO1 = notificationDetailPO1.back();
 //
-//        String titleNotificationBack = notificationPO1.getTitle();
+//        String titleNotificationBack = notificationPO1.getSubTitle();
 //        assertEquals("Notifiche", titleNotificationBack);
     }
 
@@ -304,7 +304,7 @@ public class WebTest {
         String confirmButtonText = notificationCreatePO.getTitle();
         assertEquals("Nuova notifica", confirmButtonText);
 
-        NotificationPO notificationPO1 = notificationCreatePO.confirm();
+        NotificationPO notificationPO1 = notificationCreatePO.cancel();
 
         String titleNotificationConfirm = notificationPO1.getTitle();
         assertEquals("Notifiche", titleNotificationConfirm);
@@ -508,7 +508,7 @@ public class WebTest {
         String titleUserEdit = userEditPO.getTitle();
         assertEquals("Dettaglio utente", titleUserEdit);
 
-        UserDetailPO userDetailPO1 = userEditPO.save();
+        UserDetailPO userDetailPO1 = userEditPO.cancel();
 
         String titleUserDetailEdit = userDetailPO1.getTitle();
         assertEquals("WORKFLOW test", titleUserDetailEdit);
@@ -562,7 +562,7 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Ref 231", groupName);
+        assertEquals("Gruppo Compliance 231", groupName);
 
         UsersAndGroupsPO usersAndGroupsPO1 = groupsPO.back();
 
@@ -585,12 +585,12 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Ref 231", groupName);
+        assertEquals("Gruppo Compliance 231", groupName);
 
         GroupDetailPO groupDetailPO = groupsPO.clickDetailGroup();
 
         String titleGroupDetail = groupDetailPO.getTitle();
-        assertEquals("Ref 231", titleGroupDetail);
+        assertEquals("Gruppo Compliance 231", titleGroupDetail);
 
         UsersAndGroupsPO groupsPO1 = groupDetailPO.back();
 
@@ -613,12 +613,12 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Ref 231", groupName);
+        assertEquals("Gruppo Compliance 231", groupName);
 
         GroupDetailPO groupDetailPO = groupsPO.clickDetailGroup();
 
         String titleGroupDetail = groupDetailPO.getTitle();
-        assertEquals("Ref 231", titleGroupDetail);
+        assertEquals("Gruppo Compliance 231", titleGroupDetail);
 
         GroupEditPO groupEditPO = groupDetailPO.edit();
 
@@ -628,7 +628,7 @@ public class WebTest {
         GroupsPO groupsPO1 = groupEditPO.save();
 
         String groupNameEdit = groupsPO1.getGroupText();
-        assertEquals("Ref 231", groupNameEdit);
+        assertEquals("Gruppo Compliance 231", groupNameEdit);
     }
 
     /**
@@ -646,7 +646,7 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Ref 231", groupName);
+        assertEquals("Gruppo Compliance 231", groupName);
 
         GroupCreatePO groupCreatePO = groupsPO.create();
 

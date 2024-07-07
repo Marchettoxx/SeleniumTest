@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class NotificationCreatePO extends PageObject {
 
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
-    private WebElement confirmButton;
+    private WebElement cancelButton;
 
     @FindBy(xpath = "//div[contains(text(), 'Nuova notifica')]")
     private WebElement title;
@@ -26,10 +26,10 @@ public class NotificationCreatePO extends PageObject {
         return this.title.getText();
     }
 
-    public NotificationPO confirm() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
+    public NotificationPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.confirmButton.click();
+        this.cancelButton.click();
         return new NotificationPO(driver);
     }
 }

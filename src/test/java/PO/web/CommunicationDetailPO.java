@@ -14,10 +14,10 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(xpath = "//div[text()='1414 a']")
     private WebElement titleBase;
 
-    @FindBy(xpath = "//span[text()='Comunicazioni']")
+    @FindBy(xpath = "//li[@class='k-breadcrumb-item']//span[@class='k-breadcrumb-item-text' and text()='Comunicazioni']")
     private WebElement communicationLinkBreadCrumb;
 
-    @FindBy(xpath = "//span[text()='Comunicazioni']")
+    @FindBy(xpath = "//li[@role='menuitem' and @aria-label='Comunicazioni']")
     private WebElement commMenuLink;
 
     @FindBy(xpath = "//div[contains(text(), 'Non ricevuta')]")
@@ -33,7 +33,7 @@ public class CommunicationDetailPO extends PageObject {
 
     public CommunicationDetailPO(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public String getTitle() {

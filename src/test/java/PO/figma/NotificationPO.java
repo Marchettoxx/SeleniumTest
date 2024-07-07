@@ -11,6 +11,9 @@ public class NotificationPO extends PageObject {
     @FindBy(xpath = "//span[text()='Notifiche']")
     private WebElement title;
 
+    @FindBy(xpath = "//div[contains(@class, 'cmcommunicationsnotificationsconfigurationreadmode-title1')]//span[text()='Notifiche']")
+    private WebElement subTitle;
+
     @FindBy(xpath = "//span[text()='Nuova notifica']")
     private WebElement createNotificationButton;
 
@@ -31,6 +34,12 @@ public class NotificationPO extends PageObject {
         this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Notifiche"));
 
         return this.title.getText();
+    }
+
+    public String getSubTitle() {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.subTitle, "Notifiche"));
+
+        return this.subTitle.getText();
     }
 
     public NotificationCreatePO createNotification() {

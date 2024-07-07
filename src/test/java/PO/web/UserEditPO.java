@@ -12,7 +12,7 @@ public class UserEditPO extends PageObject {
     private WebElement title;
 
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
-    private WebElement saveButton;
+    private WebElement cancelButton;
 
     private final WebDriverWait wait;
 
@@ -27,10 +27,10 @@ public class UserEditPO extends PageObject {
         return this.title.getText();
     }
 
-    public UserDetailPO save() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+    public UserDetailPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.saveButton.click();
+        this.cancelButton.click();
         return new UserDetailPO(driver);
     }
 }
