@@ -11,7 +11,7 @@ public class GroupDetailPO extends PageObject {
     @FindBy(xpath = "//div[text()='Gruppo Compliance 231']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[text()='Utenti e Gruppi']")
+    @FindBy(xpath = "//li[contains(@class, 'k-breadcrumb-item')]//span[text()='Utenti e Gruppi']")
     private WebElement backLink;
 
     @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
