@@ -11,7 +11,7 @@ public class NotificationDetailPO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;
 
-    @FindBy(xpath = "//span[@class='k-breadcrumb-link ng-star-inserted']//span[@class='k-breadcrumb-item-text' and text()='Configurazione']")
+    @FindBy(xpath = "//span[text()='Configurazione']")
     private WebElement notificationLink;
 
     @FindBy(xpath = "//div[text()='Regola di notifica 2']")

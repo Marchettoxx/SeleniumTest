@@ -29,7 +29,7 @@ public class WebTest {
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        chrome_options.addArguments("--headless=new");
+        //chrome_options.addArguments("--headless=new");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
@@ -238,9 +238,8 @@ public class WebTest {
         // TODO: deve andare in configurazione notifiche non in presa visione [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/408]
 //         NotificationPO notificationPO1 = notificationDetailPO.back();
 //
-//         String titleNotificationBack = notificationPO1.getSubTitle();
+//         String titleNotificationBack = notificationPO1.getTitle();
 //         assertEquals("Notifiche", titleNotificationBack);
-//
     }
 
     /**
@@ -278,7 +277,7 @@ public class WebTest {
         // TODO: deve andare in configurazione notifiche non in presa visione [ISSUE https://github.servizi.allitude.it/portali-web-modernizzati/pwm-communications-fe/issues/408]
 //        NotificationPO notificationPO1 = notificationDetailPO1.back();
 //
-//        String titleNotificationBack = notificationPO1.getSubTitle();
+//        String titleNotificationBack = notificationPO1.getTitle();
 //        assertEquals("Notifiche", titleNotificationBack);
     }
 

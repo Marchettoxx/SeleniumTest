@@ -234,7 +234,7 @@ public class FigmaTest {
 
         NotificationPO notificationPO1 = notificationDetailPO.back();
 
-        String titleNotificationBack = notificationPO1.getSubTitle();
+        String titleNotificationBack = notificationPO1.getTitle();
         assertEquals("Notifiche", titleNotificationBack);
     }
 
@@ -272,7 +272,7 @@ public class FigmaTest {
 
         NotificationPO notificationPO1 = notificationDetailPO1.back();
 
-        String titleNotificationBack = notificationPO1.getSubTitle();
+        String titleNotificationBack = notificationPO1.getTitle();
         assertEquals("Notifiche", titleNotificationBack);
     }
 
