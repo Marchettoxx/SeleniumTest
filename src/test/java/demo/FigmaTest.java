@@ -29,7 +29,7 @@ public class FigmaTest {
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        chrome_options.addArguments("--headless=new");
+        //chrome_options.addArguments("--headless=new");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
@@ -586,10 +586,10 @@ public class FigmaTest {
         String titleGroupDetail = groupDetailPO.getTitle();
         assertEquals("[Nome gruppo]", titleGroupDetail);
 
-        UsersAndGroupsPO usersAndGroupsPO1 = groupDetailPO.back();
+        GroupsPO groupsPO1 = groupDetailPO.back();
 
-        String usersAndGroupsTitleBack = usersAndGroupsPO1.getTitle();
-        assertEquals("Utenti e gruppi", usersAndGroupsTitleBack);
+        String groupsPO1GroupText = groupsPO1.getGroupText();
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupsPO1GroupText);
     }
 
     /**
@@ -619,10 +619,10 @@ public class FigmaTest {
         String groupEditTitle = groupEditPO.getTitle();
         assertEquals("Dettaglio gruppo", groupEditTitle);
 
-        GroupsPO groupsPO1 = groupEditPO.save();
+        GroupDetailPO groupDetailPO1 = groupEditPO.cancel();
 
-        String groupNameEdit = groupsPO1.getGroupText();
-        assertEquals("Gruppo Compliance 231 (ristretto)", groupNameEdit);
+        String groupNameEdit = groupDetailPO1.getTitle();
+        assertEquals("[Nome gruppo]", groupNameEdit);
     }
 
     /**
@@ -657,10 +657,10 @@ public class FigmaTest {
         String titleGroupDetailAdd = groupCreatePO1.getTitle();
         assertEquals("Nuovo gruppo", titleGroupDetailAdd);
 
-        UsersAndGroupsPO usersAndGroupsPO1 = groupCreatePO.cancel();
+        GroupsPO usersAndGroupsPO1 = groupCreatePO.cancel();
 
-        String titleUsersAndGroupsBack = usersAndGroupsPO1.getTitle();
-        assertEquals("Utenti e gruppi", titleUsersAndGroupsBack);
+        String groupsPO1GroupText = usersAndGroupsPO1.getGroupText();
+        assertEquals("Gruppo Compliance 231 (ristretto)", groupsPO1GroupText);
     }
 
     // ------------------------------------------------------------------------------------

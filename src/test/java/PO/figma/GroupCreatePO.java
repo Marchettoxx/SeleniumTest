@@ -30,11 +30,11 @@ public class GroupCreatePO extends PageObject {
         return this.title.getText();
     }
 
-    public UsersAndGroupsPO cancel() {
+    public GroupsPO cancel() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
         this.cancelButton.click();
-        return new UsersAndGroupsPO(driver);
+        return new GroupsPO(driver);
     }
 
     public GroupAddUserPO add() {

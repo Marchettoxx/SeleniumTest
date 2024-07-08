@@ -12,7 +12,7 @@ public class GroupEditPO extends PageObject {
     private WebElement title;
 
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
-    private WebElement saveButton;
+    private WebElement cancelButton;
 
     private final WebDriverWait wait;
 
@@ -27,11 +27,11 @@ public class GroupEditPO extends PageObject {
         return this.title.getText();
     }
 
-    public GroupsPO save() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+    public GroupDetailPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.saveButton.click();
-        return new GroupsPO(driver);
+        this.cancelButton.click();
+        return new GroupDetailPO(driver);
     }
 }
 

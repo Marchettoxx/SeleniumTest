@@ -592,10 +592,10 @@ public class WebTest {
         String titleGroupDetail = groupDetailPO.getTitle();
         assertEquals("Gruppo Compliance 231", titleGroupDetail);
 
-        UsersAndGroupsPO groupsPO1 = groupDetailPO.back();
+        GroupsPO groupsPO1 = groupDetailPO.back();
 
-        String usersAndGroupsTitleBack = groupsPO1.getTitle();
-        assertEquals("Utenti e gruppi", usersAndGroupsTitleBack);
+        String groupsPO1GroupText = groupsPO1.getGroupText();
+        assertEquals("Gruppo Compliance 231", groupsPO1GroupText);
     }
 
     /**
@@ -625,10 +625,10 @@ public class WebTest {
         String groupEditTitle = groupEditPO.getTitle();
         assertEquals("Dettaglio gruppo", groupEditTitle);
 
-        GroupsPO groupsPO1 = groupEditPO.save();
+        GroupDetailPO groupDetailPO1 = groupEditPO.cancel();
 
-        String groupNameEdit = groupsPO1.getGroupText();
-        assertEquals("Gruppo Compliance 231", groupNameEdit);
+        String groupDetailPO1Title = groupDetailPO1.getTitle();
+        assertEquals("Gruppo Compliance 231", groupDetailPO1Title);
     }
 
     /**
@@ -663,10 +663,10 @@ public class WebTest {
         String titleGroupDetailAdd = groupCreatePO1.getTitle();
         assertEquals("Nuovo gruppo", titleGroupDetailAdd);
 
-        UsersAndGroupsPO usersAndGroupsPO1 = groupCreatePO.cancel();
+        GroupsPO usersAndGroupsPO1 = groupCreatePO.cancel();
 
-        String titleUsersAndGroupsBack = usersAndGroupsPO1.getTitle();
-        assertEquals("Utenti e gruppi", titleUsersAndGroupsBack);
+        String titleUsersAndGroupsBack = usersAndGroupsPO1.getGroupText();
+        assertEquals("Gruppo Compliance 231", titleUsersAndGroupsBack);
     }
 
     // ------------------------------------------------------------------------------------

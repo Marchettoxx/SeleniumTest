@@ -30,11 +30,11 @@ public class GroupDetailPO extends PageObject {
         return this.title.getText();
     }
 
-    public UsersAndGroupsPO back() {
+    public GroupsPO back() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
 
         this.backLink.click();
-        return new UsersAndGroupsPO(driver);
+        return new GroupsPO(driver);
     }
 
     public GroupEditPO edit() {

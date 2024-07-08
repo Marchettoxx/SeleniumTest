@@ -11,8 +11,8 @@ public class GroupEditPO extends PageObject {
     @FindBy(xpath = "//span[text()='Dettaglio gruppo']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[text()='SALVA']")
-    private WebElement saveButton;
+    @FindBy(xpath = "//span[text()='ANNULLA']")
+    private WebElement cancelButton;
 
     private final WebDriverWait wait;
 
@@ -27,11 +27,11 @@ public class GroupEditPO extends PageObject {
         return this.title.getText();
     }
 
-    public GroupsPO save() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.saveButton));
+    public GroupDetailPO cancel() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
-        this.saveButton.click();
-        return new GroupsPO(driver);
+        this.cancelButton.click();
+        return new GroupDetailPO(driver);
     }
 }
 
