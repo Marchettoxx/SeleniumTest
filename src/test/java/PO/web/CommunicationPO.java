@@ -17,7 +17,7 @@ public class CommunicationPO extends PageObject {
     @FindBy(xpath = "//div[text()='12/2024']")
     private WebElement detailLink;
 
-    @FindBy(xpath = "//div[text()='4/2024']")
+    @FindBy(xpath = "//div[text()='13/2024']")
     private WebElement detailLinkBase;
 
     @FindBy(xpath = "//span[text()='Utenti e Gruppi']")
@@ -26,8 +26,8 @@ public class CommunicationPO extends PageObject {
     @FindBy(xpath = "//span[text()='Rubrica']")
     private WebElement addressbookLink;
 
-    @FindBy(xpath = "//button[@title='Pagina 3']//span[text()=' 3 ']")
-    private WebElement pageThreeButton;
+    @FindBy(xpath = "//button[@title='Pagina 5']//span[text()=' 5 ']")
+    private WebElement pageButton;
 
     @FindBy(xpath = "//span[contains(text(), 'CREA COMUNICAZIONE')]")
     private WebElement createSplitButton;
@@ -55,8 +55,8 @@ public class CommunicationPO extends PageObject {
     }
 
     public CommunicationDetailPO clickDetail() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.pageThreeButton));
-        this.pageThreeButton.click();
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.pageButton));
+        this.pageButton.click();
 
         this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
         this.detailLink.click();

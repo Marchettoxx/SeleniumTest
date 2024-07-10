@@ -1,9 +1,9 @@
 package model;
 
 public enum UserTypeEnum {
-    ADMIN("CC9024"),
+    ADMIN("CC9021"),
     STANDARD("CC9021"),
-    BANK("fk1223");
+    BANK("CC9016");
 
     private final String username;
 

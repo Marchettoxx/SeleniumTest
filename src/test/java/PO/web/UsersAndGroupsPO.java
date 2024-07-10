@@ -11,7 +11,7 @@ public class UsersAndGroupsPO extends PageObject {
     @FindBy(xpath = "//div[text()='Utenti e gruppi']")
     private WebElement title;
 
-    @FindBy(xpath = "//div[contains(text(), '1test@test.it')]")
+    @FindBy(xpath = "//div[contains(text(), 'nicola.dallepiatte9093@allitude.it')]")
     private WebElement detailLink;
 
     @FindBy(xpath = "//span[contains(text(), 'Gestione gruppi')]")

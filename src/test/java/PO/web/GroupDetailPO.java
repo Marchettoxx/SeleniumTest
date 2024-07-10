@@ -11,9 +11,8 @@ public class GroupDetailPO extends PageObject {
     @FindBy(xpath = "//div[text()='Gruppo Compliance 231']")
     private WebElement title;
 
-    @FindBy(xpath = "//li[contains(@class, 'k-breadcrumb-item')]//span[text()='Utenti e Gruppi']")
+    @FindBy(xpath = "//span[contains(@class, 'k-breadcrumb-item-text') and text()='Utenti e Gruppi']")
     private WebElement backLink;
-
     @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;
 
@@ -31,6 +30,8 @@ public class GroupDetailPO extends PageObject {
     }
 
     public GroupsPO back() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
 
         this.backLink.click();

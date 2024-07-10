@@ -11,9 +11,6 @@ public class CommunicationDetailPO extends PageObject {
     @FindBy(xpath = "//div[text()='1424 Prova banca affilitata CC9016']")
     private WebElement title;
 
-    @FindBy(xpath = "//div[text()='1414 a']")
-    private WebElement titleBase;
-
     @FindBy(xpath = "//li[@class='k-breadcrumb-item']//span[@class='k-breadcrumb-item-text' and text()='Comunicazioni']")
     private WebElement communicationLinkBreadCrumb;
 
@@ -40,12 +37,6 @@ public class CommunicationDetailPO extends PageObject {
         this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "1424 Prova banca affilitata CC9016"));
 
         return this.title.getText();
-    }
-
-    public String getTitleBase() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.titleBase, "1414 a"));
-
-        return this.titleBase.getText();
     }
 
     public CommunicationPO returnBackBreadCrumb() {
