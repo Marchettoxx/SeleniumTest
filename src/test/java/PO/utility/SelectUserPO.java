@@ -1,5 +1,7 @@
-package PO.figma;
+package PO.utility;
 
+import PO.figma.CommunicationPO;
+import PO.figma.PageObject;
 import model.UserTypeEnum;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,9 +32,6 @@ public class SelectUserPO extends PageObject {
         switch (userTypeEnum) {
             case ADMIN:
                 choice = this.adminButton;
-                break;
-            case STANDARD:
-                choice = this.standardButton;
                 break;
             case BANK:
                 choice = this.bankButton;
