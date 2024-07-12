@@ -27,6 +27,12 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(xpath = "//bb-button[@label='SELEZIONA']")
     private WebElement selectButton;
 
+    @FindBy(xpath = "//li[@class='k-breadcrumb-item']//span[@class='k-breadcrumb-item-text' and text()='Comunicazioni']")
+    private WebElement communicationLinkBreadCrumb;
+
+    @FindBy(xpath = "//li[@role='menuitem' and @aria-label='Comunicazioni']")
+    private WebElement commMenuLink;
+
     private final WebDriverWait wait;
 
     public CommunicationCreatePO(WebDriver driver) {
@@ -63,6 +69,20 @@ public class CommunicationCreatePO extends PageObject {
 
         this.selectButton.click();
         return new CommunicationSelectUserPO(driver);
+    }
+
+    public CommunicationPO returnBackBreadCrumb() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.communicationLinkBreadCrumb));
+
+        this.communicationLinkBreadCrumb.click();
+        return new CommunicationPO(driver);
+    }
+
+    public CommunicationPO back() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.commMenuLink));
+
+        this.commMenuLink.click();
+        return new CommunicationPO(driver);
     }
 }
 

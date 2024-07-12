@@ -11,6 +11,12 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(xpath = "//span[text()='Nuova comunicazione']")
     private WebElement title;
 
+    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link') and span='Comunicazioni']")
+    private WebElement communicationLinkBreadCrumb;
+
+    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link3') and span='Comunicazioni']")
+    private WebElement commMenuLink;
+
     @FindBy(xpath = "//span[text()='ANNULLA']")
     private WebElement cancelButton;
 
@@ -34,6 +40,20 @@ public class CommunicationCreatePO extends PageObject {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
 
         this.cancelButton.click();
+        return new CommunicationPO(driver);
+    }
+
+    public CommunicationPO returnBackBreadCrumb() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.communicationLinkBreadCrumb));
+
+        this.communicationLinkBreadCrumb.click();
+        return new CommunicationPO(driver);
+    }
+
+    public CommunicationPO returnBack() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.commMenuLink));
+
+        this.commMenuLink.click();
         return new CommunicationPO(driver);
     }
 

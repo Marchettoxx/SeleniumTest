@@ -91,6 +91,8 @@ public class FigmaTest {
         assertEquals("Comunicazioni", titleCommunicationBack);
     }
 
+
+
     /**
      * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente tramite menù laterale.
      */
@@ -138,6 +140,62 @@ public class FigmaTest {
     }
 
     /**
+     * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
+     */
+    @Test
+    public void communicationCreateAdminBreadCrumbTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
+
+        CommunicationCreatePO communicationCreatePO = communicationPO.create();
+
+        String titleCreateCommunication = communicationCreatePO.getTitle();
+        assertEquals("Nuova comunicazione", titleCreateCommunication);
+
+        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
+
+        String titleSelectUser = communicationSelectUserPO.getTitle();
+        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
+
+        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
+
+        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
+        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
+
+        CommunicationPO communicationPO1 = communicationCreatePO1.returnBackBreadCrumb();
+
+        String titleCommunicationBack = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunicationBack);
+    }
+
+    /**
+     * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
+     */
+    @Test
+    public void communicationCreateAdminSideMenuTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
+
+        CommunicationCreatePO communicationCreatePO = communicationPO.create();
+
+        String titleCreateCommunication = communicationCreatePO.getTitle();
+        assertEquals("Nuova comunicazione", titleCreateCommunication);
+
+        CommunicationSelectUserPO communicationSelectUserPO = communicationCreatePO.select();
+
+        String titleSelectUser = communicationSelectUserPO.getTitle();
+        assertEquals("Seleziona gli utenti destinatari della comunicazione", titleSelectUser);
+
+        CommunicationCreatePO communicationCreatePO1 = communicationSelectUserPO.confirm();
+
+        String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
+        assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
+
+        CommunicationPO communicationPO1 = communicationCreatePO1.returnBack();
+
+        String titleCommunicationBack = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunicationBack);
+    }
+
+    /**
      * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
      */
     @Test
@@ -160,6 +218,34 @@ public class FigmaTest {
         assertEquals("[Nome comunicazione]", titleDetailCommunicationFromChat);
 
         CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
+
+        String titleCommunicationBack = communicationPO1.getTitle();
+        assertEquals("Comunicazioni", titleCommunicationBack);
+    }
+
+    /**
+     * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
+     */
+    @Test
+    public void chatCommunicationAdminSideMenuTest() {
+        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
+
+        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
+
+        String titleDetailCommunication = communicationDetailPO.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunication);
+
+        ChatPO chatPO = communicationDetailPO.openChat();
+
+        String titleChat = chatPO.getTitle();
+        assertEquals("Chat con ABI 08016", titleChat);
+
+        CommunicationDetailPO communicationDetailPO1 = chatPO.closeChat();
+
+        String titleDetailCommunicationFromChat = communicationDetailPO1.getTitle();
+        assertEquals("[Nome comunicazione]", titleDetailCommunicationFromChat);
+
+        CommunicationPO communicationPO1 = communicationDetailPO.back();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);
@@ -610,6 +696,8 @@ public class FigmaTest {
         String groupsPO1GroupText = groupsPO1.getGroupText();
         assertEquals("Gruppo Compliance 231 (ristretto)", groupsPO1GroupText);
     }
+
+    // come precedente ma con side menu
 
     /**
      * Test azione di apertura modifica gruppo e ritorno alla pagina precedente.
