@@ -40,6 +40,8 @@ public class CommunicationDetailPO extends PageObject {
     }
 
     public CommunicationPO returnBackBreadCrumb() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.communicationLinkBreadCrumb));
 
         this.communicationLinkBreadCrumb.click();

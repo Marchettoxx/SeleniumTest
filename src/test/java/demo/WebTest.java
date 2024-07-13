@@ -79,6 +79,7 @@ public class WebTest {
     public void communicationDetailBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
+        // TODO: griglia rotta
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
@@ -97,6 +98,7 @@ public class WebTest {
     public void communicationDetailSideMenuAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
+        // TODO: griglia rotta
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
@@ -199,6 +201,7 @@ public class WebTest {
     public void chatCommunicationAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
+        // TODO: griglia rotta
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
@@ -224,9 +227,10 @@ public class WebTest {
      * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
      */
     @Test
-    public void chatCommunicationAdminSideMenuAdminTest() {
+    public void chatCommunicationSideMenuAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
+        // TODO: griglia rotta
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
@@ -820,7 +824,7 @@ public class WebTest {
         CommunicationForwardPO communicationForwardPO = communicationDetailPO.forward();
 
         String titleForward = communicationForwardPO.getTitle();
-        assertEquals("Inoltra comunicazione", titleForward);
+        assertEquals("Inoltra comunicazione 13 Prova banca affilitata CC9016", titleForward);
 
         CommunicationSelectContactPO communicationSelectContactPO = communicationForwardPO.select();
 
@@ -830,7 +834,7 @@ public class WebTest {
         CommunicationForwardPO communicationForwardPO1 = communicationSelectContactPO.close();
 
         String titleForwardSelect = communicationForwardPO.getTitle();
-        assertEquals("Inoltra comunicazione", titleForwardSelect);
+        assertEquals("Inoltra comunicazione 13 Prova banca affilitata CC9016", titleForwardSelect);
 
         CommunicationDetailPO communicationDetailPO1 = communicationForwardPO1.cancel();
 

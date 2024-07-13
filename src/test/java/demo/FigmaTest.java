@@ -143,7 +143,7 @@ public class FigmaTest {
      * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
      */
     @Test
-    public void communicationCreateAdminBreadCrumbTest() {
+    public void communicationCreateBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         CommunicationCreatePO communicationCreatePO = communicationPO.create();
@@ -171,7 +171,7 @@ public class FigmaTest {
      * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
      */
     @Test
-    public void communicationCreateAdminSideMenuTest() {
+    public void communicationCreateSideMenuAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         CommunicationCreatePO communicationCreatePO = communicationPO.create();
@@ -227,7 +227,7 @@ public class FigmaTest {
      * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
      */
     @Test
-    public void chatCommunicationAdminSideMenuTest() {
+    public void chatCommunicationSideMenuAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();

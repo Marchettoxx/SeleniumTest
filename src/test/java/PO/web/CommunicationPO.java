@@ -26,7 +26,7 @@ public class CommunicationPO extends PageObject {
     @FindBy(xpath = "//span[text()='Rubrica']")
     private WebElement addressbookLink;
 
-    @FindBy(xpath = "//button[@title='Pagina 5']//span[text()=' 5 ']")
+    @FindBy(xpath = "//button[@title='Pagina 3']//span[text()=' 3 ']")
     private WebElement pageButton;
 
     @FindBy(xpath = "//span[contains(text(), 'CREA COMUNICAZIONE')]")

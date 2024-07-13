@@ -11,7 +11,7 @@ public class NotificationDetailPO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;
 
-    @FindBy(xpath = "//span[text()='Configurazione']")
+    @FindBy(xpath = "//span[contains(text(), 'Configurazione')]")
     private WebElement notificationLink;
 
     @FindBy(xpath = "//div[text()='Regola di notifica 2']")
@@ -38,6 +38,8 @@ public class NotificationDetailPO extends PageObject {
     }
 
     public NotificationPO back() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.notificationLink));
 
         this.notificationLink.click();
