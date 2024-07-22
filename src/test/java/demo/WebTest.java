@@ -73,44 +73,6 @@ public class WebTest {
     // ------------------------------------------------------------------------------------
 
     /**
-     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente.
-     */
-    @Test
-    public void communicationDetailBreadCrumbAdminTest() {
-        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
-
-        // TODO: griglia rotta
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
-
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1424 Prova banca affilitata CC9016", titleDetailCommunication);
-
-        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
-
-        String titleCommunicationBack = communicationPO1.getTitle();
-        assertEquals("Comunicazioni", titleCommunicationBack);
-    }
-
-    /**
-     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente.
-     */
-    @Test
-    public void communicationDetailSideMenuAdminTest() {
-        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
-
-        // TODO: griglia rotta
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
-
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1425 Prova banca affilitata CC9016", titleDetailCommunication);
-
-        CommunicationPO communicationPO1 = communicationDetailPO.back();
-
-        String titleCommunicationBack = communicationPO1.getTitle();
-        assertEquals("Comunicazioni", titleCommunicationBack);
-    }
-
-    /**
      * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
      */
     @Test

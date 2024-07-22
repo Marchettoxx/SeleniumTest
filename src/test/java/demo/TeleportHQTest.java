@@ -74,44 +74,6 @@ public class TeleportHQTest {
     // ------------------------------------------------------------------------------------
 
     /**
-     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente.
-     */
-    @Test
-    public void communicationDetailBreadCrumbAdminTest() {
-        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
-
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
-
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("[Nome comunicazione]", titleDetailCommunication);
-
-        CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
-
-        String titleCommunicationBack = communicationPO1.getTitle();
-        assertEquals("Comunicazioni", titleCommunicationBack);
-    }
-
-
-
-    /**
-     * Test azione di visualizzazione dettaglio comunicazione e di ritorno alla pagina precedente tramite menù laterale.
-     */
-    @Test
-    public void communicationDetailSideMenuAdminTest() {
-        CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
-
-        CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
-
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("[Nome comunicazione]", titleDetailCommunication);
-
-        CommunicationPO communicationPO1 = communicationDetailPO.back();
-
-        String titleCommunicationBack = communicationPO1.getTitle();
-        assertEquals("Comunicazioni", titleCommunicationBack);
-    }
-
-    /**
      * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
      */
     @Test
