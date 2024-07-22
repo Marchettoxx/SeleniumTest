@@ -1,4 +1,4 @@
-package PO.figma;
+package PO.teleportHQ;
 
 import PO.utility.SelectUserPO;
 import org.openqa.selenium.WebDriver;

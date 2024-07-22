@@ -1,12 +1,10 @@
-package PO.figma;
+package PO.teleportHQ;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.boot.autoconfigure.jms.JmsProperties;
 
 public class ConfigurationPO extends PageObject {
 

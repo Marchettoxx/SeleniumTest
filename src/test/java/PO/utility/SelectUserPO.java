@@ -1,7 +1,7 @@
 package PO.utility;
 
-import PO.figma.CommunicationPO;
-import PO.figma.PageObject;
+import PO.teleportHQ.CommunicationPO;
+import PO.teleportHQ.PageObject;
 import model.UserTypeEnum;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

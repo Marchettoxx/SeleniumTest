@@ -1,6 +1,6 @@
 package demo;
 
-import PO.figma.*;
+import PO.teleportHQ.*;
 import PO.utility.SelectUserPO;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import model.UserTypeEnum;
@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public class FigmaTest {
+public class TeleportHQTest {
 
     private WebDriver driver;
 

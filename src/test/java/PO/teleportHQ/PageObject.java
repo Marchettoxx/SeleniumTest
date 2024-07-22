@@ -1,4 +1,4 @@
-package PO.figma;
+package PO.teleportHQ;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
