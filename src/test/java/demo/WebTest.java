@@ -160,7 +160,7 @@ public class WebTest {
      * Test azione di apertura chat nel dettaglio comunicazione e ritorno alla pagina precedente.
      */
     @Test
-    public void chatCommunicationAdminTest() {
+    public void chatCommunicationBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         // TODO: griglia rotta
