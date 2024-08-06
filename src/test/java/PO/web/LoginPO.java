@@ -14,10 +14,10 @@ public class LoginPO extends PageObject {
     @FindBy(name = "credentials.passcode")
     private WebElement passwordInput;
 
-    @FindBy(xpath = "//input[@value='Avanti']")
+    @FindBy(xpath = "//button[normalize-space(text())='Avanti']")
     private WebElement submitUsernameButton;
 
-    @FindBy(xpath = "//input[@value='Verifica']")
+    @FindBy(xpath = "//button[normalize-space(text())='Verifica']")
     private WebElement submitPasswordButton;
 
     private final WebDriverWait wait;

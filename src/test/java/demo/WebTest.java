@@ -30,6 +30,7 @@ public class WebTest {
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
         //chrome_options.addArguments("--headless=new");
+        chrome_options.addArguments("--disable-search-engine-choice-screen");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
         }
