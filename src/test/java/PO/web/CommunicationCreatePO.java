@@ -15,7 +15,7 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
-    @FindBy(xpath = "//span[contains(text(), 'CONFERMA')]")
+    @FindBy(xpath = "//span[contains(text(), 'INTERROMPI')]")
     private WebElement confirmModal;
 
     @FindBy(xpath = "//kendo-combobox[@id='legalType']//input[@class='k-input-inner']")

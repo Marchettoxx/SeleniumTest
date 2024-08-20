@@ -11,10 +11,10 @@ public class CommunicationPO extends PageObject {
     @FindBy(xpath = "//div[text()='Comunicazioni']")
     private WebElement title;
 
-    @FindBy(xpath = "//span[contains(text(), 'CONFIGURAZIONE')]")
+    @FindBy(xpath = "//span[contains(text(), 'CONFIGURA')]")
     private WebElement configuraButton;
 
-    @FindBy(xpath = "//div[text()='12/2024']")
+    @FindBy(xpath = "//div[text()='2/2024']")
     private WebElement detailLink;
 
     @FindBy(xpath = "//div[text()='13/2024']")
@@ -26,14 +26,22 @@ public class CommunicationPO extends PageObject {
     @FindBy(xpath = "//span[text()='Rubrica']")
     private WebElement addressbookLink;
 
-    @FindBy(xpath = "//button[@title='Pagina 3']//span[text()=' 3 ']")
+    @FindBy(xpath = "//button[@title='Pagina 5']//span[text()=' 5 ']")
     private WebElement pageButton;
 
-    @FindBy(xpath = "//span[contains(text(), 'CREA COMUNICAZIONE')]")
+    @FindBy(xpath = "//span[contains(text(), 'NUOVA COMUNICAZIONE')]")
     private WebElement createSplitButton;
 
     @FindBy(xpath = "//span[contains(text(), 'Alert normativo')]")
     private WebElement alertNormativoLink;
+
+    @FindBy(xpath = "//input[@placeholder='Inserisci oggetto']")
+    private WebElement input;
+
+    @FindBy(xpath = "//bb-button[@lefticon='fa-sharp fa-regular fa-magnifying-glass']")
+    private WebElement searchButton;
+
+
     private final WebDriverWait wait;
 
     public CommunicationPO(WebDriver driver) {
@@ -55,8 +63,11 @@ public class CommunicationPO extends PageObject {
     }
 
     public CommunicationDetailPO clickDetail() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.pageButton));
-        this.pageButton.click();
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.input));
+        this.input.sendKeys("Test chat");
+
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
+        this.searchButton.click();
 
         this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLink));
         this.detailLink.click();

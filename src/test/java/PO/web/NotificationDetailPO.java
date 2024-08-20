@@ -39,7 +39,6 @@ public class NotificationDetailPO extends PageObject {
 
     public NotificationPO back() {
         driver.manage().window().maximize();
-
         this.wait.until(ExpectedConditions.elementToBeClickable(this.notificationLink));
 
         this.notificationLink.click();

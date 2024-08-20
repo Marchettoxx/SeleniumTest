@@ -164,21 +164,20 @@ public class WebTest {
     public void chatCommunicationBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
-        // TODO: griglia rotta
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1424 Prova banca affilitata CC9016", titleDetailCommunication);
+        assertEquals("2/2024 Test chat", titleDetailCommunication);
 
         ChatPO chatPO = communicationDetailPO.openChat();
 
         String titleChat = chatPO.getTitle();
-        assertEquals("Chat con ABI 03599", titleChat);
+        assertEquals("Chat con ABI 05662", titleChat);
 
         CommunicationDetailPO communicationDetailPO1 = chatPO.closeChat();
 
         String titleDetailCommunicationFromChat = communicationDetailPO1.getTitle();
-        assertEquals("1424 Prova banca affilitata CC9016", titleDetailCommunicationFromChat);
+        assertEquals("2/2024 Test chat", titleDetailCommunicationFromChat);
 
         CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
 
@@ -193,21 +192,20 @@ public class WebTest {
     public void chatCommunicationSideMenuAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
-        // TODO: griglia rotta
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetail();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1424 Prova banca affilitata CC9016", titleDetailCommunication);
+        assertEquals("2/2024 Test chat", titleDetailCommunication);
 
         ChatPO chatPO = communicationDetailPO.openChat();
 
         String titleChat = chatPO.getTitle();
-        assertEquals("Chat con ABI 03599", titleChat);
+        assertEquals("Chat con ABI 05662", titleChat);
 
         CommunicationDetailPO communicationDetailPO1 = chatPO.closeChat();
 
         String titleDetailCommunicationFromChat = communicationDetailPO1.getTitle();
-        assertEquals("1424 Prova banca affilitata CC9016", titleDetailCommunicationFromChat);
+        assertEquals("2/2024 Test chat", titleDetailCommunicationFromChat);
 
         CommunicationPO communicationPO1 = communicationDetailPO.back();
 

@@ -14,6 +14,9 @@ public class NotificationCreatePO extends PageObject {
     @FindBy(xpath = "//div[contains(text(), 'Nuova notifica')]")
     private WebElement title;
 
+    @FindBy(xpath = "//span[contains(text(),'CONFERMA')]")
+    private WebElement confirmButton;
+
     private final WebDriverWait wait;
     public NotificationCreatePO(WebDriver driver) {
         super(driver);
@@ -28,8 +31,10 @@ public class NotificationCreatePO extends PageObject {
 
     public NotificationPO cancel() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
-
         this.cancelButton.click();
+
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.confirmButton));
+        this.confirmButton.click();
         return new NotificationPO(driver);
     }
 }
