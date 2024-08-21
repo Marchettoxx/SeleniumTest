@@ -29,7 +29,7 @@ public class WebTest {
     @Before
     public void setup() {
         ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.addArguments("--headless=new");
+        // chrome_options.addArguments("--headless=new");
         chrome_options.addArguments("--disable-search-engine-choice-screen");
         if (driver == null) {
             driver = WebDriverManager.chromedriver().capabilities(chrome_options).create();
@@ -623,7 +623,7 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Gruppo Compliance 231", groupName);
+        assertEquals("Test", groupName);
 
         UsersAndGroupsPO usersAndGroupsPO1 = groupsPO.back();
 
@@ -646,17 +646,17 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Gruppo Compliance 231", groupName);
+        assertEquals("Test", groupName);
 
         GroupDetailPO groupDetailPO = groupsPO.clickDetailGroup();
 
         String titleGroupDetail = groupDetailPO.getTitle();
-        assertEquals("Gruppo Compliance 231", titleGroupDetail);
+        assertEquals("Test", titleGroupDetail);
 
         GroupsPO groupsPO1 = groupDetailPO.back();
 
         String groupsPO1GroupText = groupsPO1.getGroupText();
-        assertEquals("Gruppo Compliance 231", groupsPO1GroupText);
+        assertEquals("Test", groupsPO1GroupText);
     }
 
     /**
@@ -674,12 +674,12 @@ public class WebTest {
         GroupsPO groupsPO = usersAndGroupsPO.clickGroups();
 
         String groupName = groupsPO.getGroupText();
-        assertEquals("Gruppo Compliance 231", groupName);
+        assertEquals("Test", groupName);
 
         GroupDetailPO groupDetailPO = groupsPO.clickDetailGroup();
 
         String titleGroupDetail = groupDetailPO.getTitle();
-        assertEquals("Gruppo Compliance 231", titleGroupDetail);
+        assertEquals("Test", titleGroupDetail);
 
         GroupEditPO groupEditPO = groupDetailPO.edit();
 
@@ -689,7 +689,7 @@ public class WebTest {
         GroupDetailPO groupDetailPO1 = groupEditPO.cancel();
 
         String groupDetailPO1Title = groupDetailPO1.getTitle();
-        assertEquals("Gruppo Compliance 231", groupDetailPO1Title);
+        assertEquals("Test", groupDetailPO1Title);
     }
 
     /**
@@ -743,8 +743,8 @@ public class WebTest {
 
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetailBase();
 
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1425 Prova banca affilitata CC9016", titleDetailCommunication);
+        String titleDetailCommunication = communicationDetailPO.getTitleBase();
+        assertEquals("13/2024 Prova banca affilitata CC9016", titleDetailCommunication);
 
         CommunicationPO communicationPO1 = communicationDetailPO.returnBackBreadCrumb();
 
@@ -761,8 +761,8 @@ public class WebTest {
 
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetailBase();
 
-        String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1425 Prova banca affilitata CC9016", titleDetailCommunication);
+        String titleDetailCommunication = communicationDetailPO.getTitleBase();
+        assertEquals("13/2024 Prova banca affilitata CC9016", titleDetailCommunication);
 
         CommunicationPO communicationPO1 = communicationDetailPO.back();
 
@@ -780,12 +780,12 @@ public class WebTest {
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetailBase();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1425 Prova banca affilitata CC9016", titleDetailCommunication);
+        assertEquals("13/2024 Prova banca affilitata CC9016", titleDetailCommunication);
 
         CommunicationForwardPO communicationForwardPO = communicationDetailPO.forward();
 
         String titleForward = communicationForwardPO.getTitle();
-        assertEquals("Inoltra comunicazione 13 Prova banca affilitata CC9016", titleForward);
+        assertEquals("Inoltra comunicazione 13/2024 Prova banca affilitata CC9016", titleForward);
 
         CommunicationSelectContactPO communicationSelectContactPO = communicationForwardPO.select();
 
@@ -795,12 +795,12 @@ public class WebTest {
         CommunicationForwardPO communicationForwardPO1 = communicationSelectContactPO.close();
 
         String titleForwardSelect = communicationForwardPO.getTitle();
-        assertEquals("Inoltra comunicazione 13 Prova banca affilitata CC9016", titleForwardSelect);
+        assertEquals("Inoltra comunicazione 13/2024 Prova banca affilitata CC9016", titleForwardSelect);
 
         CommunicationDetailPO communicationDetailPO1 = communicationForwardPO1.cancel();
 
         String titleDetailCommunicationForward = communicationDetailPO1.getTitle();
-        assertEquals("1425 Prova banca affilitata CC9016", titleDetailCommunicationForward);
+        assertEquals("13/2024 Prova banca affilitata CC9016", titleDetailCommunicationForward);
     }
 
     /**
@@ -813,7 +813,7 @@ public class WebTest {
         CommunicationDetailPO communicationDetailPO = communicationPO.clickDetailBase();
 
         String titleDetailCommunication = communicationDetailPO.getTitle();
-        assertEquals("1425 Prova banca affilitata CC9016", titleDetailCommunication);
+        assertEquals("13/2024 Prova banca affilitata CC9016", titleDetailCommunication);
 
         CommunicationAnswerPO communicationAnswerPO = communicationDetailPO.answer();
 
@@ -823,7 +823,7 @@ public class WebTest {
         CommunicationDetailPO communicationDetailPO1 = communicationAnswerPO.back();
 
         String titleDetailCommunicationForward = communicationDetailPO1.getTitle();
-        assertEquals("1425 Prova banca affilitata CC9016", titleDetailCommunicationForward);
+        assertEquals("13/2024 Prova banca affilitata CC9016", titleDetailCommunicationForward);
     }
 
     /**

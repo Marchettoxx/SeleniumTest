@@ -14,7 +14,7 @@ public class SignaturePO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'Presa visione')]")
     private WebElement ackTab;
 
-    @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
+    @FindBy(xpath = "//span[contains(text(), 'Modifica')]")
     private WebElement editButton;
 
     @FindBy(xpath = "//span[contains(text(), 'NUOVA FIRMA')]")

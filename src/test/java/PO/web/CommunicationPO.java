@@ -26,9 +26,6 @@ public class CommunicationPO extends PageObject {
     @FindBy(xpath = "//span[text()='Rubrica']")
     private WebElement addressbookLink;
 
-    @FindBy(xpath = "//button[@title='Pagina 5']//span[text()=' 5 ']")
-    private WebElement pageButton;
-
     @FindBy(xpath = "//span[contains(text(), 'NUOVA COMUNICAZIONE')]")
     private WebElement createSplitButton;
 
@@ -76,6 +73,12 @@ public class CommunicationPO extends PageObject {
     }
 
     public CommunicationDetailPO clickDetailBase() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.input));
+        this.input.sendKeys("Prova banca affilitata CC9016");
+
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
+        this.searchButton.click();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.detailLinkBase));
         this.detailLinkBase.click();
 

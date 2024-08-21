@@ -27,7 +27,7 @@ public class CommunicationForwardPO extends PageObject {
     public String getTitle() {
         driver.manage().window().maximize();
 
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Inoltra comunicazione 13 Prova banca affilitata CC9016"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Inoltra comunicazione 13/2024 Prova banca affilitata CC9016"));
 
         return this.title.getText();
     }
