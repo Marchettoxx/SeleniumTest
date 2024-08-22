@@ -48,6 +48,8 @@ public class UserDetailPO extends PageObject {
     }
 
     public UserEditPO edit() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.elementToBeClickable(this.editButton));
 
         this.editButton.click();

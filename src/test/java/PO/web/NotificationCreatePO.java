@@ -11,7 +11,7 @@ public class NotificationCreatePO extends PageObject {
     @FindBy(xpath = "//span[contains(text(), 'ANNULLA')]")
     private WebElement cancelButton;
 
-    @FindBy(xpath = "//div[contains(text(), 'Nuova notifica')]")
+    @FindBy(xpath = "//div[@title='Nuova notifica']")
     private WebElement title;
 
     @FindBy(xpath = "//span[contains(text(),'CONFERMA')]")
@@ -24,6 +24,8 @@ public class NotificationCreatePO extends PageObject {
     }
 
     public String getTitle() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Nuova notifica"));
 
         return this.title.getText();

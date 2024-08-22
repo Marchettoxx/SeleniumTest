@@ -43,9 +43,9 @@ public class CommunicationDetailPO extends PageObject {
     }
 
     public String getTitleBase() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "13/2024 Prova banca affilitata CC9016"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.titleBase, "13/2024 Prova banca affilitata CC9016"));
 
-        return this.title.getText();
+        return this.titleBase.getText();
     }
 
     public CommunicationPO returnBackBreadCrumb() {
