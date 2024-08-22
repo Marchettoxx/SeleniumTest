@@ -24,14 +24,14 @@ public class GroupDetailPO extends PageObject {
     }
 
     public String getTitle() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Test"));
         
         return this.title.getText();
     }
 
     public GroupsPO back() {
-        driver.manage().window().maximize();
-
         this.wait.until(ExpectedConditions.elementToBeClickable(this.backLink));
 
         this.backLink.click();
