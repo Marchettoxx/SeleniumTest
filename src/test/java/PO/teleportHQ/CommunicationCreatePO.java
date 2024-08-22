@@ -11,17 +11,17 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(xpath = "//span[text()='Nuova comunicazione']")
     private WebElement title;
 
-    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link') and span='Comunicazioni']")
-    private WebElement communicationLinkBreadCrumb;
-
-    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link3') and span='Comunicazioni']")
-    private WebElement commMenuLink;
-
     @FindBy(xpath = "//span[text()='ANNULLA']")
     private WebElement cancelButton;
 
     @FindBy(xpath = "//span[text()='Seleziona']")
     private WebElement selectButton;
+
+    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link') and span='Comunicazioni']")
+    private WebElement communicationLinkBreadCrumb;
+
+    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link3') and span='Comunicazioni']")
+    private WebElement commMenuLink;
 
     private final WebDriverWait wait;
 
@@ -43,6 +43,13 @@ public class CommunicationCreatePO extends PageObject {
         return new CommunicationPO(driver);
     }
 
+    public CommunicationSelectUserPO select() {
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.selectButton));
+
+        this.selectButton.click();
+        return new CommunicationSelectUserPO(driver);
+    }
+
     public CommunicationPO returnBackBreadCrumb() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.communicationLinkBreadCrumb));
 
@@ -50,18 +57,11 @@ public class CommunicationCreatePO extends PageObject {
         return new CommunicationPO(driver);
     }
 
-    public CommunicationPO returnBack() {
+    public CommunicationPO back() {
         this.wait.until(ExpectedConditions.elementToBeClickable(this.commMenuLink));
 
         this.commMenuLink.click();
         return new CommunicationPO(driver);
-    }
-
-    public CommunicationSelectUserPO select() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.selectButton));
-
-        this.selectButton.click();
-        return new CommunicationSelectUserPO(driver);
     }
 }
 

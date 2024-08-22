@@ -19,7 +19,7 @@ public class AddressBookEditPO extends PageObject {
     }
 
     public String getCancelButtonText() {
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.cancelButton));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.cancelButton, "ANNULLA"));
 
         return this.cancelButton.getText();
     }

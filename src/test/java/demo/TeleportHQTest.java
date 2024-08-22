@@ -151,7 +151,7 @@ public class TeleportHQTest {
         String titleDetailCommunicationSelect = communicationCreatePO1.getTitle();
         assertEquals("Nuova comunicazione", titleDetailCommunicationSelect);
 
-        CommunicationPO communicationPO1 = communicationCreatePO1.returnBack();
+        CommunicationPO communicationPO1 = communicationCreatePO1.back();
 
         String titleCommunicationBack = communicationPO1.getTitle();
         assertEquals("Comunicazioni", titleCommunicationBack);
@@ -281,7 +281,7 @@ public class TeleportHQTest {
      * Test azione apertura dettaglio notifica e ritorno alla pagina precedente.
      */
     @Test
-    public void notificationDetailAdminTest()  {
+    public void notificationDetailAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         ConfigurationPO configurationPO = communicationPO.clickConfig();
@@ -329,8 +329,8 @@ public class TeleportHQTest {
 
         NotificationEditPO notificationEditPO = notificationDetailPO.edit();
 
-        String title = notificationEditPO.getTitle();
-        assertEquals("Dettaglio notifica", title);
+        String titleDetail = notificationEditPO.getTitle();
+        assertEquals("Dettaglio notifica", titleDetail);
 
         NotificationDetailPO notificationDetailPO1 = notificationEditPO.cancel();
 
@@ -362,13 +362,13 @@ public class TeleportHQTest {
 
         NotificationCreatePO notificationCreatePO = notificationPO.createNotification();
 
-        String confirmButtonText = notificationCreatePO.getTitle();
-        assertEquals("Nuova notifica", confirmButtonText);
+        String title = notificationCreatePO.getTitle();
+        assertEquals("Nuova notifica", title);
 
         NotificationPO notificationPO1 = notificationCreatePO.cancel();
 
-        String titleNotificationConfirm = notificationPO1.getTitle();
-        assertEquals("Notifiche", titleNotificationConfirm);
+        String titleNotificationBack = notificationPO1.getTitle();
+        assertEquals("Notifiche", titleNotificationBack);
     }
 
     /**
@@ -659,8 +659,6 @@ public class TeleportHQTest {
         assertEquals("Gruppo Compliance 231 (ristretto)", groupsPO1GroupText);
     }
 
-    // come precedente ma con side menu
-
     /**
      * Test azione di apertura modifica gruppo e ritorno alla pagina precedente.
      */
@@ -690,8 +688,8 @@ public class TeleportHQTest {
 
         GroupDetailPO groupDetailPO1 = groupEditPO.cancel();
 
-        String groupNameEdit = groupDetailPO1.getTitle();
-        assertEquals("[Nome gruppo]", groupNameEdit);
+        String groupDetailPO1Title = groupDetailPO1.getTitle();
+        assertEquals("[Nome gruppo]", groupDetailPO1Title);
     }
 
     /**
@@ -728,8 +726,8 @@ public class TeleportHQTest {
 
         GroupsPO usersAndGroupsPO1 = groupCreatePO.cancel();
 
-        String groupsPO1GroupText = usersAndGroupsPO1.getGroupText();
-        assertEquals("Gruppo Compliance 231 (ristretto)", groupsPO1GroupText);
+        String titleUsersAndGroupsBack = usersAndGroupsPO1.getGroupText();
+        assertEquals("Gruppo Compliance 231 (ristretto)", titleUsersAndGroupsBack);
     }
 
     // ------------------------------------------------------------------------------------

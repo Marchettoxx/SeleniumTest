@@ -11,11 +11,11 @@ public class UserDetailPO extends PageObject {
     @FindBy(xpath = "//div[contains(text(), 'WORKFLOW test')]")
     private WebElement title;
 
-    @FindBy(xpath = "//li[@class='k-breadcrumb-item ng-star-inserted']//span[@class='k-breadcrumb-item-text' and text()='Utenti e Gruppi']")
-    private WebElement backLink;
-
     @FindBy(css = "li.k-drawer-item[aria-label='Utenti e Gruppi']")
     private WebElement backMenuLink;
+
+    @FindBy(xpath = "//li[@class='k-breadcrumb-item ng-star-inserted']//span[@class='k-breadcrumb-item-text' and text()='Utenti e Gruppi']")
+    private WebElement backLink;
 
     @FindBy(xpath = "//span[contains(text(), 'MODIFICA')]")
     private WebElement editButton;

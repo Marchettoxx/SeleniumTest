@@ -21,6 +21,7 @@ public class SignaturePO extends PageObject {
     private WebElement createButton;
 
     private final WebDriverWait wait;
+
     public SignaturePO(WebDriver driver) {
         super(driver);
         this.wait = new WebDriverWait(driver, 10);

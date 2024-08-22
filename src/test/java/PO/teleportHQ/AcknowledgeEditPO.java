@@ -19,7 +19,7 @@ public class AcknowledgeEditPO extends PageObject {
     }
 
     public String getCancelButtonText() {
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.cancelButton, "ANNULLA"));
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.cancelButton,"ANNULLA"));
 
         return this.cancelButton.getText();
     }

@@ -18,6 +18,7 @@ public class NotificationCreatePO extends PageObject {
     private WebElement confirmButton;
 
     private final WebDriverWait wait;
+
     public NotificationCreatePO(WebDriver driver) {
         super(driver);
         this.wait = new WebDriverWait(driver, 10);

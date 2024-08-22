@@ -105,7 +105,7 @@ public class WebTest {
      * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
      */
     @Test
-    public void communicationCreateAdminBreadCrumbTest() {
+    public void communicationCreateBreadCrumbAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         CommunicationCreatePO communicationCreatePO = communicationPO.create();
@@ -133,7 +133,7 @@ public class WebTest {
      * Test azione di creazione comunicazione e selezione utenti e ritorno alla pagina precedente.
      */
     @Test
-    public void communicationCreateAdminSideMenuTest() {
+    public void communicationCreateSideMenuAdminTest() {
         CommunicationPO communicationPO = this.login(UserTypeEnum.ADMIN);
 
         CommunicationCreatePO communicationCreatePO = communicationPO.create();
@@ -362,13 +362,13 @@ public class WebTest {
 
         NotificationCreatePO notificationCreatePO = notificationPO.createNotification();
 
-        String confirmButtonText = notificationCreatePO.getTitle();
-        assertEquals("Nuova notifica", confirmButtonText);
+        String title = notificationCreatePO.getTitle();
+        assertEquals("Nuova notifica", title);
 
         NotificationPO notificationPO1 = notificationCreatePO.cancel();
 
-        String titleNotificationConfirm = notificationPO1.getTitle();
-        assertEquals("Notifiche", titleNotificationConfirm);
+        String titleNotificationBack = notificationPO1.getTitle();
+        assertEquals("Notifiche", titleNotificationBack);
     }
 
     /**
