@@ -17,10 +17,10 @@ public class CommunicationCreatePO extends PageObject {
     @FindBy(xpath = "//span[text()='Seleziona']")
     private WebElement selectButton;
 
-    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link') and span='Comunicazioni']")
+    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link1') and span='Comunicazioni']")
     private WebElement communicationLinkBreadCrumb;
 
-    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link3') and span='Comunicazioni']")
+    @FindBy(xpath = "//a[contains(@class, 'cmcommunicationsregulatoryalertadmin-link4') and span='Comunicazioni']")
     private WebElement commMenuLink;
 
     private final WebDriverWait wait;

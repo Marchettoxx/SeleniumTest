@@ -11,10 +11,10 @@ public class UserDetailPO extends PageObject {
     @FindBy(xpath = "//span[text()='[Cognome nome]']")
     private WebElement title;
 
-    @FindBy(xpath = "//a[contains(@class, 'cmdettaglioutente-link2') and span='Utenti e gruppi']")
+    @FindBy(xpath = "//a[contains(@class, 'cmdettaglioutente-link3') and span='Utenti e gruppi']")
     private WebElement backMenuLink;
 
-    @FindBy(xpath = "//a[contains(@class, 'cmdettaglioutente-link') and span='Utenti e gruppi']")
+    @FindBy(xpath = "//a[contains(@class, 'cmdettaglioutente-link1') and span='Utenti e gruppi']")
     private WebElement backLink;
 
     @FindBy(xpath = "//span[text()='MODIFICA']")

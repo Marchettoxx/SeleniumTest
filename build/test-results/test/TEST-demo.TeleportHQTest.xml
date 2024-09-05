@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="demo.TeleportHQTest" tests="30" skipped="0" failures="0" errors="0" timestamp="2024-08-20T19:32:52" hostname="LAPTOP-95RP200R" time="158.747">
+<testsuite name="demo.TeleportHQTest" tests="30" skipped="0" failures="0" errors="0" timestamp="2024-09-05T15:58:10" hostname="LAPTOP-95RP200R" time="109.384">
   <properties/>
-  <testcase name="notificationEditAdminTest" classname="demo.TeleportHQTest" time="7.83"/>
-  <testcase name="chatCommunicationBreadCrumbAdminTest" classname="demo.TeleportHQTest" time="4.647"/>
-  <testcase name="UserDetailBreadCrumbAdminTest" classname="demo.TeleportHQTest" time="4.754"/>
-  <testcase name="UserDetailSideMenuAdminTest" classname="demo.TeleportHQTest" time="3.646"/>
-  <testcase name="textEditAdminTest" classname="demo.TeleportHQTest" time="4.655"/>
-  <testcase name="textTabAdminTest" classname="demo.TeleportHQTest" time="4.096"/>
-  <testcase name="communicationDetailSideMenuBankTest" classname="demo.TeleportHQTest" time="4.157"/>
-  <testcase name="acknowledgmentEditAdminTest" classname="demo.TeleportHQTest" time="4.053"/>
-  <testcase name="communicationForwardBankTest" classname="demo.TeleportHQTest" time="4.556"/>
-  <testcase name="chatCommunicationSideMenuAdminTest" classname="demo.TeleportHQTest" time="4.542"/>
-  <testcase name="UserEditAdminTest" classname="demo.TeleportHQTest" time="6.484"/>
-  <testcase name="communicationCreateSideMenuAdminTest" classname="demo.TeleportHQTest" time="4.783"/>
-  <testcase name="groupsTabAdminTest" classname="demo.TeleportHQTest" time="8.875"/>
-  <testcase name="signatureEditAdminTest" classname="demo.TeleportHQTest" time="10.912"/>
-  <testcase name="configurationAdminTest" classname="demo.TeleportHQTest" time="8.679"/>
-  <testcase name="communicationAnswerBankTest" classname="demo.TeleportHQTest" time="4.103"/>
-  <testcase name="groupCreateAdminTest" classname="demo.TeleportHQTest" time="5.333"/>
-  <testcase name="communicationCreateAdminTest" classname="demo.TeleportHQTest" time="4.793"/>
-  <testcase name="communicationCreateBreadCrumbAdminTest" classname="demo.TeleportHQTest" time="4.336"/>
-  <testcase name="groupDetailAdminTest" classname="demo.TeleportHQTest" time="5.454"/>
-  <testcase name="notificationCreateAdminTest" classname="demo.TeleportHQTest" time="5.039"/>
-  <testcase name="notificationTabAdminTest" classname="demo.TeleportHQTest" time="4.935"/>
-  <testcase name="groupEditAdminTest" classname="demo.TeleportHQTest" time="4.567"/>
-  <testcase name="UserCreateAdminTest" classname="demo.TeleportHQTest" time="4.946"/>
-  <testcase name="signatureCreateAdminTest" classname="demo.TeleportHQTest" time="5.136"/>
-  <testcase name="signatureTabAdminTest" classname="demo.TeleportHQTest" time="5.024"/>
-  <testcase name="addressBookEditBankTest" classname="demo.TeleportHQTest" time="5.121"/>
-  <testcase name="notificationDetailAdminTest" classname="demo.TeleportHQTest" time="3.88"/>
-  <testcase name="addressBookCreateBankTest" classname="demo.TeleportHQTest" time="4.761"/>
-  <testcase name="communicationDetailBreadCrumbBankTest" classname="demo.TeleportHQTest" time="4.649"/>
-  <system-out><![CDATA[21:32:45.305 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class demo.TeleportHQTest]
-21:32:45.318 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-21:32:45.335 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-21:32:45.392 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [demo.TeleportHQTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-21:32:45.430 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [demo.TeleportHQTest], using SpringBootContextLoader
-21:32:45.439 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.TeleportHQTest]: class path resource [demo/TeleportHQTest-context.xml] does not exist
-21:32:45.440 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.TeleportHQTest]: class path resource [demo/TeleportHQTestContext.groovy] does not exist
-21:32:45.441 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [demo.TeleportHQTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-21:32:45.442 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [demo.TeleportHQTest]: TeleportHQTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-21:32:45.511 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [demo.TeleportHQTest]
-21:32:45.619 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\massa\Desktop\gitProjects\SeleniumTest\build\classes\java\main\demo\ServingWebContentApplication.class]
-21:32:45.621 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration demo.ServingWebContentApplication for test class demo.TeleportHQTest
-21:32:45.828 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [demo.TeleportHQTest]: using defaults.
-21:32:45.829 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-21:32:45.860 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@8692d67, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@78f5c518, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2f48b3d2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@34f7234e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@753432a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@23bff419, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4983159f, org.springframework.test.context.event.EventPublishingTestExecutionListener@44e3a2b2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@101639ae, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4c550889, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1d2bd371, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@44040454, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@65fe9e33, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@18bc345]
-21:32:45.863 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
-21:32:45.865 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
-21:32:45.869 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
-21:32:45.870 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
-21:32:45.873 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
-21:32:45.873 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
-21:32:45.875 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
-21:32:45.876 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
-21:32:45.877 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
-21:32:45.877 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
-21:32:45.887 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@6b98a075 testClass = TeleportHQTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2e61d218 testClass = TeleportHQTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@51bf5add, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@51bd8b5c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2462cb01, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@34b9f960, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
-21:32:45.890 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
-21:32:45.890 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
-21:32:45.898 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@6b98a075 testClass = TeleportHQTest, testInstance = demo.TeleportHQTest@78365cfa, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2e61d218 testClass = TeleportHQTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@51bf5add, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@51bd8b5c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2462cb01, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@34b9f960, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
-21:32:45.943 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+  <testcase name="notificationEditAdminTest" classname="demo.TeleportHQTest" time="6.321"/>
+  <testcase name="chatCommunicationBreadCrumbAdminTest" classname="demo.TeleportHQTest" time="3.929"/>
+  <testcase name="UserDetailBreadCrumbAdminTest" classname="demo.TeleportHQTest" time="3.485"/>
+  <testcase name="UserDetailSideMenuAdminTest" classname="demo.TeleportHQTest" time="3.321"/>
+  <testcase name="textEditAdminTest" classname="demo.TeleportHQTest" time="3.593"/>
+  <testcase name="textTabAdminTest" classname="demo.TeleportHQTest" time="3.533"/>
+  <testcase name="communicationDetailSideMenuBankTest" classname="demo.TeleportHQTest" time="3.165"/>
+  <testcase name="acknowledgmentEditAdminTest" classname="demo.TeleportHQTest" time="3.484"/>
+  <testcase name="communicationForwardBankTest" classname="demo.TeleportHQTest" time="3.656"/>
+  <testcase name="chatCommunicationSideMenuAdminTest" classname="demo.TeleportHQTest" time="3.62"/>
+  <testcase name="UserEditAdminTest" classname="demo.TeleportHQTest" time="3.567"/>
+  <testcase name="communicationCreateSideMenuAdminTest" classname="demo.TeleportHQTest" time="3.525"/>
+  <testcase name="groupsTabAdminTest" classname="demo.TeleportHQTest" time="3.39"/>
+  <testcase name="signatureEditAdminTest" classname="demo.TeleportHQTest" time="3.52"/>
+  <testcase name="configurationAdminTest" classname="demo.TeleportHQTest" time="3.543"/>
+  <testcase name="communicationAnswerBankTest" classname="demo.TeleportHQTest" time="3.393"/>
+  <testcase name="groupCreateAdminTest" classname="demo.TeleportHQTest" time="3.85"/>
+  <testcase name="communicationCreateAdminTest" classname="demo.TeleportHQTest" time="3.587"/>
+  <testcase name="communicationCreateBreadCrumbAdminTest" classname="demo.TeleportHQTest" time="3.636"/>
+  <testcase name="groupDetailAdminTest" classname="demo.TeleportHQTest" time="3.532"/>
+  <testcase name="notificationCreateAdminTest" classname="demo.TeleportHQTest" time="3.599"/>
+  <testcase name="notificationTabAdminTest" classname="demo.TeleportHQTest" time="3.375"/>
+  <testcase name="groupEditAdminTest" classname="demo.TeleportHQTest" time="3.695"/>
+  <testcase name="UserCreateAdminTest" classname="demo.TeleportHQTest" time="4.852"/>
+  <testcase name="signatureCreateAdminTest" classname="demo.TeleportHQTest" time="3.466"/>
+  <testcase name="signatureTabAdminTest" classname="demo.TeleportHQTest" time="3.363"/>
+  <testcase name="addressBookEditBankTest" classname="demo.TeleportHQTest" time="3.376"/>
+  <testcase name="notificationDetailAdminTest" classname="demo.TeleportHQTest" time="3.544"/>
+  <testcase name="addressBookCreateBankTest" classname="demo.TeleportHQTest" time="3.269"/>
+  <testcase name="communicationDetailBreadCrumbBankTest" classname="demo.TeleportHQTest" time="3.174"/>
+  <system-out><![CDATA[17:58:03.509 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class demo.TeleportHQTest]
+17:58:03.522 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+17:58:03.540 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+17:58:03.596 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [demo.TeleportHQTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+17:58:03.630 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [demo.TeleportHQTest], using SpringBootContextLoader
+17:58:03.640 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.TeleportHQTest]: class path resource [demo/TeleportHQTest-context.xml] does not exist
+17:58:03.642 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.TeleportHQTest]: class path resource [demo/TeleportHQTestContext.groovy] does not exist
+17:58:03.642 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [demo.TeleportHQTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+17:58:03.643 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [demo.TeleportHQTest]: TeleportHQTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:58:03.703 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [demo.TeleportHQTest]
+17:58:03.835 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\massa\Desktop\gitProjects\SeleniumTest\build\classes\java\main\demo\ServingWebContentApplication.class]
+17:58:03.836 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration demo.ServingWebContentApplication for test class demo.TeleportHQTest
+17:58:04.008 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [demo.TeleportHQTest]: using defaults.
+17:58:04.009 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+17:58:04.041 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@8692d67, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@78f5c518, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2f48b3d2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@34f7234e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@753432a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@23bff419, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4983159f, org.springframework.test.context.event.EventPublishingTestExecutionListener@44e3a2b2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@101639ae, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4c550889, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1d2bd371, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@44040454, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@65fe9e33, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@18bc345]
+17:58:04.045 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
+17:58:04.046 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
+17:58:04.050 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
+17:58:04.050 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
+17:58:04.053 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
+17:58:04.054 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
+17:58:04.056 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
+17:58:04.057 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
+17:58:04.058 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
+17:58:04.058 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
+17:58:04.070 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@6b98a075 testClass = TeleportHQTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2e61d218 testClass = TeleportHQTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@51bf5add, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@51bd8b5c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2462cb01, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@34b9f960, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+17:58:04.073 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.TeleportHQTest]
+17:58:04.073 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.TeleportHQTest]
+17:58:04.081 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@6b98a075 testClass = TeleportHQTest, testInstance = demo.TeleportHQTest@78365cfa, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2e61d218 testClass = TeleportHQTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@51bf5add, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@51bd8b5c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2462cb01, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@34b9f960, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
+17:58:04.120 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -70,239 +70,239 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.2.RELEASE)
 
-2024-08-20 21:32:46.420  INFO 17220 --- [    Test worker] demo.TeleportHQTest                      : Starting TeleportHQTest on LAPTOP-95RP200R with PID 17220 (started by massa in C:\Users\massa\Desktop\gitProjects\SeleniumTest)
-2024-08-20 21:32:46.423  INFO 17220 --- [    Test worker] demo.TeleportHQTest                      : No active profile set, falling back to default profiles: default
-2024-08-20 21:32:47.508  INFO 17220 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2024-08-20 21:32:47.550  INFO 17220 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 JPA repository interfaces.
-2024-08-20 21:32:48.721  INFO 17220 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-08-20 21:32:48.738  INFO 17220 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-20 21:32:48.739  INFO 17220 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2024-08-20 21:32:49.051  INFO 17220 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-20 21:32:49.051  INFO 17220 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2586 ms
-2024-08-20 21:32:49.603  INFO 17220 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2024-08-20 21:32:49.638  INFO 17220 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-08-20 21:32:49.991  INFO 17220 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-08-20 21:32:50.160  INFO 17220 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-08-20 21:32:50.268  WARN 17220 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-20 21:32:50.316  INFO 17220 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2024-08-20 21:32:50.767  INFO 17220 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2024-08-20 21:32:51.160  INFO 17220 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2024-08-20 21:32:51.775  INFO 17220 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-08-20 21:32:51.795  INFO 17220 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-08-20 21:32:52.236  INFO 17220 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-08-20 21:32:52.238  INFO 17220 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2024-08-20 21:32:52.240  INFO 17220 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2024-08-20 21:32:52.256  INFO 17220 --- [    Test worker] demo.TeleportHQTest                      : Started TeleportHQTest in 6.309 seconds (JVM running for 8.324)
-2024-08-20 21:32:53.147  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:32:53.181  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:32:55.108  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:00.124  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:00.137  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:01.354  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:04.771  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:04.786  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:05.913  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:09.527  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:09.540  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:10.731  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:13.168  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:13.177  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:14.365  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:17.820  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:17.830  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:19.035  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:21.921  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:21.934  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:23.212  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:26.075  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:26.090  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:27.344  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:30.128  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:30.140  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:31.469  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:34.684  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:34.694  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:35.973  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:39.227  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:39.239  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:40.421  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:45.708  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:45.719  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:46.922  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:50.496  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:50.509  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:33:51.748  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:33:59.370  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:33:59.381  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:00.670  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:10.278  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:10.288  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:11.556  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:18.962  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:18.973  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:20.299  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:23.066  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:23.078  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:24.354  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:28.399  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:28.412  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:29.822  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:33.192  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:33.203  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:34.563  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:37.525  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:37.539  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:38.808  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:42.984  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:43.002  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:44.383  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:48.020  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:48.036  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:49.500  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:52.954  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:52.969  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:54.269  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:34:57.521  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:34:57.533  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:34:58.926  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:35:02.467  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:35:02.479  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:35:03.950  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:35:07.608  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:35:07.624  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:35:09.113  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:35:12.634  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:35:12.650  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:35:14.180  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:35:17.749  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:35:17.762  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:35:18.894  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:35:21.627  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:35:21.637  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:35:22.790  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2024-08-20 21:35:26.389  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 127.0.6533.119 (resolved driver for Chrome 127)
-2024-08-20 21:35:26.401  INFO 17220 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\127.0.6533.119\chromedriver.exe
-2024-08-20 21:35:27.714  INFO 17220 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:04.580  INFO 9508 --- [    Test worker] demo.TeleportHQTest                      : Starting TeleportHQTest on LAPTOP-95RP200R with PID 9508 (started by massa in C:\Users\massa\Desktop\gitProjects\SeleniumTest)
+2024-09-05 17:58:04.582  INFO 9508 --- [    Test worker] demo.TeleportHQTest                      : No active profile set, falling back to default profiles: default
+2024-09-05 17:58:05.617  INFO 9508 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2024-09-05 17:58:05.650  INFO 9508 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 JPA repository interfaces.
+2024-09-05 17:58:06.673  INFO 9508 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-09-05 17:58:06.689  INFO 9508 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-05 17:58:06.689  INFO 9508 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2024-09-05 17:58:07.008  INFO 9508 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-05 17:58:07.008  INFO 9508 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2385 ms
+2024-09-05 17:58:07.537  INFO 9508 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-09-05 17:58:07.573  INFO 9508 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-05 17:58:07.871  INFO 9508 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-05 17:58:08.002  INFO 9508 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-05 17:58:08.110  WARN 9508 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-05 17:58:08.154  INFO 9508 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2024-09-05 17:58:08.586  INFO 9508 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2024-09-05 17:58:08.941  INFO 9508 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2024-09-05 17:58:09.494  INFO 9508 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-09-05 17:58:09.508  INFO 9508 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-05 17:58:10.008  INFO 9508 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-09-05 17:58:10.009  INFO 9508 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2024-09-05 17:58:10.011  INFO 9508 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2024-09-05 17:58:10.031  INFO 9508 --- [    Test worker] demo.TeleportHQTest                      : Started TeleportHQTest in 5.907 seconds (JVM running for 9.521)
+2024-09-05 17:58:11.119  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:11.156  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:13.023  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:16.397  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:16.414  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:17.677  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:20.321  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:20.333  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:21.568  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:23.819  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:23.830  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:24.995  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:27.150  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:27.162  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:28.334  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:30.740  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:30.752  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:31.915  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:34.251  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:34.263  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:35.462  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:37.418  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:37.431  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:38.629  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:40.933  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:40.950  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:42.149  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:44.578  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:44.588  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:45.776  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:48.190  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:48.201  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:49.414  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:51.777  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:51.788  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:52.972  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:55.291  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:55.303  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:56.526  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:58:58.674  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:58:58.684  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:58:59.868  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:02.213  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:02.223  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:03.429  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:05.746  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:05.755  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:06.947  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:09.143  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:09.152  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:10.345  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:12.996  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:13.004  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:14.203  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:16.565  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:16.578  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:17.812  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:20.204  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:20.214  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:21.357  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:23.728  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:23.737  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:24.951  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:27.351  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:27.361  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:28.502  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:30.713  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:30.725  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:31.912  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:34.417  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:34.427  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:35.638  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:39.278  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:39.288  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:40.406  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:42.726  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:42.735  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:43.915  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:46.104  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:46.115  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:47.238  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:49.483  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:49.493  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:50.646  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:53.023  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:53.034  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:54.144  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2024-09-05 17:59:56.301  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 128.0.6613.119 (resolved driver for Chrome 128)
+2024-09-05 17:59:56.312  INFO 9508 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\massa\.cache\selenium\chromedriver\win64\128.0.6613.119\chromedriver.exe
+2024-09-05 17:59:57.472  INFO 9508 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 ]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 31049
+  <system-err><![CDATA[Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 35713
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 8487
+ChromeDriver was started successfully on port 35713.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 5311
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 18162
+ChromeDriver was started successfully on port 5311.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 25732
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 44595
+ChromeDriver was started successfully on port 25732.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 32049
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 35908
+ChromeDriver was started successfully on port 32049.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 9428
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 14375
+ChromeDriver was started successfully on port 9428.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 44794
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 27263
+ChromeDriver was started successfully on port 44794.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 5439
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 18284
+ChromeDriver was started successfully on port 5439.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 24650
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 47917
+ChromeDriver was started successfully on port 24650.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 35721
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 35645
+ChromeDriver was started successfully on port 35721.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 38164
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 1625
+ChromeDriver was started successfully on port 38164.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 45746
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 33104
+ChromeDriver was started successfully on port 45746.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 13640
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 30805
+ChromeDriver was started successfully on port 13640.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 12083
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 34685
+ChromeDriver was started successfully on port 12083.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 46431
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 10090
+ChromeDriver was started successfully on port 46431.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 32057
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 25402
+ChromeDriver was started successfully on port 32057.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 18856
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 47899
+ChromeDriver was started successfully on port 18856.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 39099
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 42210
+ChromeDriver was started successfully on port 39099.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 19359
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 45287
+ChromeDriver was started successfully on port 19359.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 7076
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 27802
+ChromeDriver was started successfully on port 7076.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 15642
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 14691
+ChromeDriver was started successfully on port 15642.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 45568
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 36314
+ChromeDriver was started successfully on port 45568.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 21990
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 26888
+ChromeDriver was started successfully on port 21990.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 6700
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 37978
+ChromeDriver was started successfully on port 6700.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 2054
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 39398
+ChromeDriver was started successfully on port 2054.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 41987
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 19492
+ChromeDriver was started successfully on port 41987.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 29982
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 25991
+ChromeDriver was started successfully on port 29982.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 3283
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 7389
+ChromeDriver was started successfully on port 3283.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 46378
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 34976
+ChromeDriver was started successfully on port 46378.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 36355
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Starting ChromeDriver 127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999}) on port 5340
+ChromeDriver was started successfully on port 36355.
+Starting ChromeDriver 128.0.6613.119 (6e439cfca4deda5954b0c74cde9b521c03cb31ad-refs/branch-heads/6613@{#1464}) on port 15755
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
+ChromeDriver was started successfully on port 15755.
 ]]></system-err>
 </testsuite>

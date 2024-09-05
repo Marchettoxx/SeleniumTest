@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationPO extends PageObject {
 
-    @FindBy(xpath = "//div[contains(@class, 'cmcommunicationsnotificationsconfigurationreadmode-title1')]//span[text()='Notifiche']")
+    @FindBy(xpath = "//div[contains(@class, 'cmcommunicationsnotificationsconfigurationreadmode-title2')]//span[text()='Notifiche']")
     private WebElement title;
 
     @FindBy(xpath = "//span[text()='Nuova notifica']")

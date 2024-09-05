@@ -38,6 +38,7 @@ public class SelectUserPO extends PageObject {
                 break;
         }
 
+        driver.manage().window().maximize();
         this.wait.until(ExpectedConditions.elementToBeClickable(choice));
         choice.click();
         return new CommunicationPO(driver);

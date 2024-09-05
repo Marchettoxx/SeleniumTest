@@ -34,6 +34,8 @@ public class CommunicationPO extends PageObject {
     }
 
     public String getTitle() {
+        driver.manage().window().maximize();
+
         this.wait.until(ExpectedConditions.textToBePresentInElement(this.title, "Comunicazioni"));
 
         return this.title.getText();
