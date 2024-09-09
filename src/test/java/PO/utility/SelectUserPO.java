@@ -11,14 +11,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectUserPO extends PageObject {
 
-    @FindBy(xpath = "//a[text()='UTENTE AMMINISTRATIVO']")
+    @FindBy(xpath = "//a[@href='/cmcommunicationslistadmin']//span[text()='UTENTE AMMINISTRATIVO']")
     private WebElement adminButton;
 
-    @FindBy(xpath = "//a[text()='UTENTE STANDARD']")
-    private WebElement standardButton;
+//    @FindBy(xpath = "//a[contains(text(), 'UTENTE AMMINISTRATIVO')]")
+//    private WebElement adminButton;
 
-    @FindBy(xpath = "//a[text()='UTENTE BANCA']")
+//    @FindBy(xpath = "//a[contains(text(), 'UTENTE BANCA')]")
+//    private WebElement bankButton;
+
+    @FindBy(xpath = "//a[@href='/communicationslistuser']//span[text()='UTENTE BANCA']")
     private WebElement bankButton;
+
 
     private final WebDriverWait wait;
 
@@ -38,7 +42,6 @@ public class SelectUserPO extends PageObject {
                 break;
         }
 
-        driver.manage().window().maximize();
         this.wait.until(ExpectedConditions.elementToBeClickable(choice));
         choice.click();
         return new CommunicationPO(driver);
